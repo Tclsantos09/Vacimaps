@@ -18,7 +18,6 @@
         android:textColor="#C4C4C4"
         android:textSize="18sp"/>
 
-    
     <View
         android:id="@+id/add"
         android:layout_width="50dp"
@@ -69,33 +68,28 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@drawable/rectangle_2"
-                >
+                />
 
-                <View
+            <View
 
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="@drawable/pencil_edit"
-                    />
-            </View>
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/pencil_edit"
+                />
 
             <View
 
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@drawable/garbage"
-                >
+                />
 
-                <View
+            <View
 
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="@drawable/rectangle_2"
-                    />
-
-                </View>
-
-
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/rectangle_2"
+                />
 
         </LinearLayout>
 
@@ -142,31 +136,28 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@drawable/rectangle_2"
-                >
+                />
 
-                <View
+            <View
 
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="@drawable/pencil_edit"
-                    />
-            </View>
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/pencil_edit"
+                />
 
             <View
 
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@drawable/garbage"
-                >
+                />
 
-                <View
+            <View
 
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="@drawable/rectangle_2"
-                    />
-
-            </View>
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/rectangle_2"
+                />
 
         </LinearLayout>
 
@@ -213,31 +204,28 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@drawable/rectangle_2"
-                >
+                />
 
-                <View
+            <View
 
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="@drawable/pencil_edit"
-                    />
-            </View>
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/pencil_edit"
+                />
 
             <View
 
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@drawable/garbage"
-                >
+                />
 
-                <View
+            <View
 
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="@drawable/rectangle_2"
-                    />
-
-            </View>
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/rectangle_2"
+                />
 
         </LinearLayout>
 
@@ -279,35 +267,31 @@
                 android:textStyle="bold" />
 
             <View
-
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@drawable/rectangle_2"
-                >
+                />
 
-                <View
+            <View
 
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="@drawable/pencil_edit"
-                    />
-            </View>
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/pencil_edit"
+                />
 
             <View
 
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@drawable/garbage"
-                >
+                />
 
-                <View
+            <View
 
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="@drawable/rectangle_2"
-                    />
-
-            </View>
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/rectangle_2"
+                />
 
         </LinearLayout>
 
