@@ -18,6 +18,7 @@
         android:textColor="#C4C4C4"
         android:textSize="18sp"/>
 
+    
     <View
         android:id="@+id/add"
         android:layout_width="50dp"
