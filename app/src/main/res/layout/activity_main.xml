@@ -5,309 +5,88 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#F1EEEE">
+    android:background="#00695C">
 
-    <EditText
-        android:id="@+id/pesquisarvacina"
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/globo"/>
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Digite o nome da vacina"
+        android:layout_marginTop="150dp"
+        android:text="VACIMAPS"
+        android:textStyle="bold"
         android:layout_centerHorizontal="true"
-        android:background="#FFFFFF"
+        android:textSize="36sp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="Souliyo Unicode"/>
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="E-mail"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:inputType="text"
-        android:textColor="#C4C4C4"
-        android:textSize="18sp"/>
+        android:textColorHint="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:textSize="16sp"
+        android:textAlignment="center"/>
 
-    <View
-        android:id="@+id/add"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/add"
-        />
+    <EditText
+        android:id="@+id/senha"
+        android:layout_marginTop="10dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Senha"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/email"
+        android:inputType="textPassword"
+        android:textColorHint="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:textSize="16sp"
+        android:textAlignment="center"/>
 
-    <View
-        android:id="@+id/rectangle"
-        android:layout_width="303dp"
-        android:layout_height="71dp"
-        android:background="@drawable/rectangle"
-        />
+
+    <Button
+        android:id="@+id/entrar"
+        android:layout_width="300dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/senha"
+        android:textStyle="bold"
+        android:text="ENTRAR"
+        android:textColor="#227F66"
+        android:textSize="16sp"
+        android:background="#FFFFFF"/>
+
     <TextView
-        android:id="@+id/nova_vacina"
-        android:layout_width="219dp"
-        android:layout_height="47dp"
-        android:text="@string/nova_vacina"
-        android:textAppearance="@style/nova_vacina"
-        />
-
-    <LinearLayout
-
-        android:id="@+id/vacina1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/rectangle"
-        android:background="#BECEC9"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="INFLUENZA A"
-                android:textColor="#FFFFFF"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-            <View
-
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/rectangle_2"
-                />
-
-            <View
-
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/pencil_edit"
-                />
-
-            <View
-
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/garbage"
-                />
-
-            <View
-
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/rectangle_2"
-                />
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Data: "
-            android:textColor="#808080"
-            android:textSize="17sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lote: "
-            android:textColor="#808080"
-            android:textSize="17sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/vacina2"
+        android:id="@+id/cadastro"
         android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/vacina1"
-        android:background="#BECEC9"
-        android:orientation="vertical">
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/entrar"
+        android:text="Novo por aqui?"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"/>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="MALARIA"
-                android:textColor="#FFFFFF"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-            <View
-
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/rectangle_2"
-                />
-
-            <View
-
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/pencil_edit"
-                />
-
-            <View
-
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/garbage"
-                />
-
-            <View
-
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/rectangle_2"
-                />
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Data: "
-            android:textColor="#808080"
-            android:textSize="17sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lote: "
-            android:textColor="#808080"
-            android:textSize="17sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/vacina3"
+    <TextView
         android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/vacina2"
-        android:background="#BECEC9"
-        android:orientation="vertical">
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/cadastro"
+        android:text="Esqueci minha senha"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"/>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="FEBRE AMARELA"
-                android:textColor="#FFFFFF"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-            <View
-
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/rectangle_2"
-                />
-
-            <View
-
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/pencil_edit"
-                />
-
-            <View
-
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/garbage"
-                />
-
-            <View
-
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/rectangle_2"
-                />
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Data: "
-            android:textColor="#808080"
-            android:textSize="17sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lote: "
-            android:textColor="#808080"
-            android:textSize="17sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/vacina4"
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/vacina3"
-        android:background="#BECEC9"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="POLIOMELITE"
-                android:textColor="#FFFFFF"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-            <View
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/rectangle_2"
-                />
-
-            <View
-
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/pencil_edit"
-                />
-
-            <View
-
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/garbage"
-                />
-
-            <View
-
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/rectangle_2"
-                />
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Data: "
-            android:textColor="#808080"
-            android:textSize="17sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lote: "
-            android:textColor="#808080"
-            android:textSize="17sp" />
-    </LinearLayout>
 
 </RelativeLayout>
