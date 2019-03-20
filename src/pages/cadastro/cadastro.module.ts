@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { CadastroPage } from './cadastro';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    CadastroPage,
+    CadastroPage
   ],
   imports: [
     IonicPageModule.forChild(CadastroPage),
-    HttpModule
+    HttpClientModule
+    
   ],
 })
 export class CadastroPageModule {}
