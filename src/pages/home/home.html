@@ -1,34 +1,57 @@
+<style>
+  @font-face {
+    font-family: Souliyo-Regular;
+    src: url(../www/assets/fonts/Souliyo-Regular.ttf)
+  }
 
-<ion-content padding style="background-color: #12614C">
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <h1 style="color: white; text-align: center;">VACIMAPS</h1>
-  <br>
-  <br>
-  <br>
+  ion-content{
+    font-family: 'Souliyo Regular', sans-serif;
+  }
+  h1{
+    color: white; padding: 80px 25px 45px 25px; text-align: center; font-size: 35px; font-weight: 100; font-style: normal; line-height: normal;
+  }
+  ion-item{
+    background-color: #12614C; color: white; align-content: center;
+  }
+  input::placeholder{
+    text-align: center; color: white; font-size: 12px; 
+  }
+  button{
+    width: 220px; height: 30px; color: #12614C; margin-left: 15px; margin-top: 25px;
+  }
+  .btn-others{
+   color: white; font-size: 12px; cursor: pointer; display: flex; flex-direction: column; text-align: center; margin: 8px; 
+  }
+  .btn-new{
+    padding-top: 14px;
+  }
+  .btn-pass{
+    padding-top: 10px;
+  }
+</style>
+
+
+<ion-content style="background-color: #12614C">
+<body>
+  <h1>VACIMAPS</h1>
   
   <ion-list inset>
 
-    <ion-item style="background-color: #12614C">
-      <ion-input type="text" [(ngModel)]="email" placeholder="E-mail"></ion-input>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="email" placeholder="e-mail"></ion-input>
     </ion-item>
   
-    <ion-item style="background-color: #12614C">
-      <ion-input type="password" [(ngModel)]="senha" placeholder="Senha" ></ion-input>
+    <ion-item>
+      <ion-input type="password" [(ngModel)]="senha" placeholder="senha"></ion-input>
     </ion-item>
-    <br>
 
-    <button ion-button color="light" (click)="login()" style="width: 220px; color: #12614C;" >Entrar</button>
+    <button ion-button color="light" (click)="login()">Entrar</button>
   </ion-list>
 
-  <br>
-  <button ion-button clear style="width: 220px; color: white; font-size: 10px;" (click)="cadastrar()">Novo por aqui?</button>
-  <button ion-button clear style="width: 220px; color: white; font-size: 10px;" >Esqueceu a senha?</button>
+  <div>
+    <a class="btn-new btn-others" (click)="cadastrar()">Novo por aqui?</a>
+    <a class="btn-pass btn-others" (click)="redefinir()">Esqueci minha senha</a>
+  </div>
+</body>
+</ion-content> 
 
-
-  
-</ion-content>

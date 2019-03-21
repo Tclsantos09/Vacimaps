@@ -1,0 +1,54 @@
+<style>
+ @font-face {
+    font-family: Souliyo-Regular;
+    src: url(../www/assets/fonts/Souliyo-Regular.ttf)
+  }
+
+  ion-content{
+    font-family: 'Souliyo Regular', sans-serif;
+  }
+  h1{
+    color: white; text-align: center;
+    padding: 40px 25px 45px 25px;
+    letter-spacing: 0.9px;
+  }
+  ion-item{
+    background-color: #12614C; color: white; align-content: center;
+  }
+  input::placeholder{
+    text-align: center; color: white; font-size: 12px; 
+  }
+  button{
+    width: 210px; height: 30px; color: #12614C; margin-left: 7px; margin-top: 15px;
+  }
+  .btn-back{
+    color: white; font-size: 10px; padding-right: 185px; padding-top: 10px;
+  }
+
+</style>
+
+<ion-content padding style="background-color: #12614C">
+
+  <button ion-button clear class="btn-back" (click)="Voltar()"><< voltar</button>
+
+  <h1>VACIMAPS</h1>
+
+  <ion-list inset>
+
+    <ion-item>
+      <h3>Redefinir senha:</h3>
+    </ion-item>
+    
+    <ion-item>
+      <ion-input type="password" [(ngModel)]="senha" placeholder="senha">senha</ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input type="password" [(ngModel)]="confSenha" placeholder=" confirmar senha">confirmar senha</ion-input>
+    </ion-item>
+    <br>
+
+    <button ion-button color="light">Redefinir</button>
+  </ion-list>
+  
+</ion-content>

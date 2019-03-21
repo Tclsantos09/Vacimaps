@@ -29,7 +29,11 @@ var map = {
 	],
 	"../pages/feed/feed.module": [
 		401,
-		0
+		4
+	],
+	"../pages/redefinir-senha/redefinir-senha.module": [
+		403,
+		3
 	]
 };
 function webpackAsyncContext(req) {
@@ -129,7 +133,7 @@ var DashboardPage = /** @class */ (function () {
     };
     DashboardPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-dashboard',template:/*ion-inline-start:"/home/renan/Vídeos/Vacimaps/src/pages/dashboard/dashboard.html"*/'<!--\n  Generated template for the DashboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Dashboard</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <br><br><br><br>\n\n    <h1 style="color: black; text-align: center;">Bem vindo, {{ nome }}!</h1>\n\n\n</ion-content>\n'/*ion-inline-end:"/home/renan/Vídeos/Vacimaps/src/pages/dashboard/dashboard.html"*/,
+            selector: 'page-dashboard',template:/*ion-inline-start:"C:\Users\victoria.rodovalho\Vacimaps\src\pages\dashboard\dashboard.html"*/'<!--\n\n  Generated template for the DashboardPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Dashboard</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <br><br><br><br>\n\n\n\n    <h1 style="color: black; text-align: center;">Bem vindo, {{ nome }}!</h1>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\victoria.rodovalho\Vacimaps\src\pages\dashboard\dashboard.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_2__profile_services__["a" /* profileService */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
@@ -234,7 +238,7 @@ var CadastroPage = /** @class */ (function () {
     };
     CadastroPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cadastro',template:/*ion-inline-start:"/home/renan/Vídeos/Vacimaps/src/pages/cadastro/cadastro.html"*/'\n<ion-content padding style="background-color: #12614C">\n  <br>\n  <button ion-button clear style="color: white; font-size: 10px; text-align: left;" (click)="Voltar()"><<Voltar</button>\n\n  <br>\n  <br>\n  <br>\n  <br>\n  <br>\n  <h1 style="color: white; text-align: center;">VACIMAPS</h1>\n  <br>\n  <br>\n  <br>\n  \n  <ion-list inset>\n\n    <ion-item style="background-color: #12614C">\n      <ion-input type="text" [(ngModel)]="nome" placeholder="Nome"></ion-input>\n    </ion-item>\n  \n    <ion-item style="background-color: #12614C">\n      <ion-input type="email" [(ngModel)]="email" placeholder="E-mail" ></ion-input>\n    </ion-item>\n\n    <ion-item style="background-color: #12614C">\n      <ion-input type="password" [(ngModel)]="senha" placeholder="Senha" ></ion-input>\n    </ion-item>\n    <br>\n\n    <button ion-button color="light" style="width: 220px; color: #12614C;" (click) = "doPOST()">Cadastrar</button>\n  </ion-list>\n  \n</ion-content>\n'/*ion-inline-end:"/home/renan/Vídeos/Vacimaps/src/pages/cadastro/cadastro.html"*/,
+            selector: 'page-cadastro',template:/*ion-inline-start:"C:\Users\victoria.rodovalho\Vacimaps\src\pages\cadastro\cadastro.html"*/'<style>\n\n@font-face {\n\n    font-family: Souliyo-Regular;\n\n    src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n\n}\n\n\n\n  ion-content{\n\n    font-family: \'Souliyo Regular\', sans-serif;\n\n  }\n\n  h1{\n\n    color: white; text-align: center;\n\n    padding: 40px 25px 45px 25px;\n\n    letter-spacing: 0.9px;\n\n  }\n\n  ion-item{\n\n    background-color: #12614C; color: white; align-content: center;\n\n  }\n\n  input::placeholder{\n\n    text-align: center; color: white; font-size: 12px; \n\n  }\n\n  button{\n\n    width: 210px; height: 30px; color: #12614C; margin-left: 7px; margin-top: 15px;\n\n  }\n\n  .btn-back{\n\n    color: white; font-size: 10px; padding-right: 185px; padding-top: 10px;\n\n  }\n\n\n\n</style>\n\n\n\n<ion-content padding style="background-color: #12614C">\n\n\n\n  <button ion-button clear class="btn-back" (click)="Voltar()"><< voltar</button>\n\n\n\n  <h1>VACIMAPS</h1>\n\n\n\n  <ion-list inset>\n\n\n\n    <ion-item>\n\n      <ion-input type="text" [(ngModel)]="nome" placeholder="nome"></ion-input>\n\n    </ion-item>\n\n  \n\n    <ion-item>\n\n      <ion-input type="email" [(ngModel)]="email" placeholder="e-mail" ></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-input type="password" [(ngModel)]="senha" placeholder="senha" ></ion-input>\n\n    </ion-item>\n\n    <br>\n\n\n\n    <button ion-button color="light" (click)="doPOST()">Cadastrar</button>\n\n  </ion-list>\n\n  \n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\victoria.rodovalho\Vacimaps\src\pages\cadastro\cadastro.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */]])
     ], CadastroPage);
@@ -410,7 +414,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/renan/Vídeos/Vacimaps/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/renan/Vídeos/Vacimaps/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\victoria.rodovalho\Vacimaps\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\victoria.rodovalho\Vacimaps\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -470,7 +474,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/renan/Vídeos/Vacimaps/src/pages/home/home.html"*/'\n<ion-content padding style="background-color: #12614C">\n  <br>\n  <br>\n  <br>\n  <br>\n  <br>\n  <br>\n  <h1 style="color: white; text-align: center;">VACIMAPS</h1>\n  <br>\n  <br>\n  <br>\n  \n  <ion-list inset>\n\n    <ion-item style="background-color: #12614C">\n      <ion-input type="text" [(ngModel)]="email" placeholder="E-mail"></ion-input>\n    </ion-item>\n  \n    <ion-item style="background-color: #12614C">\n      <ion-input type="password" [(ngModel)]="senha" placeholder="Senha" ></ion-input>\n    </ion-item>\n    <br>\n\n    <button ion-button color="light" (click)="login()" style="width: 220px; color: #12614C;" >Entrar</button>\n  </ion-list>\n\n  <br>\n  <button ion-button clear style="width: 220px; color: white; font-size: 10px;" (click)="cadastrar()">Novo por aqui?</button>\n  <button ion-button clear style="width: 220px; color: white; font-size: 10px;" >Esqueceu a senha?</button>\n\n\n  \n</ion-content>\n'/*ion-inline-end:"/home/renan/Vídeos/Vacimaps/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\victoria.rodovalho\Vacimaps\src\pages\home\home.html"*/'<style>\n\n  @font-face {\n\n    font-family: Souliyo-Regular;\n\n    src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n\n  }\n\n\n\n  ion-content{\n\n    font-family: \'Souliyo Regular\', sans-serif;\n\n  }\n\n  h1{\n\n    color: white; padding: 80px 25px 45px 25px; text-align: center; font-size: 35px; font-weight: 100; font-style: normal; line-height: normal;\n\n  }\n\n  ion-item{\n\n    background-color: #12614C; color: white; align-content: center;\n\n  }\n\n  input::placeholder{\n\n    text-align: center; color: white; font-size: 12px; \n\n  }\n\n  button{\n\n    width: 220px; height: 30px; color: #12614C; margin-left: 15px; margin-top: 25px;\n\n  }\n\n  .btn-others{\n\n   color: white; font-size: 12px; cursor: pointer; display: flex; flex-direction: column; text-align: center; margin: 8px; \n\n  }\n\n  .btn-new{\n\n    padding-top: 14px;\n\n  }\n\n  .btn-pass{\n\n    padding-top: 10px;\n\n  }\n\n</style>\n\n\n\n\n\n<ion-content style="background-color: #12614C">\n\n<body>\n\n  <h1>VACIMAPS</h1>\n\n  \n\n  <ion-list inset>\n\n\n\n    <ion-item>\n\n      <ion-input type="text" [(ngModel)]="email" placeholder="e-mail"></ion-input>\n\n    </ion-item>\n\n  \n\n    <ion-item>\n\n      <ion-input type="password" [(ngModel)]="senha" placeholder="senha"></ion-input>\n\n    </ion-item>\n\n\n\n    <button ion-button color="light" (click)="login()">Entrar</button>\n\n  </ion-list>\n\n\n\n  <div>\n\n    <a class="btn-new btn-others" (click)="cadastrar()">Novo por aqui?</a>\n\n    <a class="btn-pass btn-others" (click)="redefinir()">Esqueci minha senha</a>\n\n  </div>\n\n</body>\n\n</ion-content> \n\n\n\n'/*ion-inline-end:"C:\Users\victoria.rodovalho\Vacimaps\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* App */]])

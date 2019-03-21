@@ -7,6 +7,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { CadastroPageModule } from '../pages/cadastro/cadastro.module';
 import { DashboardPageModule } from '../pages/dashboard/dashboard.module';
+import { RedefinirSenhaPageModule } from '../pages/redefinir-senha/redefinir-senha.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DashboardPageModule } from '../pages/dashboard/dashboard.module';
     BrowserModule,    
     IonicModule.forRoot(MyApp),
     CadastroPageModule,
-    DashboardPageModule
+    DashboardPageModule,
+    RedefinirSenhaPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
