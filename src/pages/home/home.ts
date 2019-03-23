@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { CadastroPage } from '../cadastro/cadastro';
 import { RedefinirSenhaPage } from '../redefinir-senha/redefinir-senha'
+import { EsqSenhaPage } from '../esqSenha/esqSenha'
 import { map } from "rxjs/operators";
 import { HttpClient } from "@angular/common/http";
 import { DashboardPage } from '../dashboard/dashboard';
@@ -30,6 +31,10 @@ export class HomePage {
 
   redefinir(){
     this.navCtrl.push(RedefinirSenhaPage)
+  }
+
+  esqSenha(){
+    this.navCtrl.push(EsqSenhaPage)
   }
 
   login() {

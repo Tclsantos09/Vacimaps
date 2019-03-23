@@ -8,6 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { CadastroPageModule } from '../pages/cadastro/cadastro.module';
 import { DashboardPageModule } from '../pages/dashboard/dashboard.module';
 import { RedefinirSenhaPageModule } from '../pages/redefinir-senha/redefinir-senha.module';
+import { EsqSenhaPageModule } from '../pages/esqSenha/esqSenha.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RedefinirSenhaPageModule } from '../pages/redefinir-senha/redefinir-sen
     IonicModule.forRoot(MyApp),
     CadastroPageModule,
     DashboardPageModule,
-    RedefinirSenhaPageModule
+    RedefinirSenhaPageModule,
+    EsqSenhaPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
