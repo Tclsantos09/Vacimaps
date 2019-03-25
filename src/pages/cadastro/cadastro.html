@@ -32,23 +32,23 @@
   <button ion-button clear class="btn-back" (click)="Voltar()"><< voltar</button>
 
   <h1>VACIMAPS</h1>
+  <form [formGroup]="formulario">
+    <ion-list inset>
 
-  <ion-list inset>
+      <ion-item>
+        <ion-input type="text"[formControl]="formulario.controls['validNome']" [(ngModel)]="nome" placeholder="nome"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-input type="email" [formControl]="formulario.controls['validEmail']" [(ngModel)]="email" placeholder="e-mail" ></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-input type="text" [(ngModel)]="nome" placeholder="nome"></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-input type="email" [(ngModel)]="email" placeholder="e-mail" ></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-input type="password" [formControl]="formulario.controls['vaidSenha']"[(ngModel)]="senha" placeholder="senha" ></ion-input>
+      </ion-item>
+      <br>
 
-    <ion-item>
-      <ion-input type="password" [(ngModel)]="senha" placeholder="senha" ></ion-input>
-    </ion-item>
-    <br>
-
-    <button ion-button color="light" (click)="doPOST()">Cadastrar</button>
-  </ion-list>
-  
+      <button ion-button color="light" (click)="doPOST()" [disabled]="!formulario.valid">Cadastrar</button>
+    </ion-list>
+  </form> 
 </ion-content>

@@ -34,20 +34,20 @@
 <ion-content style="background-color: #12614C">
 <body>
   <h1>VACIMAPS</h1>
-  
-  <ion-list inset>
+  <form [formGroup]="formulario">
+    <ion-list inset>
 
-    <ion-item>
-      <ion-input type="text" [(ngModel)]="email" placeholder="e-mail"></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-input type="password" [(ngModel)]="senha" placeholder="senha"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-input type="email"  [formControl]="formulario.controls['validEmail']" [(ngModel)]="email" placeholder="e-mail"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-input type="password"  [formControl]="formulario.controls['vaidSenha']" [(ngModel)]="senha" placeholder="senha"></ion-input>
+      </ion-item>
 
-    <button ion-button color="light" (click)="login()">Entrar</button>
-  </ion-list>
-
+      <button ion-button color="light" (click)='login()' [disabled]="!formulario.valid">Entrar</button>
+    </ion-list>
+  </form>
   <div>
     <a class="btn-new btn-others" (click)="cadastrar()">Novo por aqui?</a>
     <a class="btn-pass btn-others" (click)="esqSenha()">Esqueci minha senha</a>

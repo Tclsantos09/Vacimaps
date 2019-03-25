@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ToastController,App } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { HttpClient } from '@angular/common/http';
+import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 @IonicPage()
 @Component({
@@ -10,12 +11,23 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CadastroPage {
   private API_URL = 'https://vacimaps-app.herokuapp.com'
+  private formulario: FormGroup;
 
   nome: string;
   senha: string;
   email: string;
   datajson;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    public appCtrl: App, 
+    private toast: ToastController, 
+    private http: HttpClient,private formBuilder: FormBuilder) {
+      this.formulario = this.formBuilder.group({
+        validNome: ['', Validators.required],
+        validEmail: ['', Validators.required],
+        vaidSenha: ['', Validators.required],
+      });
+
   }
 
   ionViewDidLoad() {
@@ -37,7 +49,15 @@ export class CadastroPage {
     console.log(this.datajson);
     this.http
       .post(url, this.datajson)
-      .subscribe(res => console.log(res["Mensagem"]))         
+      .subscribe(res => {
+        if(res['Mensagem'] == 'O email informado já está cadastrado!'){          
+          this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present()    
+       
+        }else {
+          this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present()    
+          this.appCtrl.getRootNav().setRoot(HomePage)
+        }
+      })         
   }
 
 }
