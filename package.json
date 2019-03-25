@@ -27,7 +27,8 @@
   "devDependencies": {
     "@ionic/app-scripts": "3.2.3",
     "@ionic/lab": "1.0.24",
-    "typescript": "~2.6.2"
+    "typescript": "~2.6.2",
+    "express":"*"
   },
   "description": "An Ionic project"
 }
