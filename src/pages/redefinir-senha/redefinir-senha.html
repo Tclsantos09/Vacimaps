@@ -33,22 +33,22 @@
 <ion-content padding style="background-color: #12614C">
 
   <h1>VACIMAPS</h1>
-
+  <form [formGroup]="formulario">
   <ion-list inset>
     <ion-label>
       Redefinir senha:
     </ion-label>
     
     <ion-item>
-      <ion-input type="password" [(ngModel)]="senha" placeholder="senha">senha</ion-input>
+      <ion-input type="password" [formControl]="formulario.controls['validSenha']" [(ngModel)]="senha" placeholder="Nova Senha"></ion-input>
     </ion-item>
   
     <ion-item>
-      <ion-input type="password" [(ngModel)]="confSenha" placeholder=" confirmar senha">confirmar senha</ion-input>
+      <ion-input type="password" [formControl]="formulario.controls['validConfSenha']"[(ngModel)]="confSenha" placeholder="Confirmar nova senha"></ion-input>
     </ion-item>
     <br>
 
-    <button ion-button color="light">Redefinir</button>
+    <button ion-button color="light" (click)='reset_password()' [disabled]="!formulario.valid">Redefinir</button>
   </ion-list>
-  
+  </form>
 </ion-content>

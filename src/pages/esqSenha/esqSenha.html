@@ -45,19 +45,20 @@
     <button ion-button clear class="btn-back" (click)="Voltar()"><< voltar</button>
 
     <h1>VACIMAPS</h1>
-   
+   <form [formGroup]="formulario">
     <ion-list inset>
  
         <ion-item>
-            <ion-input type="text" [(ngModel)]="email" placeholder="e-mail"></ion-input>
+            <ion-input type="text" [(ngModel)]="email" [formControl]="formulario.controls['validEmail']"  placeholder="e-mail"></ion-input>
         </ion-item>
-        <p>Um link será enviado ao seu e-mail</p>
+        <p>Um Codigo será enviado ao seu e-mail</p>
         <br>
-        <button ion-button color="light" >Enviar</button>
+        <button ion-button color="light" (click)="forgot_password()" [disabled]="!formulario.valid">Enviar</button>
 
     </ion-list>
+    </form>
     <div>
-        <a class="btn-new btn-others" (click)="forgot_password()">Novo por aqui?</a>
+        <a class="btn-new btn-others" (click)="cadastrar()" >Novo por aqui?</a>
     </div>
    </ion-content>
    
