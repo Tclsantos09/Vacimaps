@@ -4,19 +4,33 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<style>
+    @font-face {
+        font-family: Souliyo-Regular;
+        src: url(../www/assets/fonts/Souliyo-Regular.ttf)
+    }
+    
+      ion-content{
+        font-family: 'Souliyo Regular', sans-serif;
+      }
+     
+      
+    </style>
+<ion-header padding style="background-color:#12614C">
 
-  <ion-navbar>
-    <ion-title>Dashboard</ion-title>
-  </ion-navbar>
+<ion-grid>
+  <ion-row>
 
+    <ion-title style="color: white">Vacimaps</ion-title>
+    <h1 style="color: white; text-align: center;">Olá {{ nome }}</h1>
+  </ion-row>
+  </ion-grid>
 </ion-header>
 
 
-<ion-content padding>
-  <br><br><br><br>
-
-    <h1 style="color: black; text-align: center;">Bem vindo, {{ nome }}!</h1>
+<ion-content padding style="background-color: #E7E6E6">
+    <ion-searchbar></ion-searchbar>
+ 
 
 
 </ion-content>
