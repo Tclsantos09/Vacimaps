@@ -20,17 +20,29 @@
 
 <ion-grid>
   <ion-row>
+    <ion-col>
+      <ion-icon name="globe"></ion-icon>
+    </ion-col>
+    <ion-col>
+      <h3 style="color: white; text-align:left;">Vacimaps</h3>
+    </ion-col>
+    <ion-col>
+      <h3 style="color: white; text-align:center;">Olá {{ nome }}</h3>
+    </ion-col>
 
-    <ion-title style="color: white">Vacimaps</ion-title>
-    <h1 style="color: white; text-align: center;">Olá {{ nome }}</h1>
   </ion-row>
+
   </ion-grid>
+
 </ion-header>
 
 
 <ion-content padding style="background-color: #E7E6E6">
+
     <ion-searchbar></ion-searchbar>
  
+  <div #map id="map"> </div>
 
+  
 
 </ion-content>
