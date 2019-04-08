@@ -25,24 +25,20 @@ var map = {
 		157
 	],
 	"../pages/dashboard/dashboard.module": [
-		161
+		164
 	],
 	"../pages/esqSenha/esqSenha.module": [
-		162
+		161
 	],
 	"../pages/feed/feed.module": [
 		285,
-		3
-	],
-	"../pages/perfil/perfil.module": [
-		287,
-		4
+		0
 	],
 	"../pages/redefinir-senha/redefinir-senha.module": [
-		163
+		162
 	],
 	"../pages/verify-code/verify-code.module": [
-		164
+		163
 	]
 };
 function webpackAsyncContext(req) {
@@ -174,7 +170,7 @@ var EsqSenhaPage = /** @class */ (function () {
     };
     EsqSenhaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-esqSenha',template:/*ion-inline-start:"C:\Users\Thais Lopes\Vacimaps\src\pages\esqSenha\esqSenha.html"*/'<style>\n\n    @font-face {\n\n       font-family: Souliyo-Regular;\n\n       src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n\n     }\n\n   \n\n     ion-content{\n\n       font-family: \'Souliyo Regular\', sans-serif;\n\n     }\n\n     h1{\n\n       color: white; text-align: center; font-size: 35px; font-weight: 100; font-style: normal; line-height: normal;\n\n       padding: 110px 25px 35px 25px;\n\n       letter-spacing: 0.9px;\n\n     }\n\n     p{\n\n       color: white; text-align: center; font-size: 12px; font-style: normal; line-height: normal;\n\n       letter-spacing: 0.9px;\n\n     }\n\n     ion-label{\n\n       color: white; padding-bottom: 5px;\n\n     }\n\n     ion-item{\n\n       background-color: #12614C; color: white; align-content: center;\n\n     }\n\n     input::placeholder{\n\n       text-align: center; color: white; font-size: 12px;\n\n     }\n\n     button{\n\n       width: 210px; height: 30px; color: #12614C; margin-left: 7px; margin-top: 15px;\n\n     }\n\n     .btn-back{\n\n       color: white; font-size: 10px; padding-right: 185px; padding-top: 10px;\n\n     }\n\n     .btn-others{\n\n        color: white; font-size: 12px; cursor: pointer; display: flex; flex-direction: column; text-align: center; margin: 8px; \n\n    }\n\n    .btn-new{\n\n        padding-top: 14px;\n\n    }\n\n   \n\n   </style>\n\n   \n\n   <ion-content padding style="background-color: #12614C">\n\n    \n\n    <button ion-button clear class="btn-back" (click)="Voltar()"><< voltar</button>\n\n\n\n    <h1>VACIMAPS</h1>\n\n   <form [formGroup]="formulario">\n\n    <ion-list inset>\n\n \n\n        <ion-item>\n\n            <ion-input type="text" [(ngModel)]="email" [formControl]="formulario.controls[\'validEmail\']"  placeholder="e-mail"></ion-input>\n\n        </ion-item>\n\n        <p>Um Codigo será enviado ao seu e-mail</p>\n\n        <br>\n\n        <button ion-button color="light" (click)="forgot_password()" [disabled]="!formulario.valid">Enviar</button>\n\n\n\n    </ion-list>\n\n    </form>\n\n    <div>\n\n        <a class="btn-new btn-others" (click)="cadastrar()" >Novo por aqui?</a>\n\n    </div>\n\n   </ion-content>\n\n   '/*ion-inline-end:"C:\Users\Thais Lopes\Vacimaps\src\pages\esqSenha\esqSenha.html"*/,
+            selector: 'page-esqSenha',template:/*ion-inline-start:"/home/renan/Vacimaps/src/pages/esqSenha/esqSenha.html"*/'<style>\n    @font-face {\n       font-family: Souliyo-Regular;\n       src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n     }\n   \n     ion-content{\n       font-family: \'Souliyo Regular\', sans-serif;\n     }\n     h1{\n       color: white; text-align: center; font-size: 35px; font-weight: 100; font-style: normal; line-height: normal;\n       padding: 110px 25px 35px 25px;\n       letter-spacing: 0.9px;\n     }\n     p{\n       color: white; text-align: center; font-size: 12px; font-style: normal; line-height: normal;\n       letter-spacing: 0.9px;\n     }\n     ion-label{\n       color: white; padding-bottom: 5px;\n     }\n     ion-item{\n       background-color: #12614C; color: white; align-content: center;\n     }\n     input::placeholder{\n       text-align: center; color: white; font-size: 12px;\n     }\n     button{\n       width: 210px; height: 30px; color: #12614C; margin-left: 7px; margin-top: 15px;\n     }\n     .btn-back{\n       color: white; font-size: 10px; padding-right: 185px; padding-top: 10px;\n     }\n     .btn-others{\n        color: white; font-size: 12px; cursor: pointer; display: flex; flex-direction: column; text-align: center; margin: 8px; \n    }\n    .btn-new{\n        padding-top: 14px;\n    }\n   \n   </style>\n   \n   <ion-content padding style="background-color: #12614C">\n    \n    <button ion-button clear class="btn-back" (click)="Voltar()"><< voltar</button>\n\n    <h1>VACIMAPS</h1>\n   <form [formGroup]="formulario">\n    <ion-list inset>\n \n        <ion-item>\n            <ion-input type="text" [(ngModel)]="email" [formControl]="formulario.controls[\'validEmail\']"  placeholder="e-mail"></ion-input>\n        </ion-item>\n        <p>Um Codigo será enviado ao seu e-mail</p>\n        <br>\n        <button ion-button color="light" (click)="forgot_password()" [disabled]="!formulario.valid">Enviar</button>\n\n    </ion-list>\n    </form>\n    <div>\n        <a class="btn-new btn-others" (click)="cadastrar()" >Novo por aqui?</a>\n    </div>\n   </ion-content>\n   '/*ion-inline-end:"/home/renan/Vacimaps/src/pages/esqSenha/esqSenha.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* NavParams */],
@@ -262,7 +258,7 @@ var VerifyCodePage = /** @class */ (function () {
     };
     VerifyCodePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-verify-code',template:/*ion-inline-start:"C:\Users\Thais Lopes\Vacimaps\src\pages\verify-code\verify-code.html"*/'<style>\n\n  @font-face {\n\n     font-family: Souliyo-Regular;\n\n     src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n\n   }\n\n \n\n   ion-content{\n\n     font-family: \'Souliyo Regular\', sans-serif;\n\n   }\n\n   h1{\n\n     color: white; text-align: center; font-size: 35px; font-weight: 100; font-style: normal; line-height: normal;\n\n     padding: 110px 25px 35px 25px;\n\n     letter-spacing: 0.9px;\n\n   }\n\n   p{\n\n     color: white; text-align: center; font-size: 12px; font-style: normal; line-height: normal;\n\n     letter-spacing: 0.9px;\n\n   }\n\n   ion-label{\n\n     color: white; padding-bottom: 5px;\n\n   }\n\n   ion-item{\n\n     background-color: #12614C; color: white; align-content: center;\n\n   }\n\n   input::placeholder{\n\n     text-align: center; color: white; font-size: 12px;\n\n   }\n\n   button{\n\n     width: 210px; height: 30px; color: #12614C; margin-left: 7px; margin-top: 15px;\n\n   }\n\n   .btn-back{\n\n     color: white; font-size: 10px; padding-right: 185px; padding-top: 10px;\n\n   }\n\n   .btn-others{\n\n      color: white; font-size: 12px; cursor: pointer; display: flex; flex-direction: column; text-align: center; margin: 8px; \n\n  }\n\n  .btn-new{\n\n      padding-top: 14px;\n\n  }\n\n \n\n </style>\n\n \n\n <ion-content padding style="background-color: #12614C">\n\n  \n\n  <button ion-button clear class="btn-back" (click)="Voltar()"><< voltar</button>\n\n\n\n  <h1>VACIMAPS</h1>\n\n <form [formGroup]="formulario">\n\n  <ion-list inset>\n\n\n\n      <ion-item>\n\n          <ion-input type="text" [(ngModel)]="codigo" [formControl]="formulario.controls[\'validCodigo\']"  placeholder="Código"></ion-input>\n\n      </ion-item>\n\n      <p>Insira o codigo recebido para realizar a validação</p>\n\n      <br>\n\n      <button ion-button color="light" (click)="validar_token()" [disabled]="!formulario.valid">Validar</button>\n\n\n\n  </ion-list>\n\n  </form>\n\n </ion-content>\n\n '/*ion-inline-end:"C:\Users\Thais Lopes\Vacimaps\src\pages\verify-code\verify-code.html"*/,
+            selector: 'page-verify-code',template:/*ion-inline-start:"/home/renan/Vacimaps/src/pages/verify-code/verify-code.html"*/'<style>\n  @font-face {\n     font-family: Souliyo-Regular;\n     src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n   }\n \n   ion-content{\n     font-family: \'Souliyo Regular\', sans-serif;\n   }\n   h1{\n     color: white; text-align: center; font-size: 35px; font-weight: 100; font-style: normal; line-height: normal;\n     padding: 110px 25px 35px 25px;\n     letter-spacing: 0.9px;\n   }\n   p{\n     color: white; text-align: center; font-size: 12px; font-style: normal; line-height: normal;\n     letter-spacing: 0.9px;\n   }\n   ion-label{\n     color: white; padding-bottom: 5px;\n   }\n   ion-item{\n     background-color: #12614C; color: white; align-content: center;\n   }\n   input::placeholder{\n     text-align: center; color: white; font-size: 12px;\n   }\n   button{\n     width: 210px; height: 30px; color: #12614C; margin-left: 7px; margin-top: 15px;\n   }\n   .btn-back{\n     color: white; font-size: 10px; padding-right: 185px; padding-top: 10px;\n   }\n   .btn-others{\n      color: white; font-size: 12px; cursor: pointer; display: flex; flex-direction: column; text-align: center; margin: 8px; \n  }\n  .btn-new{\n      padding-top: 14px;\n  }\n \n </style>\n \n <ion-content padding style="background-color: #12614C">\n  \n  <button ion-button clear class="btn-back" (click)="Voltar()"><< voltar</button>\n\n  <h1>VACIMAPS</h1>\n <form [formGroup]="formulario">\n  <ion-list inset>\n\n      <ion-item>\n          <ion-input type="text" [(ngModel)]="codigo" [formControl]="formulario.controls[\'validCodigo\']"  placeholder="Código"></ion-input>\n      </ion-item>\n      <p>Insira o codigo recebido para realizar a validação</p>\n      <br>\n      <button ion-button color="light" (click)="validar_token()" [disabled]="!formulario.valid">Validar</button>\n\n  </ion-list>\n  </form>\n </ion-content>\n '/*ion-inline-end:"/home/renan/Vacimaps/src/pages/verify-code/verify-code.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavParams */],
@@ -286,8 +282,6 @@ var VerifyCodePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile_services__ = __webpack_require__(259);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__perfil_perfil__ = __webpack_require__(687);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__perfil_perfil___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__perfil_perfil__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -297,7 +291,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -319,38 +312,19 @@ var DashboardPage = /** @class */ (function () {
             console.log(usuario);
         });
     }
-    DashboardPage.prototype.perfil = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__perfil_perfil__["PerfilPage"]);
-    };
     DashboardPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad DashboardPage');
-        var position = new google.maps.LatLng(-21.763409, -43.349034);
-        var mapOptions = {
-            zoom: 18,
-            center: position,
-            disableDefaultUI: true
-        };
-        this.map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        var marker = new google.maps.Marker({
-            position: position,
-            map: this.map,
-            //Titulo
-            title: 'Minha posição',
-            //Animção
-            animation: google.maps.Animation.DROP,
-            //Icone
-            icon: 'assets/imgs/pessoa.png'
-        });
     };
     DashboardPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-dashboard',template:/*ion-inline-start:"C:\Users\Thais Lopes\Vacimaps\src\pages\dashboard\dashboard.html"*/'<!--\n\n  Generated template for the DashboardPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<style>\n\n    @font-face {\n\n        font-family: Souliyo-Regular;\n\n        src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n\n    }\n\n    \n\n      ion-content{\n\n        font-family: \'Souliyo Regular\', sans-serif;\n\n      }\n\n     \n\n      \n\n    </style>\n\n<ion-header padding style="background-color:#12614C">\n\n\n\n<ion-grid>\n\n  <ion-row>\n\n    <ion-col>\n\n      <ion-icon name="globe"></ion-icon>\n\n      </ion-col>\n\n      <ion-col>\n\n      <h3 style="color: white; font-size: 12px; text-align:left;">Vacimaps</h3>\n\n    </ion-col>\n\n    <ion-col>\n\n      <h3 style="color: white; font-size: 12px; text-align:center;">Olá {{ nome }}</h3>\n\n      <a class="btn-new btn-others" (click)="perfil()">Perfil</a>\n\n    </ion-col>\n\n\n\n  </ion-row>\n\n\n\n  </ion-grid>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding style="background-color: #E7E6E6">\n\n\n\n    <ion-searchbar></ion-searchbar>\n\n \n\n  <div #map id="map"> </div>\n\n\n\n  \n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Thais Lopes\Vacimaps\src\pages\dashboard\dashboard.html"*/,
+            selector: 'page-dashboard',template:/*ion-inline-start:"/home/renan/Vacimaps/src/pages/dashboard/dashboard.html"*/'<!--\n  Generated template for the DashboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Dashboard</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <br><br><br><br>\n\n    <h1 style="color: black; text-align: center;">Bem vindo, {{ nome }}!</h1>\n\n\n</ion-content>\n'/*ion-inline-end:"/home/renan/Vacimaps/src/pages/dashboard/dashboard.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_2__profile_services__["a" /* profileService */]]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__profile_services__["a" /* profileService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__profile_services__["a" /* profileService */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__profile_services__["a" /* profileService */]])
     ], DashboardPage);
     return DashboardPage;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=dashboard.js.map
@@ -358,44 +332,6 @@ var DashboardPage = /** @class */ (function () {
 /***/ }),
 
 /***/ 161:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardPageModule", function() { return DashboardPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dashboard__ = __webpack_require__(160);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var DashboardPageModule = /** @class */ (function () {
-    function DashboardPageModule() {
-    }
-    DashboardPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__dashboard__["a" /* DashboardPage */]
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__dashboard__["a" /* DashboardPage */]),
-            ],
-        })
-    ], DashboardPageModule);
-    return DashboardPageModule;
-}());
-
-//# sourceMappingURL=dashboard.module.js.map
-
-/***/ }),
-
-/***/ 162:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -433,7 +369,7 @@ var EsqSenhaPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 163:
+/***/ 162:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -471,7 +407,7 @@ var RedefinirSenhaPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 164:
+/***/ 163:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -509,6 +445,44 @@ var VerifyCodePageModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 164:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardPageModule", function() { return DashboardPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dashboard__ = __webpack_require__(160);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var DashboardPageModule = /** @class */ (function () {
+    function DashboardPageModule() {
+    }
+    DashboardPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__dashboard__["a" /* DashboardPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__dashboard__["a" /* DashboardPage */]),
+            ],
+        })
+    ], DashboardPageModule);
+    return DashboardPageModule;
+}());
+
+//# sourceMappingURL=dashboard.module.js.map
+
+/***/ }),
+
 /***/ 208:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -536,10 +510,10 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(284);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_cadastro_cadastro_module__ = __webpack_require__(157);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_dashboard_dashboard_module__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_redefinir_senha_redefinir_senha_module__ = __webpack_require__(163);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_esqSenha_esqSenha_module__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_verify_code_verify_code_module__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_dashboard_dashboard_module__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_redefinir_senha_redefinir_senha_module__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_esqSenha_esqSenha_module__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_verify_code_verify_code_module__ = __webpack_require__(163);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -572,11 +546,11 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/cadastro/cadastro.module#CadastroPageModule', name: 'CadastroPage', segment: 'cadastro', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/esqSenha/esqSenha.module#EsqSenhaPageModule', name: 'EsqSenhaPage', segment: 'esqSenha', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/feed/feed.module#FeedPageModule', name: 'FeedPage', segment: 'feed', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/redefinir-senha/redefinir-senha.module#RedefinirSenhaPageModule', name: 'RedefinirSenhaPage', segment: 'redefinir-senha', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/verify-code/verify-code.module#VerifyCodePageModule', name: 'VerifyCodePage', segment: 'verify-code', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/verify-code/verify-code.module#VerifyCodePageModule', name: 'VerifyCodePage', segment: 'verify-code', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_7__pages_cadastro_cadastro_module__["CadastroPageModule"],
@@ -593,7 +567,7 @@ var AppModule = /** @class */ (function () {
             providers: [
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] },
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] }
             ]
         })
     ], AppModule);
@@ -686,7 +660,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Thais Lopes\Vacimaps\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\Thais Lopes\Vacimaps\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/renan/Vacimaps/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/renan/Vacimaps/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -772,7 +746,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Thais Lopes\Vacimaps\src\pages\home\home.html"*/'<style>\n\n  @font-face {\n\n    font-family: Souliyo-Regular;\n\n    src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n\n  }\n\n\n\n  ion-content{\n\n    font-family: \'Souliyo Regular\', sans-serif;\n\n  }\n\n  h1{\n\n    color: white; padding: 80px 25px 45px 25px; text-align: center; font-size: 35px; font-weight: 100; font-style: normal; line-height: normal;\n\n  }\n\n  ion-item{\n\n    background-color: #12614C; color: white; align-content: center;\n\n  }\n\n  input::placeholder{\n\n    text-align: center; color: white; font-size: 12px; \n\n  }\n\n  button{\n\n    width: 220px; height: 30px; color: #12614C; margin-left: 15px; margin-top: 25px;\n\n  }\n\n  .btn-others{\n\n   color: white; font-size: 12px; cursor: pointer; display: flex; flex-direction: column; text-align: center; margin: 8px; \n\n  }\n\n  .btn-new{\n\n    padding-top: 14px;\n\n  }\n\n  .btn-pass{\n\n    padding-top: 10px;\n\n  }\n\n</style>\n\n\n\n\n\n<ion-content style="background-color: #12614C">\n\n<body>\n\n  <h1>VACIMAPS</h1>\n\n  <form [formGroup]="formulario">\n\n    <ion-list inset>\n\n\n\n      <ion-item>\n\n        <ion-input type="email"  [formControl]="formulario.controls[\'validEmail\']" [(ngModel)]="email" placeholder="e-mail"></ion-input>\n\n      </ion-item>\n\n    \n\n      <ion-item>\n\n        <ion-input type="password"  [formControl]="formulario.controls[\'vaidSenha\']" [(ngModel)]="senha" placeholder="senha"></ion-input>\n\n      </ion-item>\n\n\n\n      <button ion-button color="light" (click)=\'login()\' [disabled]="!formulario.valid">Entrar</button>\n\n    </ion-list>\n\n  </form>\n\n  <div>\n\n    <a class="btn-new btn-others" (click)="cadastrar()">Novo por aqui?</a>\n\n    <a class="btn-pass btn-others" (click)="esqSenha()">Esqueci minha senha</a>\n\n  </div>\n\n</body>\n\n</ion-content> \n\n\n\n'/*ion-inline-end:"C:\Users\Thais Lopes\Vacimaps\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/home/renan/Vacimaps/src/pages/home/home.html"*/'<style>\n  @font-face {\n    font-family: Souliyo-Regular;\n    src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n  }\n\n  ion-content{\n    font-family: \'Souliyo Regular\', sans-serif;\n  }\n  h1{\n    color: white; padding: 80px 25px 45px 25px; text-align: center; font-size: 35px; font-weight: 100; font-style: normal; line-height: normal;\n  }\n  ion-item{\n    background-color: #12614C; color: white; align-content: center;\n  }\n  input::placeholder{\n    text-align: center; color: white; font-size: 12px; \n  }\n  button{\n    width: 220px; height: 30px; color: #12614C; margin-left: 15px; margin-top: 25px;\n  }\n  .btn-others{\n   color: white; font-size: 12px; cursor: pointer; display: flex; flex-direction: column; text-align: center; margin: 8px; \n  }\n  .btn-new{\n    padding-top: 14px;\n  }\n  .btn-pass{\n    padding-top: 10px;\n  }\n</style>\n\n\n<ion-content style="background-color: #12614C">\n<body>\n  <h1>VACIMAPS</h1>\n  <form [formGroup]="formulario">\n    <ion-list inset>\n\n      <ion-item>\n        <ion-input type="email"  [formControl]="formulario.controls[\'validEmail\']" [(ngModel)]="email" placeholder="e-mail"></ion-input>\n      </ion-item>\n    \n      <ion-item>\n        <ion-input type="password"  [formControl]="formulario.controls[\'vaidSenha\']" [(ngModel)]="senha" placeholder="senha"></ion-input>\n      </ion-item>\n\n      <button ion-button color="light" (click)=\'login()\' [disabled]="!formulario.valid">Entrar</button>\n    </ion-list>\n  </form>\n  <div>\n    <a class="btn-new btn-others" (click)="cadastrar()">Novo por aqui?</a>\n    <a class="btn-pass btn-others" (click)="esqSenha()">Esqueci minha senha</a>\n  </div>\n</body>\n</ion-content> \n\n'/*ion-inline-end:"/home/renan/Vacimaps/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["a" /* HttpClient */],
@@ -785,13 +759,6 @@ var HomePage = /** @class */ (function () {
 
 //.pipe(map(response => { localStorage.setItem('token', JSON.stringify(response)) }))
 //# sourceMappingURL=home.js.map
-
-/***/ }),
-
-/***/ 687:
-/***/ (function(module, exports) {
-
-//# sourceMappingURL=perfil.js.map
 
 /***/ }),
 
@@ -864,7 +831,7 @@ var CadastroPage = /** @class */ (function () {
     };
     CadastroPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cadastro',template:/*ion-inline-start:"C:\Users\Thais Lopes\Vacimaps\src\pages\cadastro\cadastro.html"*/'<style>\n\n@font-face {\n\n    font-family: Souliyo-Regular;\n\n    src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n\n}\n\n\n\n  ion-content{\n\n    font-family: \'Souliyo Regular\', sans-serif;\n\n  }\n\n  h1{\n\n    color: white; text-align: center;\n\n    padding: 40px 25px 45px 25px;\n\n    letter-spacing: 0.9px;\n\n  }\n\n  ion-item{\n\n    background-color: #12614C; color: white; align-content: center;\n\n  }\n\n  input::placeholder{\n\n    text-align: center; color: white; font-size: 12px; \n\n  }\n\n  button{\n\n    width: 210px; height: 30px; color: #12614C; margin-left: 7px; margin-top: 15px;\n\n  }\n\n  .btn-back{\n\n    color: white; font-size: 10px; padding-right: 185px; padding-top: 10px;\n\n  }\n\n\n\n</style>\n\n\n\n<ion-content padding style="background-color: #12614C">\n\n\n\n  <button ion-button clear class="btn-back" (click)="Voltar()"><< voltar</button>\n\n\n\n  <h1>VACIMAPS</h1>\n\n  <form [formGroup]="formulario">\n\n    <ion-list inset>\n\n\n\n      <ion-item>\n\n        <ion-input type="text"[formControl]="formulario.controls[\'validNome\']" [(ngModel)]="nome" placeholder="nome"></ion-input>\n\n      </ion-item>\n\n    \n\n      <ion-item>\n\n        <ion-input type="email" [formControl]="formulario.controls[\'validEmail\']" [(ngModel)]="email" placeholder="e-mail" ></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-input type="password" [formControl]="formulario.controls[\'vaidSenha\']"[(ngModel)]="senha" placeholder="senha" ></ion-input>\n\n      </ion-item>\n\n      <br>\n\n\n\n      <button ion-button color="light" (click)="doPOST()" [disabled]="!formulario.valid">Cadastrar</button>\n\n    </ion-list>\n\n  </form> \n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Thais Lopes\Vacimaps\src\pages\cadastro\cadastro.html"*/,
+            selector: 'page-cadastro',template:/*ion-inline-start:"/home/renan/Vacimaps/src/pages/cadastro/cadastro.html"*/'<style>\n@font-face {\n    font-family: Souliyo-Regular;\n    src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n}\n\n  ion-content{\n    font-family: \'Souliyo Regular\', sans-serif;\n  }\n  h1{\n    color: white; text-align: center;\n    padding: 40px 25px 45px 25px;\n    letter-spacing: 0.9px;\n  }\n  ion-item{\n    background-color: #12614C; color: white; align-content: center;\n  }\n  input::placeholder{\n    text-align: center; color: white; font-size: 12px; \n  }\n  button{\n    width: 210px; height: 30px; color: #12614C; margin-left: 7px; margin-top: 15px;\n  }\n  .btn-back{\n    color: white; font-size: 10px; padding-right: 185px; padding-top: 10px;\n  }\n\n</style>\n\n<ion-content padding style="background-color: #12614C">\n\n  <button ion-button clear class="btn-back" (click)="Voltar()"><< voltar</button>\n\n  <h1>VACIMAPS</h1>\n  <form [formGroup]="formulario">\n    <ion-list inset>\n\n      <ion-item>\n        <ion-input type="text"[formControl]="formulario.controls[\'validNome\']" [(ngModel)]="nome" placeholder="nome"></ion-input>\n      </ion-item>\n    \n      <ion-item>\n        <ion-input type="email" [formControl]="formulario.controls[\'validEmail\']" [(ngModel)]="email" placeholder="e-mail" ></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-input type="password" [formControl]="formulario.controls[\'vaidSenha\']"[(ngModel)]="senha" placeholder="senha" ></ion-input>\n      </ion-item>\n      <br>\n\n      <button ion-button color="light" (click)="doPOST()" [disabled]="!formulario.valid">Cadastrar</button>\n    </ion-list>\n  </form> \n</ion-content>\n'/*ion-inline-end:"/home/renan/Vacimaps/src/pages/cadastro/cadastro.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
@@ -946,7 +913,7 @@ var RedefinirSenhaPage = /** @class */ (function () {
     };
     RedefinirSenhaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-redefinir-senha',template:/*ion-inline-start:"C:\Users\Thais Lopes\Vacimaps\src\pages\redefinir-senha\redefinir-senha.html"*/'<style>\n\n @font-face {\n\n    font-family: Souliyo-Regular;\n\n    src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n\n  }\n\n\n\n  ion-content{\n\n    font-family: \'Souliyo Regular\', sans-serif;\n\n  }\n\n  h1{\n\n    color: white; text-align: center; font-size: 35px; font-weight: 100; font-style: normal; line-height: normal;\n\n    padding: 110px 25px 35px 25px;\n\n    letter-spacing: 0.9px;\n\n  }\n\n  ion-label{\n\n    color: white; padding-bottom: 5px;\n\n  }\n\n  ion-item{\n\n    background-color: #12614C; color: white; align-content: center;\n\n  }\n\n  input::placeholder{\n\n    text-align: center; color: white; font-size: 12px;\n\n  }\n\n  button{\n\n    width: 210px; height: 30px; color: #12614C; margin-left: 7px; margin-top: 15px;\n\n  }\n\n  .btn-back{\n\n    color: white; font-size: 10px; padding-right: 185px; padding-top: 10px;\n\n  }\n\n\n\n</style>\n\n\n\n<ion-content padding style="background-color: #12614C">\n\n\n\n  <h1>VACIMAPS</h1>\n\n  <form [formGroup]="formulario">\n\n  <ion-list inset>\n\n    <ion-label>\n\n      Redefinir senha:\n\n    </ion-label>\n\n    \n\n    <ion-item>\n\n      <ion-input type="password" [formControl]="formulario.controls[\'validSenha\']" [(ngModel)]="senha" placeholder="Nova Senha"></ion-input>\n\n    </ion-item>\n\n  \n\n    <ion-item>\n\n      <ion-input type="password" [formControl]="formulario.controls[\'validConfSenha\']"[(ngModel)]="confSenha" placeholder="Confirmar nova senha"></ion-input>\n\n    </ion-item>\n\n    <br>\n\n\n\n    <button ion-button color="light" (click)=\'reset_password()\' [disabled]="!formulario.valid">Redefinir</button>\n\n  </ion-list>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Thais Lopes\Vacimaps\src\pages\redefinir-senha\redefinir-senha.html"*/,
+            selector: 'page-redefinir-senha',template:/*ion-inline-start:"/home/renan/Vacimaps/src/pages/redefinir-senha/redefinir-senha.html"*/'<style>\n @font-face {\n    font-family: Souliyo-Regular;\n    src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n  }\n\n  ion-content{\n    font-family: \'Souliyo Regular\', sans-serif;\n  }\n  h1{\n    color: white; text-align: center; font-size: 35px; font-weight: 100; font-style: normal; line-height: normal;\n    padding: 110px 25px 35px 25px;\n    letter-spacing: 0.9px;\n  }\n  ion-label{\n    color: white; padding-bottom: 5px;\n  }\n  ion-item{\n    background-color: #12614C; color: white; align-content: center;\n  }\n  input::placeholder{\n    text-align: center; color: white; font-size: 12px;\n  }\n  button{\n    width: 210px; height: 30px; color: #12614C; margin-left: 7px; margin-top: 15px;\n  }\n  .btn-back{\n    color: white; font-size: 10px; padding-right: 185px; padding-top: 10px;\n  }\n\n</style>\n\n<ion-content padding style="background-color: #12614C">\n\n  <h1>VACIMAPS</h1>\n  <form [formGroup]="formulario">\n  <ion-list inset>\n    <ion-label>\n      Redefinir senha:\n    </ion-label>\n    \n    <ion-item>\n      <ion-input type="password" [formControl]="formulario.controls[\'validSenha\']" [(ngModel)]="senha" placeholder="Nova Senha"></ion-input>\n    </ion-item>\n  \n    <ion-item>\n      <ion-input type="password" [formControl]="formulario.controls[\'validConfSenha\']"[(ngModel)]="confSenha" placeholder="Confirmar nova senha"></ion-input>\n    </ion-item>\n    <br>\n\n    <button ion-button color="light" (click)=\'reset_password()\' [disabled]="!formulario.valid">Redefinir</button>\n  </ion-list>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/home/renan/Vacimaps/src/pages/redefinir-senha/redefinir-senha.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */],
