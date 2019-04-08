@@ -10,7 +10,8 @@ import { DashboardPageModule } from '../pages/dashboard/dashboard.module';
 import { RedefinirSenhaPageModule } from '../pages/redefinir-senha/redefinir-senha.module';
 import { EsqSenhaPageModule } from '../pages/esqSenha/esqSenha.module';
 import { VerifyCodePageModule } from '../pages/verify-code/verify-code.module';
-import { Geolocation } from '@ionic-native/geolocation';
+import { PerfilPageModule } from '../pages/perfil/perfil.module';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     DashboardPageModule,
     RedefinirSenhaPageModule,
     EsqSenhaPageModule,
-    VerifyCodePageModule
+    VerifyCodePageModule,
+    PerfilPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { profileService, User } from './profile.services';
+import { PerfilPage } from '../perfil/perfil';
 declare var google;
 /**
  * Generated class for the DashboardPage page.
@@ -31,6 +32,10 @@ export class DashboardPage {
         console.log(usuario)
         
       });
+}
+
+perfil(){
+  this.navCtrl.push(PerfilPage)
 }
 
   ionViewDidLoad() {

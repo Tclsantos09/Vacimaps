@@ -1,0 +1,47 @@
+<style>
+    @font-face {
+      font-family: Souliyo-Regular;
+      src: url(../www/assets/fonts/Souliyo-Regular.ttf)
+    }
+  
+    ion-content{
+      font-family: 'Souliyo Regular', sans-serif;
+    }
+    h1{
+      color: black; padding: 80px 25px 45px 25px; text-align: center; font-size: 16px; font-weight: 100; font-style: normal; line-height: normal;
+    }
+    ion-item{
+      background-color: white; color: black;;
+    }
+    input{
+      color: black; font-size: 12px; 
+    }
+    button{
+      width: 20px; height: 30px; color: rgb(28, 224, 21); margin-left: 15px; margin-top: 25px;
+    }
+  </style>
+  
+  
+<ion-content style="background-color: white">
+  <body>
+    <h1>Meu Perfil</h1>
+      <ion-list inset>
+        <ion-item>
+            <ion-avatar item-start>
+                <img src="../../assets/imgs/perfil.jpg">
+            </ion-avatar>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Nome</ion-label>
+            <ion-input type="text" name="name" >{{ nome }}</ion-input>
+        </ion-item>
+      
+        <ion-item>
+            <ion-label stacked>Nascimento</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" name="birth">{{ birth }}</ion-datetime>
+        </ion-item>
+  
+        <button ion-button block (click)="save()">Salvar</button>
+      </ion-list>
+  </body>
+</ion-content>  

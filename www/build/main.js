@@ -1,173 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 115:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(21);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var CadastroPage = /** @class */ (function () {
-    function CadastroPage(navCtrl, navParams, appCtrl, toast, http, formBuilder) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.appCtrl = appCtrl;
-        this.toast = toast;
-        this.http = http;
-        this.formBuilder = formBuilder;
-        this.API_URL = 'https://vacimaps-app.herokuapp.com';
-        this.formulario = this.formBuilder.group({
-            validNome: ['', __WEBPACK_IMPORTED_MODULE_4__angular_forms__["f" /* Validators */].required],
-            validEmail: ['', __WEBPACK_IMPORTED_MODULE_4__angular_forms__["f" /* Validators */].required],
-            vaidSenha: ['', __WEBPACK_IMPORTED_MODULE_4__angular_forms__["f" /* Validators */].required],
-        });
-    }
-    CadastroPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad CadastroPage');
-    };
-    CadastroPage.prototype.Voltar = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
-    };
-    CadastroPage.prototype.doPOST = function () {
-        var _this = this;
-        console.log("POST");
-        var url = this.API_URL + "/usuario";
-        this.datajson = {
-            nome: this.nome,
-            senha: this.senha,
-            email: this.email,
-        };
-        console.log(this.datajson);
-        this.http
-            .post(url, this.datajson)
-            .subscribe(function (res) {
-            if (res['Mensagem'] == 'O email informado já está cadastrado!') {
-                _this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present();
-            }
-            else {
-                _this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present();
-                _this.appCtrl.getRootNav().setRoot(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
-            }
-        });
-    };
-    CadastroPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cadastro',template:/*ion-inline-start:"C:\Users\Marjorie\Documents\ADS\Vacimaps\src\pages\cadastro\cadastro.html"*/'<style>\n\n@font-face {\n\n    font-family: Souliyo-Regular;\n\n    src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n\n}\n\n\n\n  ion-content{\n\n    font-family: \'Souliyo Regular\', sans-serif;\n\n  }\n\n  h1{\n\n    color: white; text-align: center;\n\n    padding: 40px 25px 45px 25px;\n\n    letter-spacing: 0.9px;\n\n  }\n\n  ion-item{\n\n    background-color: #12614C; color: white; align-content: center;\n\n  }\n\n  input::placeholder{\n\n    text-align: center; color: white; font-size: 12px; \n\n  }\n\n  button{\n\n    width: 210px; height: 30px; color: #12614C; margin-left: 7px; margin-top: 15px;\n\n  }\n\n  .btn-back{\n\n    color: white; font-size: 10px; padding-right: 185px; padding-top: 10px;\n\n  }\n\n\n\n</style>\n\n\n\n<ion-content padding style="background-color: #12614C">\n\n\n\n  <button ion-button clear class="btn-back" (click)="Voltar()"><< voltar</button>\n\n\n\n  <h1>VACIMAPS</h1>\n\n  <form [formGroup]="formulario">\n\n    <ion-list inset>\n\n\n\n      <ion-item>\n\n        <ion-input type="text"[formControl]="formulario.controls[\'validNome\']" [(ngModel)]="nome" placeholder="nome"></ion-input>\n\n      </ion-item>\n\n    \n\n      <ion-item>\n\n        <ion-input type="email" [formControl]="formulario.controls[\'validEmail\']" [(ngModel)]="email" placeholder="e-mail" ></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-input type="password" [formControl]="formulario.controls[\'vaidSenha\']"[(ngModel)]="senha" placeholder="senha" ></ion-input>\n\n      </ion-item>\n\n      <br>\n\n\n\n      <button ion-button color="light" (click)="doPOST()" [disabled]="!formulario.valid">Cadastrar</button>\n\n    </ion-list>\n\n  </form> \n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Marjorie\Documents\ADS\Vacimaps\src\pages\cadastro\cadastro.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* App */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */]])
-    ], CadastroPage);
-    return CadastroPage;
-}());
-
-//# sourceMappingURL=cadastro.js.map
-
-/***/ }),
-
-/***/ 116:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RedefinirSenhaPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_home__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(42);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var RedefinirSenhaPage = /** @class */ (function () {
-    function RedefinirSenhaPage(navCtrl, http, navParams, appCtrl, toast, formBuilder) {
-        this.navCtrl = navCtrl;
-        this.http = http;
-        this.navParams = navParams;
-        this.appCtrl = appCtrl;
-        this.toast = toast;
-        this.formBuilder = formBuilder;
-        this.API_URL = 'https://vacimaps-app.herokuapp.com';
-        this.formulario = this.formBuilder.group({
-            validSenha: ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required],
-            validConfSenha: ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required]
-        });
-        this.id = navParams.get('id');
-    }
-    RedefinirSenhaPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad RedefinirSenhaPage');
-    };
-    RedefinirSenhaPage.prototype.Voltar = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_0__home_home__["a" /* HomePage */]);
-    };
-    RedefinirSenhaPage.prototype.reset_password = function () {
-        var _this = this;
-        if (this.senha == this.confSenha) {
-            var url = this.API_URL + "/reset_password";
-            this.http
-                .put(url, { id: this.id, senha: this.senha })
-                .subscribe(function (res) {
-                if (res['Mensagem'] == 'Usuario não encontrado!') {
-                    _this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present();
-                }
-                else {
-                    _this.toast.create({ message: "Senha alterada com sucesso!", duration: 3000, position: 'botton' }).present();
-                    _this.appCtrl.getRootNav().setRoot(__WEBPACK_IMPORTED_MODULE_0__home_home__["a" /* HomePage */]);
-                }
-            });
-        }
-        else {
-            this.toast.create({ message: "Senhas Diferentes!", duration: 3000, position: 'botton' }).present();
-        }
-    };
-    RedefinirSenhaPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-redefinir-senha',template:/*ion-inline-start:"C:\Users\Marjorie\Documents\ADS\Vacimaps\src\pages\redefinir-senha\redefinir-senha.html"*/'<style>\n\n @font-face {\n\n    font-family: Souliyo-Regular;\n\n    src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n\n  }\n\n\n\n  ion-content{\n\n    font-family: \'Souliyo Regular\', sans-serif;\n\n  }\n\n  h1{\n\n    color: white; text-align: center; font-size: 35px; font-weight: 100; font-style: normal; line-height: normal;\n\n    padding: 110px 25px 35px 25px;\n\n    letter-spacing: 0.9px;\n\n  }\n\n  ion-label{\n\n    color: white; padding-bottom: 5px;\n\n  }\n\n  ion-item{\n\n    background-color: #12614C; color: white; align-content: center;\n\n  }\n\n  input::placeholder{\n\n    text-align: center; color: white; font-size: 12px;\n\n  }\n\n  button{\n\n    width: 210px; height: 30px; color: #12614C; margin-left: 7px; margin-top: 15px;\n\n  }\n\n  .btn-back{\n\n    color: white; font-size: 10px; padding-right: 185px; padding-top: 10px;\n\n  }\n\n\n\n</style>\n\n\n\n<ion-content padding style="background-color: #12614C">\n\n\n\n  <h1>VACIMAPS</h1>\n\n  <form [formGroup]="formulario">\n\n  <ion-list inset>\n\n    <ion-label>\n\n      Redefinir senha:\n\n    </ion-label>\n\n    \n\n    <ion-item>\n\n      <ion-input type="password" [formControl]="formulario.controls[\'validSenha\']" [(ngModel)]="senha" placeholder="Nova Senha"></ion-input>\n\n    </ion-item>\n\n  \n\n    <ion-item>\n\n      <ion-input type="password" [formControl]="formulario.controls[\'validConfSenha\']"[(ngModel)]="confSenha" placeholder="Confirmar nova senha"></ion-input>\n\n    </ion-item>\n\n    <br>\n\n\n\n    <button ion-button color="light" (click)=\'reset_password()\' [disabled]="!formulario.valid">Redefinir</button>\n\n  </ion-list>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Marjorie\Documents\ADS\Vacimaps\src\pages\redefinir-senha\redefinir-senha.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* App */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */]])
-    ], RedefinirSenhaPage);
-    return RedefinirSenhaPage;
-}());
-
-//# sourceMappingURL=redefinir-senha.js.map
-
-/***/ }),
-
-/***/ 164:
+/***/ 114:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -180,32 +13,36 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 164;
+webpackEmptyAsyncContext.id = 114;
 
 /***/ }),
 
-/***/ 208:
+/***/ 156:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/cadastro/cadastro.module": [
-		209
+		157
 	],
 	"../pages/dashboard/dashboard.module": [
-		215
+		161
 	],
 	"../pages/esqSenha/esqSenha.module": [
-		216
+		162
 	],
 	"../pages/feed/feed.module": [
-		684,
-		0
+		285,
+		3
+	],
+	"../pages/perfil/perfil.module": [
+		287,
+		4
 	],
 	"../pages/redefinir-senha/redefinir-senha.module": [
-		217
+		163
 	],
 	"../pages/verify-code/verify-code.module": [
-		218
+		164
 	]
 };
 function webpackAsyncContext(req) {
@@ -219,21 +56,21 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 208;
+webpackAsyncContext.id = 156;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 209:
+/***/ 157:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroPageModule", function() { return CadastroPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(29);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -265,18 +102,18 @@ var CadastroPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 212:
+/***/ 158:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EsqSenhaPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_home__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_cadastro__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__verify_code_verify_code__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_home__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_cadastro__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__verify_code_verify_code__ = __webpack_require__(159);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -337,7 +174,7 @@ var EsqSenhaPage = /** @class */ (function () {
     };
     EsqSenhaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-esqSenha',template:/*ion-inline-start:"C:\Users\Marjorie\Documents\ADS\Vacimaps\src\pages\esqSenha\esqSenha.html"*/'<style>\n\n    @font-face {\n\n       font-family: Souliyo-Regular;\n\n       src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n\n     }\n\n   \n\n     ion-content{\n\n       font-family: \'Souliyo Regular\', sans-serif;\n\n     }\n\n     h1{\n\n       color: white; text-align: center; font-size: 35px; font-weight: 100; font-style: normal; line-height: normal;\n\n       padding: 110px 25px 35px 25px;\n\n       letter-spacing: 0.9px;\n\n     }\n\n     p{\n\n       color: white; text-align: center; font-size: 12px; font-style: normal; line-height: normal;\n\n       letter-spacing: 0.9px;\n\n     }\n\n     ion-label{\n\n       color: white; padding-bottom: 5px;\n\n     }\n\n     ion-item{\n\n       background-color: #12614C; color: white; align-content: center;\n\n     }\n\n     input::placeholder{\n\n       text-align: center; color: white; font-size: 12px;\n\n     }\n\n     button{\n\n       width: 210px; height: 30px; color: #12614C; margin-left: 7px; margin-top: 15px;\n\n     }\n\n     .btn-back{\n\n       color: white; font-size: 10px; padding-right: 185px; padding-top: 10px;\n\n     }\n\n     .btn-others{\n\n        color: white; font-size: 12px; cursor: pointer; display: flex; flex-direction: column; text-align: center; margin: 8px; \n\n    }\n\n    .btn-new{\n\n        padding-top: 14px;\n\n    }\n\n   \n\n   </style>\n\n   \n\n   <ion-content padding style="background-color: #12614C">\n\n    \n\n    <button ion-button clear class="btn-back" (click)="Voltar()"><< voltar</button>\n\n\n\n    <h1>VACIMAPS</h1>\n\n   <form [formGroup]="formulario">\n\n    <ion-list inset>\n\n \n\n        <ion-item>\n\n            <ion-input type="text" [(ngModel)]="email" [formControl]="formulario.controls[\'validEmail\']"  placeholder="e-mail"></ion-input>\n\n        </ion-item>\n\n        <p>Um Codigo será enviado ao seu e-mail</p>\n\n        <br>\n\n        <button ion-button color="light" (click)="forgot_password()" [disabled]="!formulario.valid">Enviar</button>\n\n\n\n    </ion-list>\n\n    </form>\n\n    <div>\n\n        <a class="btn-new btn-others" (click)="cadastrar()" >Novo por aqui?</a>\n\n    </div>\n\n   </ion-content>\n\n   '/*ion-inline-end:"C:\Users\Marjorie\Documents\ADS\Vacimaps\src\pages\esqSenha\esqSenha.html"*/,
+            selector: 'page-esqSenha',template:/*ion-inline-start:"C:\Users\Thais Lopes\Vacimaps\src\pages\esqSenha\esqSenha.html"*/'<style>\n\n    @font-face {\n\n       font-family: Souliyo-Regular;\n\n       src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n\n     }\n\n   \n\n     ion-content{\n\n       font-family: \'Souliyo Regular\', sans-serif;\n\n     }\n\n     h1{\n\n       color: white; text-align: center; font-size: 35px; font-weight: 100; font-style: normal; line-height: normal;\n\n       padding: 110px 25px 35px 25px;\n\n       letter-spacing: 0.9px;\n\n     }\n\n     p{\n\n       color: white; text-align: center; font-size: 12px; font-style: normal; line-height: normal;\n\n       letter-spacing: 0.9px;\n\n     }\n\n     ion-label{\n\n       color: white; padding-bottom: 5px;\n\n     }\n\n     ion-item{\n\n       background-color: #12614C; color: white; align-content: center;\n\n     }\n\n     input::placeholder{\n\n       text-align: center; color: white; font-size: 12px;\n\n     }\n\n     button{\n\n       width: 210px; height: 30px; color: #12614C; margin-left: 7px; margin-top: 15px;\n\n     }\n\n     .btn-back{\n\n       color: white; font-size: 10px; padding-right: 185px; padding-top: 10px;\n\n     }\n\n     .btn-others{\n\n        color: white; font-size: 12px; cursor: pointer; display: flex; flex-direction: column; text-align: center; margin: 8px; \n\n    }\n\n    .btn-new{\n\n        padding-top: 14px;\n\n    }\n\n   \n\n   </style>\n\n   \n\n   <ion-content padding style="background-color: #12614C">\n\n    \n\n    <button ion-button clear class="btn-back" (click)="Voltar()"><< voltar</button>\n\n\n\n    <h1>VACIMAPS</h1>\n\n   <form [formGroup]="formulario">\n\n    <ion-list inset>\n\n \n\n        <ion-item>\n\n            <ion-input type="text" [(ngModel)]="email" [formControl]="formulario.controls[\'validEmail\']"  placeholder="e-mail"></ion-input>\n\n        </ion-item>\n\n        <p>Um Codigo será enviado ao seu e-mail</p>\n\n        <br>\n\n        <button ion-button color="light" (click)="forgot_password()" [disabled]="!formulario.valid">Enviar</button>\n\n\n\n    </ion-list>\n\n    </form>\n\n    <div>\n\n        <a class="btn-new btn-others" (click)="cadastrar()" >Novo por aqui?</a>\n\n    </div>\n\n   </ion-content>\n\n   '/*ion-inline-end:"C:\Users\Thais Lopes\Vacimaps\src\pages\esqSenha\esqSenha.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* NavParams */],
@@ -353,17 +190,17 @@ var EsqSenhaPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 213:
+/***/ 159:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VerifyCodePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_home__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__redefinir_senha_redefinir_senha__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_home__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__redefinir_senha_redefinir_senha__ = __webpack_require__(80);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -425,7 +262,7 @@ var VerifyCodePage = /** @class */ (function () {
     };
     VerifyCodePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-verify-code',template:/*ion-inline-start:"C:\Users\Marjorie\Documents\ADS\Vacimaps\src\pages\verify-code\verify-code.html"*/'<style>\n\n  @font-face {\n\n     font-family: Souliyo-Regular;\n\n     src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n\n   }\n\n \n\n   ion-content{\n\n     font-family: \'Souliyo Regular\', sans-serif;\n\n   }\n\n   h1{\n\n     color: white; text-align: center; font-size: 35px; font-weight: 100; font-style: normal; line-height: normal;\n\n     padding: 110px 25px 35px 25px;\n\n     letter-spacing: 0.9px;\n\n   }\n\n   p{\n\n     color: white; text-align: center; font-size: 12px; font-style: normal; line-height: normal;\n\n     letter-spacing: 0.9px;\n\n   }\n\n   ion-label{\n\n     color: white; padding-bottom: 5px;\n\n   }\n\n   ion-item{\n\n     background-color: #12614C; color: white; align-content: center;\n\n   }\n\n   input::placeholder{\n\n     text-align: center; color: white; font-size: 12px;\n\n   }\n\n   button{\n\n     width: 210px; height: 30px; color: #12614C; margin-left: 7px; margin-top: 15px;\n\n   }\n\n   .btn-back{\n\n     color: white; font-size: 10px; padding-right: 185px; padding-top: 10px;\n\n   }\n\n   .btn-others{\n\n      color: white; font-size: 12px; cursor: pointer; display: flex; flex-direction: column; text-align: center; margin: 8px; \n\n  }\n\n  .btn-new{\n\n      padding-top: 14px;\n\n  }\n\n \n\n </style>\n\n \n\n <ion-content padding style="background-color: #12614C">\n\n  \n\n  <button ion-button clear class="btn-back" (click)="Voltar()"><< voltar</button>\n\n\n\n  <h1>VACIMAPS</h1>\n\n <form [formGroup]="formulario">\n\n  <ion-list inset>\n\n\n\n      <ion-item>\n\n          <ion-input type="text" [(ngModel)]="codigo" [formControl]="formulario.controls[\'validCodigo\']"  placeholder="Código"></ion-input>\n\n      </ion-item>\n\n      <p>Insira o codigo recebido para realizar a validação</p>\n\n      <br>\n\n      <button ion-button color="light" (click)="validar_token()" [disabled]="!formulario.valid">Validar</button>\n\n\n\n  </ion-list>\n\n  </form>\n\n </ion-content>\n\n '/*ion-inline-end:"C:\Users\Marjorie\Documents\ADS\Vacimaps\src\pages\verify-code\verify-code.html"*/,
+            selector: 'page-verify-code',template:/*ion-inline-start:"C:\Users\Thais Lopes\Vacimaps\src\pages\verify-code\verify-code.html"*/'<style>\n\n  @font-face {\n\n     font-family: Souliyo-Regular;\n\n     src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n\n   }\n\n \n\n   ion-content{\n\n     font-family: \'Souliyo Regular\', sans-serif;\n\n   }\n\n   h1{\n\n     color: white; text-align: center; font-size: 35px; font-weight: 100; font-style: normal; line-height: normal;\n\n     padding: 110px 25px 35px 25px;\n\n     letter-spacing: 0.9px;\n\n   }\n\n   p{\n\n     color: white; text-align: center; font-size: 12px; font-style: normal; line-height: normal;\n\n     letter-spacing: 0.9px;\n\n   }\n\n   ion-label{\n\n     color: white; padding-bottom: 5px;\n\n   }\n\n   ion-item{\n\n     background-color: #12614C; color: white; align-content: center;\n\n   }\n\n   input::placeholder{\n\n     text-align: center; color: white; font-size: 12px;\n\n   }\n\n   button{\n\n     width: 210px; height: 30px; color: #12614C; margin-left: 7px; margin-top: 15px;\n\n   }\n\n   .btn-back{\n\n     color: white; font-size: 10px; padding-right: 185px; padding-top: 10px;\n\n   }\n\n   .btn-others{\n\n      color: white; font-size: 12px; cursor: pointer; display: flex; flex-direction: column; text-align: center; margin: 8px; \n\n  }\n\n  .btn-new{\n\n      padding-top: 14px;\n\n  }\n\n \n\n </style>\n\n \n\n <ion-content padding style="background-color: #12614C">\n\n  \n\n  <button ion-button clear class="btn-back" (click)="Voltar()"><< voltar</button>\n\n\n\n  <h1>VACIMAPS</h1>\n\n <form [formGroup]="formulario">\n\n  <ion-list inset>\n\n\n\n      <ion-item>\n\n          <ion-input type="text" [(ngModel)]="codigo" [formControl]="formulario.controls[\'validCodigo\']"  placeholder="Código"></ion-input>\n\n      </ion-item>\n\n      <p>Insira o codigo recebido para realizar a validação</p>\n\n      <br>\n\n      <button ion-button color="light" (click)="validar_token()" [disabled]="!formulario.valid">Validar</button>\n\n\n\n  </ion-list>\n\n  </form>\n\n </ion-content>\n\n '/*ion-inline-end:"C:\Users\Thais Lopes\Vacimaps\src\pages\verify-code\verify-code.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavParams */],
@@ -441,14 +278,16 @@ var VerifyCodePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 214:
+/***/ 160:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile_services__ = __webpack_require__(378);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile_services__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__perfil_perfil__ = __webpack_require__(687);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__perfil_perfil___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__perfil_perfil__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -458,6 +297,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -479,6 +319,9 @@ var DashboardPage = /** @class */ (function () {
             console.log(usuario);
         });
     }
+    DashboardPage.prototype.perfil = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__perfil_perfil__["PerfilPage"]);
+    };
     DashboardPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad DashboardPage');
         var position = new google.maps.LatLng(-21.763409, -43.349034);
@@ -501,7 +344,7 @@ var DashboardPage = /** @class */ (function () {
     };
     DashboardPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-dashboard',template:/*ion-inline-start:"C:\Users\Marjorie\Documents\ADS\Vacimaps\src\pages\dashboard\dashboard.html"*/'<!--\n\n  Generated template for the DashboardPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<style>\n\n    @font-face {\n\n        font-family: Souliyo-Regular;\n\n        src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n\n    }\n\n    \n\n      ion-content{\n\n        font-family: \'Souliyo Regular\', sans-serif;\n\n      }\n\n     \n\n      \n\n    </style>\n\n<ion-header padding style="background-color:#12614C">\n\n\n\n<ion-grid>\n\n  <ion-row>\n\n    <ion-col>\n\n      <ion-icon name="globe"></ion-icon>\n\n    </ion-col>\n\n    <ion-col>\n\n      <h3 style="color: white; text-align:left;">Vacimaps</h3>\n\n    </ion-col>\n\n    <ion-col>\n\n      <h3 style="color: white; text-align:center;">Olá {{ nome }}</h3>\n\n    </ion-col>\n\n\n\n  </ion-row>\n\n\n\n  </ion-grid>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding style="background-color: #E7E6E6">\n\n\n\n    <ion-searchbar></ion-searchbar>\n\n \n\n  <div #map id="map"> </div>\n\n\n\n  \n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Marjorie\Documents\ADS\Vacimaps\src\pages\dashboard\dashboard.html"*/,
+            selector: 'page-dashboard',template:/*ion-inline-start:"C:\Users\Thais Lopes\Vacimaps\src\pages\dashboard\dashboard.html"*/'<!--\n\n  Generated template for the DashboardPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<style>\n\n    @font-face {\n\n        font-family: Souliyo-Regular;\n\n        src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n\n    }\n\n    \n\n      ion-content{\n\n        font-family: \'Souliyo Regular\', sans-serif;\n\n      }\n\n     \n\n      \n\n    </style>\n\n<ion-header padding style="background-color:#12614C">\n\n\n\n<ion-grid>\n\n  <ion-row>\n\n    <ion-col>\n\n      <ion-icon name="globe"></ion-icon>\n\n      </ion-col>\n\n      <ion-col>\n\n      <h3 style="color: white; font-size: 12px; text-align:left;">Vacimaps</h3>\n\n    </ion-col>\n\n    <ion-col>\n\n      <h3 style="color: white; font-size: 12px; text-align:center;">Olá {{ nome }}</h3>\n\n      <a class="btn-new btn-others" (click)="perfil()">Perfil</a>\n\n    </ion-col>\n\n\n\n  </ion-row>\n\n\n\n  </ion-grid>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding style="background-color: #E7E6E6">\n\n\n\n    <ion-searchbar></ion-searchbar>\n\n \n\n  <div #map id="map"> </div>\n\n\n\n  \n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Thais Lopes\Vacimaps\src\pages\dashboard\dashboard.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_2__profile_services__["a" /* profileService */]]
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__profile_services__["a" /* profileService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__profile_services__["a" /* profileService */]) === "function" && _c || Object])
@@ -514,15 +357,15 @@ var DashboardPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 215:
+/***/ 161:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardPageModule", function() { return DashboardPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dashboard__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dashboard__ = __webpack_require__(160);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -538,7 +381,7 @@ var DashboardPageModule = /** @class */ (function () {
     DashboardPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__dashboard__["a" /* DashboardPage */],
+                __WEBPACK_IMPORTED_MODULE_2__dashboard__["a" /* DashboardPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__dashboard__["a" /* DashboardPage */]),
@@ -552,15 +395,15 @@ var DashboardPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 216:
+/***/ 162:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EsqSenhaPageModule", function() { return EsqSenhaPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__esqSenha__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__esqSenha__ = __webpack_require__(158);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -590,15 +433,15 @@ var EsqSenhaPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 217:
+/***/ 163:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RedefinirSenhaPageModule", function() { return RedefinirSenhaPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__redefinir_senha__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__redefinir_senha__ = __webpack_require__(80);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -628,15 +471,15 @@ var RedefinirSenhaPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 218:
+/***/ 164:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VerifyCodePageModule", function() { return VerifyCodePageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__verify_code__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__verify_code__ = __webpack_require__(159);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -666,13 +509,13 @@ var VerifyCodePageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 353:
+/***/ 208:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(354);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(358);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(229);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -680,23 +523,23 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 358:
+/***/ 229:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(258);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(262);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(401);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_cadastro_cadastro_module__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_dashboard_dashboard_module__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_redefinir_senha_redefinir_senha_module__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_esqSenha_esqSenha_module__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_verify_code_verify_code_module__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_cadastro_cadastro_module__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_dashboard_dashboard_module__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_redefinir_senha_redefinir_senha_module__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_esqSenha_esqSenha_module__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_verify_code_verify_code_module__ = __webpack_require__(164);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -761,14 +604,14 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 378:
+/***/ 259:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return profileService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(29);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -808,16 +651,16 @@ var profileService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 401:
+/***/ 284:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(262);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(258);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(34);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -843,7 +686,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Marjorie\Documents\ADS\Vacimaps\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\Marjorie\Documents\ADS\Vacimaps\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Thais Lopes\Vacimaps\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\Thais Lopes\Vacimaps\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -854,19 +697,19 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 45:
+/***/ 34:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_cadastro__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__redefinir_senha_redefinir_senha__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__esqSenha_esqSenha__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__dashboard_dashboard__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_forms__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_cadastro__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__redefinir_senha_redefinir_senha__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__esqSenha_esqSenha__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__dashboard_dashboard__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_forms__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -929,7 +772,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Marjorie\Documents\ADS\Vacimaps\src\pages\home\home.html"*/'<style>\n\n  @font-face {\n\n    font-family: Souliyo-Regular;\n\n    src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n\n  }\n\n\n\n  ion-content{\n\n    font-family: \'Souliyo Regular\', sans-serif;\n\n  }\n\n  h1{\n\n    color: white; padding: 80px 25px 45px 25px; text-align: center; font-size: 35px; font-weight: 100; font-style: normal; line-height: normal;\n\n  }\n\n  ion-item{\n\n    background-color: #12614C; color: white; align-content: center;\n\n  }\n\n  input::placeholder{\n\n    text-align: center; color: white; font-size: 12px; \n\n  }\n\n  button{\n\n    width: 220px; height: 30px; color: #12614C; margin-left: 15px; margin-top: 25px;\n\n  }\n\n  .btn-others{\n\n   color: white; font-size: 12px; cursor: pointer; display: flex; flex-direction: column; text-align: center; margin: 8px; \n\n  }\n\n  .btn-new{\n\n    padding-top: 14px;\n\n  }\n\n  .btn-pass{\n\n    padding-top: 10px;\n\n  }\n\n</style>\n\n\n\n\n\n<ion-content style="background-color: #12614C">\n\n<body>\n\n  <h1>VACIMAPS</h1>\n\n  <form [formGroup]="formulario">\n\n    <ion-list inset>\n\n\n\n      <ion-item>\n\n        <ion-input type="email"  [formControl]="formulario.controls[\'validEmail\']" [(ngModel)]="email" placeholder="e-mail"></ion-input>\n\n      </ion-item>\n\n    \n\n      <ion-item>\n\n        <ion-input type="password"  [formControl]="formulario.controls[\'vaidSenha\']" [(ngModel)]="senha" placeholder="senha"></ion-input>\n\n      </ion-item>\n\n\n\n      <button ion-button color="light" (click)=\'login()\' [disabled]="!formulario.valid">Entrar</button>\n\n    </ion-list>\n\n  </form>\n\n  <div>\n\n    <a class="btn-new btn-others" (click)="cadastrar()">Novo por aqui?</a>\n\n    <a class="btn-pass btn-others" (click)="esqSenha()">Esqueci minha senha</a>\n\n  </div>\n\n</body>\n\n</ion-content> \n\n\n\n'/*ion-inline-end:"C:\Users\Marjorie\Documents\ADS\Vacimaps\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Thais Lopes\Vacimaps\src\pages\home\home.html"*/'<style>\n\n  @font-face {\n\n    font-family: Souliyo-Regular;\n\n    src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n\n  }\n\n\n\n  ion-content{\n\n    font-family: \'Souliyo Regular\', sans-serif;\n\n  }\n\n  h1{\n\n    color: white; padding: 80px 25px 45px 25px; text-align: center; font-size: 35px; font-weight: 100; font-style: normal; line-height: normal;\n\n  }\n\n  ion-item{\n\n    background-color: #12614C; color: white; align-content: center;\n\n  }\n\n  input::placeholder{\n\n    text-align: center; color: white; font-size: 12px; \n\n  }\n\n  button{\n\n    width: 220px; height: 30px; color: #12614C; margin-left: 15px; margin-top: 25px;\n\n  }\n\n  .btn-others{\n\n   color: white; font-size: 12px; cursor: pointer; display: flex; flex-direction: column; text-align: center; margin: 8px; \n\n  }\n\n  .btn-new{\n\n    padding-top: 14px;\n\n  }\n\n  .btn-pass{\n\n    padding-top: 10px;\n\n  }\n\n</style>\n\n\n\n\n\n<ion-content style="background-color: #12614C">\n\n<body>\n\n  <h1>VACIMAPS</h1>\n\n  <form [formGroup]="formulario">\n\n    <ion-list inset>\n\n\n\n      <ion-item>\n\n        <ion-input type="email"  [formControl]="formulario.controls[\'validEmail\']" [(ngModel)]="email" placeholder="e-mail"></ion-input>\n\n      </ion-item>\n\n    \n\n      <ion-item>\n\n        <ion-input type="password"  [formControl]="formulario.controls[\'vaidSenha\']" [(ngModel)]="senha" placeholder="senha"></ion-input>\n\n      </ion-item>\n\n\n\n      <button ion-button color="light" (click)=\'login()\' [disabled]="!formulario.valid">Entrar</button>\n\n    </ion-list>\n\n  </form>\n\n  <div>\n\n    <a class="btn-new btn-others" (click)="cadastrar()">Novo por aqui?</a>\n\n    <a class="btn-pass btn-others" (click)="esqSenha()">Esqueci minha senha</a>\n\n  </div>\n\n</body>\n\n</ion-content> \n\n\n\n'/*ion-inline-end:"C:\Users\Thais Lopes\Vacimaps\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["a" /* HttpClient */],
@@ -943,7 +786,181 @@ var HomePage = /** @class */ (function () {
 //.pipe(map(response => { localStorage.setItem('token', JSON.stringify(response)) }))
 //# sourceMappingURL=home.js.map
 
+/***/ }),
+
+/***/ 687:
+/***/ (function(module, exports) {
+
+//# sourceMappingURL=perfil.js.map
+
+/***/ }),
+
+/***/ 79:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(12);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var CadastroPage = /** @class */ (function () {
+    function CadastroPage(navCtrl, navParams, appCtrl, toast, http, formBuilder) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.appCtrl = appCtrl;
+        this.toast = toast;
+        this.http = http;
+        this.formBuilder = formBuilder;
+        this.API_URL = 'https://vacimaps-app.herokuapp.com';
+        this.formulario = this.formBuilder.group({
+            validNome: ['', __WEBPACK_IMPORTED_MODULE_4__angular_forms__["f" /* Validators */].required],
+            validEmail: ['', __WEBPACK_IMPORTED_MODULE_4__angular_forms__["f" /* Validators */].required],
+            vaidSenha: ['', __WEBPACK_IMPORTED_MODULE_4__angular_forms__["f" /* Validators */].required],
+        });
+    }
+    CadastroPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad CadastroPage');
+    };
+    CadastroPage.prototype.Voltar = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
+    };
+    CadastroPage.prototype.doPOST = function () {
+        var _this = this;
+        console.log("POST");
+        var url = this.API_URL + "/usuario";
+        this.datajson = {
+            nome: this.nome,
+            senha: this.senha,
+            email: this.email,
+        };
+        console.log(this.datajson);
+        this.http
+            .post(url, this.datajson)
+            .subscribe(function (res) {
+            if (res['Mensagem'] == 'O email informado já está cadastrado!') {
+                _this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present();
+            }
+            else {
+                _this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present();
+                _this.appCtrl.getRootNav().setRoot(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
+            }
+        });
+    };
+    CadastroPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-cadastro',template:/*ion-inline-start:"C:\Users\Thais Lopes\Vacimaps\src\pages\cadastro\cadastro.html"*/'<style>\n\n@font-face {\n\n    font-family: Souliyo-Regular;\n\n    src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n\n}\n\n\n\n  ion-content{\n\n    font-family: \'Souliyo Regular\', sans-serif;\n\n  }\n\n  h1{\n\n    color: white; text-align: center;\n\n    padding: 40px 25px 45px 25px;\n\n    letter-spacing: 0.9px;\n\n  }\n\n  ion-item{\n\n    background-color: #12614C; color: white; align-content: center;\n\n  }\n\n  input::placeholder{\n\n    text-align: center; color: white; font-size: 12px; \n\n  }\n\n  button{\n\n    width: 210px; height: 30px; color: #12614C; margin-left: 7px; margin-top: 15px;\n\n  }\n\n  .btn-back{\n\n    color: white; font-size: 10px; padding-right: 185px; padding-top: 10px;\n\n  }\n\n\n\n</style>\n\n\n\n<ion-content padding style="background-color: #12614C">\n\n\n\n  <button ion-button clear class="btn-back" (click)="Voltar()"><< voltar</button>\n\n\n\n  <h1>VACIMAPS</h1>\n\n  <form [formGroup]="formulario">\n\n    <ion-list inset>\n\n\n\n      <ion-item>\n\n        <ion-input type="text"[formControl]="formulario.controls[\'validNome\']" [(ngModel)]="nome" placeholder="nome"></ion-input>\n\n      </ion-item>\n\n    \n\n      <ion-item>\n\n        <ion-input type="email" [formControl]="formulario.controls[\'validEmail\']" [(ngModel)]="email" placeholder="e-mail" ></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-input type="password" [formControl]="formulario.controls[\'vaidSenha\']"[(ngModel)]="senha" placeholder="senha" ></ion-input>\n\n      </ion-item>\n\n      <br>\n\n\n\n      <button ion-button color="light" (click)="doPOST()" [disabled]="!formulario.valid">Cadastrar</button>\n\n    </ion-list>\n\n  </form> \n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Thais Lopes\Vacimaps\src\pages\cadastro\cadastro.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* App */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */]])
+    ], CadastroPage);
+    return CadastroPage;
+}());
+
+//# sourceMappingURL=cadastro.js.map
+
+/***/ }),
+
+/***/ 80:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RedefinirSenhaPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_home__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(29);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var RedefinirSenhaPage = /** @class */ (function () {
+    function RedefinirSenhaPage(navCtrl, http, navParams, appCtrl, toast, formBuilder) {
+        this.navCtrl = navCtrl;
+        this.http = http;
+        this.navParams = navParams;
+        this.appCtrl = appCtrl;
+        this.toast = toast;
+        this.formBuilder = formBuilder;
+        this.API_URL = 'https://vacimaps-app.herokuapp.com';
+        this.formulario = this.formBuilder.group({
+            validSenha: ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required],
+            validConfSenha: ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required]
+        });
+        this.id = navParams.get('id');
+    }
+    RedefinirSenhaPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad RedefinirSenhaPage');
+    };
+    RedefinirSenhaPage.prototype.Voltar = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_0__home_home__["a" /* HomePage */]);
+    };
+    RedefinirSenhaPage.prototype.reset_password = function () {
+        var _this = this;
+        if (this.senha == this.confSenha) {
+            var url = this.API_URL + "/reset_password";
+            this.http
+                .put(url, { id: this.id, senha: this.senha })
+                .subscribe(function (res) {
+                if (res['Mensagem'] == 'Usuario não encontrado!') {
+                    _this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present();
+                }
+                else {
+                    _this.toast.create({ message: "Senha alterada com sucesso!", duration: 3000, position: 'botton' }).present();
+                    _this.appCtrl.getRootNav().setRoot(__WEBPACK_IMPORTED_MODULE_0__home_home__["a" /* HomePage */]);
+                }
+            });
+        }
+        else {
+            this.toast.create({ message: "Senhas Diferentes!", duration: 3000, position: 'botton' }).present();
+        }
+    };
+    RedefinirSenhaPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
+            selector: 'page-redefinir-senha',template:/*ion-inline-start:"C:\Users\Thais Lopes\Vacimaps\src\pages\redefinir-senha\redefinir-senha.html"*/'<style>\n\n @font-face {\n\n    font-family: Souliyo-Regular;\n\n    src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n\n  }\n\n\n\n  ion-content{\n\n    font-family: \'Souliyo Regular\', sans-serif;\n\n  }\n\n  h1{\n\n    color: white; text-align: center; font-size: 35px; font-weight: 100; font-style: normal; line-height: normal;\n\n    padding: 110px 25px 35px 25px;\n\n    letter-spacing: 0.9px;\n\n  }\n\n  ion-label{\n\n    color: white; padding-bottom: 5px;\n\n  }\n\n  ion-item{\n\n    background-color: #12614C; color: white; align-content: center;\n\n  }\n\n  input::placeholder{\n\n    text-align: center; color: white; font-size: 12px;\n\n  }\n\n  button{\n\n    width: 210px; height: 30px; color: #12614C; margin-left: 7px; margin-top: 15px;\n\n  }\n\n  .btn-back{\n\n    color: white; font-size: 10px; padding-right: 185px; padding-top: 10px;\n\n  }\n\n\n\n</style>\n\n\n\n<ion-content padding style="background-color: #12614C">\n\n\n\n  <h1>VACIMAPS</h1>\n\n  <form [formGroup]="formulario">\n\n  <ion-list inset>\n\n    <ion-label>\n\n      Redefinir senha:\n\n    </ion-label>\n\n    \n\n    <ion-item>\n\n      <ion-input type="password" [formControl]="formulario.controls[\'validSenha\']" [(ngModel)]="senha" placeholder="Nova Senha"></ion-input>\n\n    </ion-item>\n\n  \n\n    <ion-item>\n\n      <ion-input type="password" [formControl]="formulario.controls[\'validConfSenha\']"[(ngModel)]="confSenha" placeholder="Confirmar nova senha"></ion-input>\n\n    </ion-item>\n\n    <br>\n\n\n\n    <button ion-button color="light" (click)=\'reset_password()\' [disabled]="!formulario.valid">Redefinir</button>\n\n  </ion-list>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Thais Lopes\Vacimaps\src\pages\redefinir-senha\redefinir-senha.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* App */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */]])
+    ], RedefinirSenhaPage);
+    return RedefinirSenhaPage;
+}());
+
+//# sourceMappingURL=redefinir-senha.js.map
+
 /***/ })
 
-},[353]);
+},[208]);
 //# sourceMappingURL=main.js.map

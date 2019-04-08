@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController,ToastController } from 'ionic-angular';
 import { CadastroPage } from '../cadastro/cadastro';
-import { RedefinirSenhaPage } from '../redefinir-senha/redefinir-senha'
-import { EsqSenhaPage } from '../esqSenha/esqSenha'
+import { RedefinirSenhaPage } from '../redefinir-senha/redefinir-senha';
+import { EsqSenhaPage } from '../esqSenha/esqSenha';
 import { map } from "rxjs/operators";
 import { HttpClient } from "@angular/common/http";
 import { DashboardPage } from '../dashboard/dashboard';
@@ -14,7 +14,7 @@ import {Validators, FormBuilder, FormGroup } from '@angular/forms';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  private API_URL = 'https://vacimaps-app.herokuapp.com'
+  private API_URL = 'https://vacimaps-app.herokuapp.com';
   private formulario: FormGroup;
 
   senha: string;
