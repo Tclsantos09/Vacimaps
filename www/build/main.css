@@ -25674,10 +25674,6 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
-page-dashboard #map {
-  height: 100%;
-}
-
 page-home {
   background-color: #12614C;
 }

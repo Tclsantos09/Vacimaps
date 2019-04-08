@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { profileService, User } from './profile.services';
-import { PerfilPage } from '../perfil/perfil';
-declare var google;
+import { ModalController } from 'ionic-angular';
+
 /**
  * Generated class for the DashboardPage page.
  *
@@ -18,13 +18,13 @@ declare var google;
 
 })
 export class DashboardPage {
-  map: any;
   token;
   usuario: User;
   nome: String;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, 
+    public modalCtrl : ModalController,
     private profileService: profileService){
       this.profileService.getUser().subscribe((usuario: User) => {
         this.usuario = usuario;
@@ -34,35 +34,12 @@ export class DashboardPage {
       });
 }
 
-perfil(){
-  this.navCtrl.push(PerfilPage)
+public openModal () {
+  var modalPage = this.modalCtrl.create ('ModalPage'); modalPage.present (); 
 }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DashboardPage');
-    const position = new google.maps.LatLng(-21.763409, -43.349034);
- 
-    const mapOptions = {
-      zoom: 18,
-      center: position,
-      disableDefaultUI: true
-    }
- 
-    this.map = new google.maps.Map(document.getElementById('map'), mapOptions);
- 
-    const marker = new google.maps.Marker({
-      position: position,
-      map: this.map,
- 
-      //Titulo
-      title: 'Minha posição',
- 
-      //Animção
-      animation: google.maps.Animation.DROP, // BOUNCE
- 
-      //Icone
-      icon: 'assets/imgs/pessoa.png'
-    });
   }
 
 }

@@ -1,0 +1,61 @@
+<!--
+  Generated template for the ModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+  <style>
+    @font-face {
+      font-family: Souliyo-Regular;
+      src: url(../www/assets/fonts/Souliyo-Regular.ttf)
+    }
+  
+    ion-content{
+      font-family: 'Souliyo Regular', sans-serif;
+    }
+    h1{
+      color: black; padding: 80px 25px 45px 25px; text-align: center; font-size: 16px; font-weight: 100; font-style: normal; line-height: normal;
+    }
+    ion-label{
+      color: black;;
+    }
+
+    ion-item{
+      background-color: white; color: black; align-items: center;
+    }
+    input{
+      color: black; font-size: 12px; 
+    }
+    button{
+      width: 50px; height: 20px;align-items: center; margin-left: 15px; margin-top: 25px;
+    }
+  </style>
+  
+  
+<ion-content style="background-color: white">
+  <ion-buttons end>
+    <button ion-button (click)="closeModal()">X</button>
+  </ion-buttons>
+  <body>
+    <h1>Meu Perfil</h1>
+    <ion-item style="align-content: center">
+        <ion-avatar item-start>
+            <img src="../../assets/imgs/perfil.png">
+        </ion-avatar>
+      </ion-item>
+      <ion-list inset>
+        <ion-item>
+            <ion-label stacked>Nome</ion-label>
+            <ion-input type="text" name="Nome" >{{ nome }}</ion-input>
+        </ion-item>
+      
+        <ion-item>
+            <ion-label stacked>Nascimento</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" name="DtAniversário">{{ birth }}</ion-datetime>
+        </ion-item>
+  
+        <button ion-button block (click)="save()">Salvar</button>
+      </ion-list>
+  </body>
+</ion-content>  
