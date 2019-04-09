@@ -1,37 +1,31 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { profileService, User } from './profile.services';
-import { ModalController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
 
-/**
- * Generated class for the DashboardPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { ModalController } from 'ionic-angular';
+import { Tab2Page } from './../tab2/tab2';
+import { Tab1Page } from './../tab1/tab1';
+import { TabsPage } from './../tabs/tabs';
+
+export interface PageInterface {
+  title: string;
+  pageName: string;
+  tabComponent?: any;
+  index?: number;
+  icon: string;
+}
 
 @IonicPage()
 @Component({
   selector: 'page-dashboard',
   templateUrl: 'dashboard.html',
-  providers: [profileService]
-
+  
 })
 export class DashboardPage {
-  token;
-  usuario: User;
-  nome: String;
+ 
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, 
-    public modalCtrl : ModalController,
-    private profileService: profileService){
-      this.profileService.getUser().subscribe((usuario: User) => {
-        this.usuario = usuario;
-        this.nome = usuario.nome;
-        console.log(usuario)
-        
-      });
+    public modalCtrl : ModalController){
 }
 
 public openModal () {
@@ -41,6 +35,12 @@ public openModal () {
   ionViewDidLoad() {
     console.log('ionViewDidLoad DashboardPage');
   }
+  rootPage = 'TabsPage';
+ 
+  // Reference to the app's root nav
+  @ViewChild(Nav) nav: Nav;
+ 
+  
 
 }
 

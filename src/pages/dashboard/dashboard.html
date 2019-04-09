@@ -1,29 +1,16 @@
-<!--
-  Generated template for the DashboardPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>Dashboard</ion-title>
-    <button ion-button (click)="openModal()">Perfil</button>
-    <ion-chip>
-        <ion-avatar>
-          <img src="../../assets/imgs/perfil.png">
-        </ion-avatar>
-        <ion-label>{{nome}}</ion-label>
-      </ion-chip>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-  <br><br><br><br>
-
-    <h1 style="color: black; text-align: center;">Bem vindo, {{ nome }}!</h1>
-
-
-</ion-content>
+<ion-menu [content]="content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+   
+    <ion-content>
+      <ion-list>
+          <button ion-item (click)="openModal()">Perfil</button>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+   
+  <!-- main navigation -->
+  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
