@@ -18,7 +18,7 @@
       color: black; text-align: center; font-size: 16px; font-weight: 100; font-style: normal; line-height: normal;
     }
     ion-label{
-      color: black; font-size: 12px; font-weight: 100; font-style: normal; line-height: normal;
+      font-size: 12px; font-weight: 100; font-style: normal; line-height: normal; color: #C4C4C4;
     }
     ion-avatar{
       width: 30px; height: 30px; align-content: center;
@@ -27,36 +27,44 @@
       background-color: white; color: black; align-content: center;
     }
     input{
-      color: black; font-size: 12px; 
+      color: black; font-size: 16px; width: 50px;
+    }
+    ion-datetime{
+      color: black; font-size: 12px;
     }
     button{
-      width: 50px; height: 20px; font-size: 12px; align-items: center; margin-left: 15px; margin-top: 25px;
+      width: 50px; height: 20px; font-size: 12px; align-items: center; margin-left: 15px; margin-top: 25px; align-content: flex-end;
+    }
+    a{
+      color: gray;
+    }
+    ion-icon {
+      font-size: 160px;
+      vertical-align: auto;
     }
   </style>
   
   
 <ion-content>
-  <ion-buttons end>
-    <button ion-button (click)="closeModal()">X</button>
-  </ion-buttons>
+  
   <body>
+      <ion-buttons end>
+          <a (click)="closeModal()">X</a>
+        </ion-buttons>
     <h1>Meu Perfil</h1>
-    
-    <ion-avatar item-start>
-        <img src="../../assets/imgs/perfil.png" >
-    </ion-avatar>
+        <ion-icon name="ios-contact"></ion-icon>
       <ion-list inset>
-        <h4>Nome</h4>
+          <ion-label>Nome</ion-label>
         <ion-item>
-            
             <ion-input type="text" name="Nome" value="{{ nome }}"></ion-input>
         </ion-item>
+        <ion-label>Data de Nascimento</ion-label>
         <ion-item>
-            <ion-label>Data de Nascimento</ion-label>
             <ion-datetime display-format="MMM DD, YYYY HH:mm"></ion-datetime>
-          </ion-item>
-  
-        <button ion-button block (click)="save()" style="background:green;color:black;">Salvar</button>
+        </ion-item>
+        <ion-buttons end>
+          <button ion-button block (click)="save()" style="background:#4FBA6E;">Salvar</button>
+        </ion-buttons>
       </ion-list>
   </body>
-</ion-content>  
+</ion-content> 
