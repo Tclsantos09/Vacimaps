@@ -4,6 +4,27 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+<style>
+  @font-face {
+    font-family: Souliyo-Regular;
+    src: url(../www/assets/fonts/Souliyo-Regular.ttf)
+  }
+
+  ion-content{
+    font-family: 'Souliyo Regular', sans-serif;
+  }
+  h1{
+    color: #FFFFFF; font-size: 12px; font-weight: 100; font-style: normal; line-height: normal;
+  }
+  p{
+    color:#808080;
+  }
+  ion-card{
+    background: rgba(18, 97, 76, 0.23);
+    width: 250px;
+    height: 200px;
+  }
+</style>
 
     <ion-header>
         <ion-navbar>
@@ -20,8 +41,39 @@
           <ion-title>Minhas vacinas</ion-title>
         </ion-navbar>
       </ion-header>
-       
+
       <ion-content padding>
-        This page has no tabs!
+          <ion-fab right bottom>
+              <button ion-fab (click)="addContact()"><ion-icon name="add-circle"></ion-icon></button>Nova Vacina
+            </ion-fab>
+        <ion-list>
+          <ion-card>
+      
+            <ion-card-header>
+              <h1>MALARIA{{ Vacina }}</h1>
+            </ion-card-header>
+      
+            <ion-card-content>
+              <p> Data: {{ data }} </p>
+            </ion-card-content>
+      
+            <ion-card-content>
+              <p> Lote: {{ lote }} </p>
+            </ion-card-content>
+
+            <ion-row text-right>
+              <ion-col>
+                <button ion-button icon-left clear small (click)="editContact(item);">
+                  <ion-icon name="md-create"></ion-icon>
+                </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button icon-left clear small (click)="removeContact(item);">
+                  <ion-icon name="md-trash"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-list>
       </ion-content>
 
