@@ -1,28 +1,47 @@
-<!--
-  Generated template for the Tab1Page page.
+<style>
+    @font-face {
+      font-family: Souliyo-Regular;
+      src: url(../www/assets/fonts/Souliyo-Regular.ttf)
+    }
+  
+    ion-content{
+      font-family: 'Souliyo Regular', sans-serif;
+      background-color: #F1EEEE;
+    }
+    ion-header{
+    background-color: #3C7D6B;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+  }
+  .menu{
+    background-color: #3C7D6B;
+    margin-left: 40%;
+    padding-top: 7px;
+  }
+  .p-header{
+    color: white;
+    margin-left: 15px;
+    padding-top: 7px;
+  }
+  h1{
+    padding-top: 50px;
+  }
+</style>
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-
-    <ion-header>
-        <ion-navbar>
-          <ion-buttons start>
-            <button ion-button menuToggle>
-                <ion-chip>
-                    <ion-label>Olá {{nome}}</ion-label>
-                    <ion-avatar>
-                        <ion-icon name="ios-contact"></ion-icon>
-                    </ion-avatar>
-                  </ion-chip>
+  <ion-content padding>
+      <ion-header>
+          <p class="p-header">VACIMAPS</p>
+          <button class="menu" ion-button menuToggle>
+            <ion-label>Olá {{nome}}</ion-label>
+            <ion-avatar>
+              <ion-icon name="ios-contact"></ion-icon>
+            </ion-avatar>
           </button>
-          </ion-buttons>
-          <ion-title>DashBoard</ion-title>
-        </ion-navbar>
-      </ion-header>
-       
-      <ion-content padding>
-        This page has no tabs!
-      </ion-content>
+        </ion-header>
+
+    <h1>This page has no tabs!</h1>
+  </ion-content>
 
         

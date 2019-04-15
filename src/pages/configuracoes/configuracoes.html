@@ -1,0 +1,62 @@
+<style>
+  @font-face {
+      font-family: Souliyo-Regular;
+      src: url(../www/assets/fonts/Souliyo-Regular.ttf)
+  }
+  ion-content{
+    font-family: 'Souliyo Regular', sans-serif;
+    background-color: white;
+  }
+  ion-label{
+    padding-top: 40px; padding-bottom: 20px; text-align: center; font-size: 17px;
+  }
+  .div-config{
+    background-color: #F6F5F5;  margin: 5px; padding: 2px; 
+  }
+  .input-email{
+    text-align: center; top: -15px; font-size: 11px; margin-top: 15px; color: #C4C4C4; 
+  }
+ 
+  ion-input{
+    top: -18px; margin-bottom: -12px; left: 4px;
+  }
+  input::placeholder{
+    text-align: center; color: #B3B3B3; font-size: 11px; background-color: white; padding: 10px; 
+  }
+  p{
+    font-size: 10px; color: #C4C4C4; 
+  }
+  .btn-salvar{
+    padding: 10px; width: 55px; height: 25px; font-size: 11px; left: 190px; top: 140px; background-color: #4FBA6E; color: white;
+  }
+  .btn-back{
+    color: #12614C; font-size: 10px; padding-right: 195px; padding-top: 20px;
+  }
+</style>
+
+<ion-content padding style="background-color: #fff">
+  <body>
+
+    <a (click)="closeModal()"> <ion-icon name="close" style="font-size: 40px; float: right; padding-top: 16px;"></ion-icon></a>
+
+    <ion-label>
+      Configurações
+    </ion-label>
+    
+    <div class="div-config">
+      <p>E-mail</p>
+      <ion-input class="input-email" type="email" placeholder="joao_silva@email.com.br" disabled></ion-input>
+
+      <p>Alterar senha</p>
+        <ion-input type="password" placeholder="Digite a senha atual"></ion-input>
+    
+        <ion-input type="password" placeholder="Digite a nova senha"></ion-input>
+
+        <ion-input type="password" placeholder="Confirme a nova senha"></ion-input>
+      <br>
+    </div>
+
+    <button ion-button class="btn-salvar" (click)="save()" color="light">Salvar</button>
+  </body>
+  
+</ion-content>

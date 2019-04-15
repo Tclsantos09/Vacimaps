@@ -32,6 +32,10 @@ public openModal () {
   var modalPage = this.modalCtrl.create ('ModalPage'); modalPage.present (); 
 }
 
+public modalOpen() {
+  var configuracaoPage = this.modalCtrl.create ('ConfiguracoesPage'); configuracaoPage.present (); 
+}
+ 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DashboardPage');
   }
@@ -39,8 +43,4 @@ public openModal () {
  
   // Reference to the app's root nav
   @ViewChild(Nav) nav: Nav;
- 
-  
-
 }
-
