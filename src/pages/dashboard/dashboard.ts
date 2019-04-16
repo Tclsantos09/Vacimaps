@@ -22,20 +22,20 @@ export interface PageInterface {
 })
 export class DashboardPage {
  
-
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, 
-    public modalCtrl : ModalController){
+    public modalCtrl : ModalController,
+    public confCtrl : ModalController){
 }
 
 public openModal () {
   var modalPage = this.modalCtrl.create ('ModalPage'); modalPage.present (); 
 }
 
-public modalOpen() {
-  var configuracaoPage = this.modalCtrl.create ('ConfiguracoesPage'); configuracaoPage.present (); 
+public modalOpen () {
+  var confPage = this.confCtrl.create ('ConfiguracoesPage'); confPage.present (); 
 }
- 
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad DashboardPage');
   }
@@ -43,4 +43,8 @@ public modalOpen() {
  
   // Reference to the app's root nav
   @ViewChild(Nav) nav: Nav;
+ 
+  
+
 }
+
