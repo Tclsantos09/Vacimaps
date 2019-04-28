@@ -36,6 +36,9 @@ public modalOpen () {
   var confPage = this.confCtrl.create ('ConfiguracoesPage'); confPage.present (); 
 }
 
+public Sair () {
+}
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad DashboardPage');
   }
