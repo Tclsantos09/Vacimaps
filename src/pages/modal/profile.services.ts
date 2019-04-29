@@ -28,4 +28,17 @@ export interface User{
     user_id?: string;
     nome?: string;
     email?: string;
+    dt_nascimento?: Date;
+    vacinas?: Vacina;
+    
+
+}
+
+export interface Vacina{
+    id_usuario_vacina?: string;
+    nome_vacina?: string;
+    cd_reforco?: string;
+    data_vacina?: string;
+    data_reforco?: string;
+    ds_local_vacina?: string;
 }

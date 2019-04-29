@@ -1,14 +1,14 @@
 webpackJsonp([1],{
 
-/***/ 290:
+/***/ 293:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConfiguracoesPageModule", function() { return ConfiguracoesPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__configuracoes__ = __webpack_require__(292);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__configuracoes__ = __webpack_require__(296);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,13 +38,13 @@ var ConfiguracoesPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 292:
+/***/ 296:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConfiguracoesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -71,7 +71,7 @@ var ConfiguracoesPage = /** @class */ (function () {
     };
     ConfiguracoesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-configuracoes',template:/*ion-inline-start:"C:\Users\Thais Lopes\Vacimaps\src\pages\configuracoes\configuracoes.html"*/'<style>\n\n  @font-face {\n\n      font-family: Souliyo-Regular;\n\n      src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n\n  }\n\n  ion-content{\n\n    font-family: \'Souliyo Regular\', sans-serif; height:70%; width:95%; border-radius: 5px; top: 7%; left: 3%; \n\n  }\n\n  h1{\n\n      color: black; text-align: center; font-size: 18px; font-weight: 100; font-style: normal; line-height: normal; padding-top: 10px;\n\n    }\n\n  .div-config{\n\n    background-color: #F6F5F5;  \n\n  }\n\n  .input-email{\n\n    text-align: center; font-size: 12px; color: #C4C4C4;\n\n  }\n\n \n\n  ion-input{\n\n    left: 4px; height: 30px; \n\n  }\n\n  input::placeholder{\n\n    text-align: center; color: #B3B3B3; font-size: 12px; background-color: #FFFFFF; height: 30px;\n\n  }\n\n  p{\n\n    font-size: 12px; color: #C4C4C4; \n\n  }\n\n  .btn-salvar{\n\n    width: 50px; \n\n    height: 20px; \n\n    font-size: 12px; \n\n    align-items: center; \n\n    margin-left: 15px; \n\n    margin-top: 60px; \n\n    align-content: flex-end; \n\n    background-color: #4FBA6E;\n\n    float: right;\n\n    color: #FFFFFF;\n\n  }\n\n  .btn-back{\n\n    color: #12614C; font-size: 10px;\n\n  }\n\n  ion-icon {\n\n    font-size: 160px;\n\n    vertical-align: auto;\n\n  }\n\n  a{\n\n    color: gray;\n\n  }\n\n</style>\n\n\n\n<ion-content>\n\n  <body>\n\n\n\n      <a (click)="closeModal()"> <ion-icon name="close" style="font-size: 30px; float: right; padding-top: 10px;"></ion-icon></a>\n\n\n\n    <h1>Configurações</h1>\n\n    \n\n    <div class="div-config">\n\n      <p>E-mail</p>\n\n      <ion-input class="input-email" type="email" placeholder="joao_silva@email.com.br" disabled></ion-input>\n\n\n\n      <p>Alterar senha</p>\n\n        <ion-input  type="password" placeholder="Digite a senha atual"></ion-input>\n\n    \n\n        <ion-input type="password" placeholder="Digite a nova senha"></ion-input>\n\n\n\n        <ion-input type="password" placeholder="Confirme a nova senha"></ion-input>\n\n      <br>\n\n    </div>\n\n\n\n    <button ion-button class="btn-salvar" (click)="save()" color="light">Salvar</button>\n\n  </body>\n\n  \n\n</ion-content>'/*ion-inline-end:"C:\Users\Thais Lopes\Vacimaps\src\pages\configuracoes\configuracoes.html"*/,
+            selector: 'page-configuracoes',template:/*ion-inline-start:"/home/renan/Vídeos/Vacimaps/src/pages/configuracoes/configuracoes.html"*/'<style>\n  @font-face {\n      font-family: Souliyo-Regular;\n      src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n  }\n  ion-content{\n    font-family: \'Souliyo Regular\', sans-serif; height:70%; width:95%; border-radius: 5px; top: 7%; left: 3%; \n  }\n  h1{\n      color: black; text-align: center; font-size: 18px; font-weight: 100; font-style: normal; line-height: normal; padding-top: 10px;\n    }\n  .div-config{\n    background-color: #F6F5F5;  \n  }\n  .input-email{\n    text-align: center; font-size: 12px; color: #C4C4C4;\n  }\n \n  ion-input{\n    left: 4px; height: 30px; \n  }\n  input::placeholder{\n    text-align: center; color: #B3B3B3; font-size: 12px; background-color: #FFFFFF; height: 30px;\n  }\n  p{\n    font-size: 12px; color: #C4C4C4; \n  }\n  .btn-salvar{\n    width: 50px; \n    height: 20px; \n    font-size: 12px; \n    align-items: center; \n    margin-left: 15px; \n    margin-top: 60px; \n    align-content: flex-end; \n    background-color: #4FBA6E;\n    float: right;\n    color: #FFFFFF;\n  }\n  .btn-back{\n    color: #12614C; font-size: 10px;\n  }\n  ion-icon {\n    font-size: 160px;\n    vertical-align: auto;\n  }\n  a{\n    color: gray;\n  }\n</style>\n\n<ion-content>\n  <body>\n\n      <a (click)="closeModal()"> <ion-icon name="close" style="font-size: 30px; float: right; padding-top: 10px;"></ion-icon></a>\n\n    <h1>Configurações</h1>\n    \n    <div class="div-config">\n      <p>E-mail</p>\n      <ion-input class="input-email" type="email" placeholder="joao_silva@email.com.br" disabled></ion-input>\n\n      <p>Alterar senha</p>\n        <ion-input  type="password" placeholder="Digite a senha atual"></ion-input>\n    \n        <ion-input type="password" placeholder="Digite a nova senha"></ion-input>\n\n        <ion-input type="password" placeholder="Confirme a nova senha"></ion-input>\n      <br>\n    </div>\n\n    <button ion-button class="btn-salvar" (click)="save()" color="light">Salvar</button>\n  </body>\n  \n</ion-content>'/*ion-inline-end:"/home/renan/Vídeos/Vacimaps/src/pages/configuracoes/configuracoes.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
