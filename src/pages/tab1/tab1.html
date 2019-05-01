@@ -28,13 +28,13 @@
   h1{
     padding-top: 50px;
   }
-  ion-list--placeholder-color{
+  ion-searchbar--placeholder-color{
     color: #C4C4C4; 
   }
-  ion-list--background{
+  ion-searchbar--background{
     color: white;
   }
-  ion-list{
+  ion-searchbar{
     background-color: white;
     margin-left: 6px;
     margin-top: 25%;
@@ -59,15 +59,13 @@
             </ion-avatar>
           </button>
         </ion-header>
-
-      <ion-list>
-        <ion-item>
-          <ion-label><ion-icon name="search"></ion-icon> Cidade</ion-label>
-          <ion-select [selectOptions]="selectOptions" okText="Ver Vacinas" (ionChange)="something()" cancelText="Cancelar">
-            <ion-option *ngFor="let c of city" [value] = "c.nome_cidade">{{ c.nome_cidade }} - {{ c.uf_cidade }}</ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-list>
+        <br>
+      <ion-searchbar placeholder="Digite o nome da cidade" (ionInput)="getCity($event)"></ion-searchbar>
+      <ion-list [hidden]= hiddenCidades>
+        <button (click)="something()" ion-item *ngFor="let c of cidades">
+          <ion-option  [value] = "c.nome_cidade">{{ c.nome_cidade }} - {{ c.uf_cidade }}</ion-option>
+        </button>
+      </ion-list> 
 
         <ion-img src="./assets/imgs/Design.png"></ion-img>
   </ion-content>

@@ -17,8 +17,9 @@ import { ModalController } from 'ionic-angular';
 })
 export class Tab1Page {
 
-  cidades: City;
-  city: any;
+  cidades: any;
+  cidade: any[];
+  hiddenCidades: Boolean;
   selectOptions;
 
   constructor(public navCtrl: NavController,
@@ -26,25 +27,53 @@ export class Tab1Page {
      private Tab1Service: Tab1Service,
      public cityModal : ModalController) {      
       
-      this.initializeItems();
+      this.Tab1Service.getCity().subscribe((cidades) => {
+        this.cidades = cidades;
+        this.cidade = this.cidades;
+      });
+    
+     this.hiddenCidades = true;
       
-  }
+  } 
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Tab1Page');
-    this.selectOptions = {
-      title: 'Cidade',
-      subTitle: 'Selecione uma Cidade',
-    };
   }
 
   initializeItems() {
-    this.Tab1Service.getCity().subscribe((cidades: City) => {
-      this.city = cidades;
-    });
+      this.cidades = this.cidade;
   }
 
   something(){
     var modalcidade = this.cityModal.create ('CidadeModalPage'); modalcidade.present();
   }
+
+  getCity(ev: any) {
+    // Reset items back to all of the items
+    this.initializeItems();
+    let val
+    // set val to the value of the searchbar
+    try{
+      val = ev.target.value;
+               
+      if(val.length > 2){
+        this.hiddenCidades = false;
+      }else{
+        this.hiddenCidades = true;
+      }
+    }catch{
+      val = "a";
+      this.hiddenCidades = true;
+    }
+     
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.cidades = this.cidades.filter((cidade) => {        
+        return (
+          cidade.nome_cidade.toLowerCase().indexOf(val.toLowerCase()) > -1 
+      );
+      })
+    }
+  }
+
 }
