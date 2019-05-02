@@ -1,32 +1,35 @@
 <style>
     @font-face {
-      font-family: Souliyo-Regular;
+      font-family: Souliyo-Regular; overflow: hidden;
       src: url(../www/assets/fonts/Souliyo-Regular.ttf)
     }
   
     ion-content{
-      font-family: 'Souliyo Regular', sans-serif;
+      font-family: 'Souliyo Regular', sans-serif; height:88%; width:95%; border-radius: 2px; top: 7%; left: 3%; 
     }
     h1{
-      color: black; text-align: center; font-size: 18px; font-weight: 100; font-style: normal; line-height: normal; padding-top: 20px;
+      color: black; text-align: center; font-size: 18px; font-weight: 100; font-style: normal; line-height: normal; padding-top: 10px;
     }
     ion-label{
       font-size: 12px; font-weight: 100; font-style: normal; line-height: normal; color: #C4C4C4;
     }
     ion-avatar{
-      width: 30px; height: 30px; align-content: center;
+      width: 25px; height: 25px; align-content: center;
     }
     ion-item{
-      background-color: white; color: black; align-content: center;
+      background-color: white; color: black; align-content: center; width:210px;
     }
     input{
-      color: black; font-size: 16px; font-weight: 100;
+      color: black; font-size: 16px; font-weight: 100; width:210px;
+    }
+    #div-config{
+      background-color: #F6F5F5;  margin: 5px; padding: 2px; 
     }
     ion-datetime{
-      color: black; font-size: 12px;
+      color: black; font-size: 12px; width:135px;
     }
     button{
-      width: 50px; height: 20px; font-size: 12px; align-items: center; margin-left: 15px; margin-top: 25px; align-content: flex-end;
+      width: 50px; height: 20px; font-size: 12px; align-items: center; margin-left: 15px; margin-top: 15px; align-content: flex-end;
     }
     a{
       color: gray;
@@ -49,15 +52,18 @@
         <ion-icon name="ios-contact"></ion-icon>
       </ion-col>
     </ion-row>
+    
       <ion-list inset>
+          <div id="div-config">
           <ion-label>Nome</ion-label>
         <ion-item>
             <ion-input type="text" name="Nome" value="{{ nome }}"></ion-input>
         </ion-item>
         <ion-label>Data de Nascimento</ion-label>
-        <ion-item>
+        <ion-item style="width:135px">
             <ion-datetime display-format="MMM DD, YYYY HH:mm"></ion-datetime>
         </ion-item>
+      </div>
         <button ion-button block (click)="save()" style="background:#4FBA6E; float: right;">Salvar</button>
       </ion-list>
   </body>
