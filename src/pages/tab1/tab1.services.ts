@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Injectable()
-export class profileService{
+export class Tab1Service{
     private API_URL = 'https://vacimaps-app.herokuapp.com'
     token;
 
@@ -16,29 +16,16 @@ export class profileService{
         console.log('ionViewDidLoad DashboardPage');
       }
     
-      getUser(){
-        return this.http.get(`${this.API_URL}/usuario`, {headers: new HttpHeaders({
+      getCity(){
+        return this.http.get(`${this.API_URL}/cidades`, {headers: new HttpHeaders({
             'token': this.token.token
         })});
     }
     
 }
 
-export interface User{
-    user_id?: string;
-    nome?: string;
-    email?: string;
-    dt_nascimento?: Date;
-    vacinas?: Vacina;
-    
-
-}
-
-export interface Vacina{
-    id_usuario_vacina?: string;
-    nome_vacina?: string;
-    cd_reforco?: string;
-    data_vacina?: string;
-    data_reforco?: string;
-    ds_local_vacina?: string;
+export interface City{
+    id_cidade?: string;
+    nome_cidade?: string;
+    uf_cidade?: string;
 }

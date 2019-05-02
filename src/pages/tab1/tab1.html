@@ -36,10 +36,10 @@
   }
   ion-searchbar{
     background-color: white;
-    margin-left: 15px;
+    margin-left: 6px;
     margin-top: 25%;
-    width: 98%;
-    font-size: 9px;
+    width: 100%;
+    font-size: 3px;
   }
   ion-img{
     width: 100%;
@@ -59,8 +59,13 @@
             </ion-avatar>
           </button>
         </ion-header>
-
-        <ion-searchbar placeholder="Digite um nome de cidade"></ion-searchbar>
+        <br>
+      <ion-searchbar placeholder="Digite o nome da cidade" (ionInput)="getCity($event)"></ion-searchbar>
+      <ion-list [hidden]= hiddenCidades>
+        <button (click)="something()" ion-item *ngFor="let c of cidades">
+          <ion-option  [value] = "c.nome_cidade">{{ c.nome_cidade }} - {{ c.uf_cidade }}</ion-option>
+        </button>
+      </ion-list> 
 
         <ion-img src="./assets/imgs/Design.png"></ion-img>
   </ion-content>
