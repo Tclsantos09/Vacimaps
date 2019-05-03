@@ -20,13 +20,16 @@
       background-color: white; color: black; align-content: center; width:210px;
     }
     input{
-      color: black; font-size: 16px; font-weight: 100; width:210px;
+      color: black; font-size: 16px; font-weight: 100; width:100%; align-content:center;
     }
     #div-config{
       background-color: #F6F5F5;  margin: 5px; padding: 2px; 
     }
     ion-datetime{
-      color: black; font-size: 12px; width:135px;
+      color: black; font-size: 12px; top: 5px;
+    }
+    ion-datetime--padding-start{
+      padding: 10px;
     }
     button{
       width: 50px; height: 20px; font-size: 12px; align-items: center; margin-left: 15px; margin-top: 15px; align-content: flex-end;
@@ -44,7 +47,7 @@
 <ion-content>
   
   <body>
-    <a (click)="closeModal()"> <ion-icon name="close" style="font-size: 40px; float: right; padding-top: 16px;"></ion-icon></a>
+    <a (click)="closeModal()"> <ion-icon name="close" style="font-size: 30px; float: right; padding-top: 10px;"></ion-icon></a>
 
     <h1>Meu Perfil</h1>
     <ion-row>
@@ -57,10 +60,10 @@
           <div id="div-config">
           <ion-label>Nome</ion-label>
         <ion-item>
-            <ion-input type="text" name="Nome" value="{{ nome }}"></ion-input>
+            <ion-input style="width:100%;" type="text" name="Nome" value="{{ nome }}"></ion-input>
         </ion-item>
         <ion-label>Data de Nascimento</ion-label>
-        <ion-item style="width:135px">
+        <ion-item style="width:60%;">
             <ion-datetime display-format="MMM DD, YYYY HH:mm"></ion-datetime>
         </ion-item>
       </div>

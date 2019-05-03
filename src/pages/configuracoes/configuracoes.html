@@ -4,31 +4,30 @@
       src: url(../www/assets/fonts/Souliyo-Regular.ttf)
   }
   ion-content{
-    font-family: 'Souliyo Regular', sans-serif; height:70%; width:95%; border-radius: 5px; top: 7%; left: 3%; 
+    font-family: 'Souliyo Regular', sans-serif; height:85%; width:95%; border-radius: 5px; top: 10%; left: 3%; 
   }
   h1{
-      color: black; text-align: center; font-size: 18px; font-weight: 100; font-style: normal; line-height: normal; padding-top: 10px;
-    }
+    color: black; text-align: center; font-size: 18px; font-weight: 100; font-style: normal; line-height: normal; padding-top: 0px; padding-bottom: 15px;
+  }
   .div-config{
     background-color: #F6F5F5;  
   }
   .input-email{
-    text-align: center; font-size: 12px; color: #C4C4C4;
+    text-align: center; font-size: 12px; color: #C4C4C4; top: -23px;
   }
- 
   ion-input{
-    left: 4px; height: 30px; 
+    left: 4px; height: 30px; top: -24px; 
   }
   input::placeholder{
     text-align: center; color: #B3B3B3; font-size: 12px; background-color: #FFFFFF; height: 30px;
   }
   p{
-    font-size: 12px; color: #C4C4C4; 
+    font-size: 12px; color: #C4C4C4; margin-top: -11px;
   }
   .btn-salvar{
-    width: 50px; 
+    width: 55px; 
     height: 20px; 
-    font-size: 12px; 
+    font-size: 10px; 
     align-items: center; 
     margin-left: 15px; 
     margin-top: 60px; 
@@ -36,9 +35,6 @@
     background-color: #4FBA6E;
     float: right;
     color: #FFFFFF;
-  }
-  .btn-back{
-    color: #12614C; font-size: 10px;
   }
   ion-icon {
     font-size: 160px;
@@ -51,7 +47,7 @@
 
 <ion-content>
   <body>
-    <a (click)="closeModal()"> <ion-icon name="close" style="font-size: 40px; float: right; padding-top: 16px;"></ion-icon></a>
+    <a (click)="closeModal()"> <ion-icon name="close" style=" cursor: pointer; font-size: 30px; float: right; padding-top: 10px;"></ion-icon></a>
 
     <h1>Configurações</h1>
     
@@ -65,7 +61,6 @@
         <ion-input type="password" placeholder="Digite a nova senha"></ion-input>
 
         <ion-input type="password" placeholder="Confirme a nova senha"></ion-input>
-      <br>
     </div>
 
     <button ion-button class="btn-salvar" (click)="save()" color="light">Salvar</button>
