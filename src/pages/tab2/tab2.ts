@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { profileService, User, Vacina } from '../modal/profile.services';
+import { profileService, User } from '../modal/profile.services';
+import { ModalController } from 'ionic-angular';
 
 
 /**
@@ -17,13 +18,29 @@ import { profileService, User, Vacina } from '../modal/profile.services';
   providers: [profileService],
 })
 export class Tab2Page {
-  vacinas: Vacina[];
+  usuario: User;
+  vacinas;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+    public vacinaModal : ModalController,
+    private profileService: profileService,
+     public navParams: NavParams) {
+       
+     this.profileService.getUser().subscribe((usuario: User) => {
+      this.usuario = usuario;
+      this.vacinas = usuario.vacinas;
+
+     });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Tab2Page');
   }
+
+  ModalVacina(){
+    var modalvacina = this.vacinaModal.create ('VacinaModalPage'); modalvacina.present();
+  }
+
+  
 
 }

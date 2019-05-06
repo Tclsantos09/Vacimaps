@@ -192,108 +192,25 @@
           </ion-row>
 
           <ion-row justify-content-end>
-            <button class="btn-vacinas" ion-button>
+            <button class="btn-vacinas" (click)="ModalVacina()" ion-button>
               <ion-icon name="add-circle"></ion-icon>
               Nova vacina 
             </button>
           </ion-row>
 
           <ion-row justify-content-center>
-            <ion-list>
-
-              <ion-card class="card-nv-vacina">
-                <ion-col>
-                  <ion-row>
-                    <ion-input type="search" class="placeholder-input search" placeholder="Digite o nome da vacina"></ion-input>
-                    <!--<ion-searchbar class="search-nv" placeholder="Digite o nome da vacina"></ion-searchbar>-->
-                  </ion-row>
-                  <ion-row>
-                    <ion-col>
-                      <ion-row>
-                        <ion-label>Data: </ion-label>
-                        <!--<ion-datetime display-format="MM/DD/YYYY" placeholder="dd/mm/aaaa"></ion-datetime>-->
-                        <ion-input class="placeholder-input input-margin" placeholder="dd/mm/aa"></ion-input>
-                      </ion-row>
-                    </ion-col>
-                    <ion-col>
-                      <ion-row>
-                        <ion-label>Lote: </ion-label>
-                        <ion-input class="placeholder-input input-margin"></ion-input>
-                      </ion-row>
-                    </ion-col>
-                  </ion-row>
-                  
-                  <ion-row>
-                    <ion-col>
-                      <button class="btn-nv-vacinas" ion-button>
-                        <ion-icon name="close-circle-outline"></ion-icon>
-                        Cancelar
-                      </button>
-                    </ion-col>
-                    <ion-col>
-                      <button class="btn-nv-vacinas" ion-button>
-                        <ion-icon name="checkmark-circle-outline"></ion-icon>
-                        Salvar 
-                      </button>
-                    </ion-col>
-                  </ion-row>
-                </ion-col>
-              </ion-card>
+            <ion-list *ngFor="let vacina of vacinas" >
 
                 <ion-card>
                   <ion-card-header>
-                    <p class="p-card">MALARIA{{ Vacina }}</p>
+                    <p class="p-card">{{ vacina.vacina }}</p>
                   </ion-card-header>
                     
                   <ion-card-content>
-                    <ion-label> Data: {{ data }} </ion-label>
-                    <ion-label> Lote: {{ lote }} </ion-label>
+                    <ion-label> Data: {{ vacina.data_vacina }} </ion-label>
+                    <ion-label> Lote: {{ vacina.local }} </ion-label>
                   </ion-card-content>
 
-                  <ion-row text-right>
-                    <ion-col>
-                      <button class="btn" ion-button icon-left clear small>
-                        <ion-icon class="icon-btn" name="md-create"></ion-icon>
-                      </button>
-                      <button class="btn-2" ion-button icon-left clear small>
-                        <ion-icon class="icon-btn" name="md-trash"></ion-icon>
-                      </button>
-                    </ion-col>
-                  </ion-row>
-                </ion-card>
-
-                <ion-card>
-                  <ion-card-header>
-                    <p class="p-card">FEBRE AMARELA{{ Vacina }}</p>
-                  </ion-card-header>
-                
-                  <ion-card-content>
-                    <ion-label> Data: {{ data }} </ion-label>
-                    <ion-label> Lote: {{ lote }} </ion-label>
-                  </ion-card-content>
-          
-                  <ion-row text-right>
-                    <ion-col>
-                      <button class="btn" ion-button icon-left clear small>
-                        <ion-icon class="icon-btn" name="md-create"></ion-icon>
-                      </button>
-                      <button class="btn-2" ion-button icon-left clear small>
-                        <ion-icon class="icon-btn" name="md-trash"></ion-icon>
-                      </button>
-                    </ion-col>
-                  </ion-row>
-                </ion-card>
-
-                <ion-card>
-                  <ion-card-header>
-                    <p class="p-card">INFLUENZA A{{ Vacina }}</p>
-                  </ion-card-header>
-                  
-                  <ion-card-content>
-                    <ion-label> Data: {{ data }} </ion-label>
-                    <ion-label> Lote: {{ lote }} </ion-label>
-                  </ion-card-content>
-            
                   <ion-row text-right>
                     <ion-col>
                       <button class="btn" ion-button icon-left clear small>

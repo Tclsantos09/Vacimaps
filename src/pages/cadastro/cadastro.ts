@@ -17,6 +17,7 @@ export class CadastroPage {
   senha: string;
   email: string;
   datajson;
+
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public appCtrl: App, 
@@ -27,6 +28,8 @@ export class CadastroPage {
         validEmail: ['', Validators.required],
         vaidSenha: ['', Validators.required],
       });
+
+
 
   }
 
