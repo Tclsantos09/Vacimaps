@@ -41,6 +41,4 @@ export class Tab2Page {
     var modalvacina = this.vacinaModal.create ('VacinaModalPage'); modalvacina.present();
   }
 
-  
-
 }

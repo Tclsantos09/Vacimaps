@@ -53,17 +53,17 @@
     
     <div class="div-config">
       <p>E-mail</p>
-      <ion-input class="input-email" type="email" placeholder="joao_silva@email.com.br" disabled></ion-input>
+      <ion-input class="input-email" type="email" placeholder="{{ email }}" disabled></ion-input>
 
       <p>Alterar senha</p>
-        <ion-input  type="password" placeholder="Digite a senha atual"></ion-input>
+        <ion-input  type="password" [(ngModel)]="senhaAtual" placeholder="Digite a senha atual" [formControl]="formulario.controls['validarSenha']" ></ion-input>
     
-        <ion-input type="password" placeholder="Digite a nova senha"></ion-input>
+        <ion-input type="password" [(ngModel)]="novasenha"placeholder="Digite a nova senha" [formControl]="formulario.controls['validarNovaSenha']" ></ion-input>
 
-        <ion-input type="password" placeholder="Confirme a nova senha"></ion-input>
+        <ion-input type="password" [(ngModel)]="confSenha" placeholder="Confirme a nova senha" [formControl]="formulario.controls['validarConfSenha']" ></ion-input>
     </div>
 
-    <button ion-button class="btn-salvar" (click)="save()" color="light">Salvar</button>
+    <button ion-button class="btn-salvar" (click)="doPut()" [disabled]="!formulario.valid" color="light">Salvar</button>
   </body>
   
 </ion-content>
