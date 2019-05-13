@@ -3,7 +3,9 @@ import { IonicPage, NavController, NavParams, ToastController, App } from 'ionic
 import { ViewController } from 'ionic-angular';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { VacinaService } from './vacina.services';
+import { VacinaService, Vacina } from './vacina.services';
+import { profileService, User } from '../modal/profile.services';
+import { Tab2Page } from '../tab2/tab2';
 
 /**
  * Generated class for the VacinaModalPage page.
@@ -24,11 +26,15 @@ export class VacinaModalPage {
   vacina: string;
   data: string;
   lote: string;
+  id;
   datajson;
+
   private formulario: FormGroup;
   token;
+
   vacinas: any;
   nome_vac: any[];
+
   hiddenCidades: Boolean;
 
   constructor(public navCtrl: NavController,    
@@ -46,11 +52,24 @@ export class VacinaModalPage {
       });
       this.token = JSON.parse(localStorage.getItem('token'));
 
-      this.VacinaService.getVacinas().subscribe((vacinas) => {
+      if (this.navParams.data.nome_vacina  && 
+        this.navParams.data.data_vacina && 
+        this.navParams.data.ds_local_vacina  &&
+        this.navParams.data.id_usuario_vacina
+        ) {
+        this.vacina = this.navParams.data.nome_vacina;
+        this.data = this.navParams.data.data_vacina;
+        this.lote = this.navParams.data.ds_local_vacina;
+        this.id = this.navParams.data.id_usuario_vacina; 
+        
+      } else {
+        
+        this.VacinaService.getVacinas().subscribe((vacinas) => {
         this.vacinas = vacinas;
         this.nome_vac = this.vacinas;
-        console.log(this.nome_vac)
       });
+      }
+      
     
      this.hiddenCidades = true;
 
@@ -60,9 +79,10 @@ export class VacinaModalPage {
     console.log('ionViewDidLoad VacinaModalPage');
   }
 
+  
   public closeModal(){
     this.viewCtrl.dismiss();
-  }
+  }  
 
   initializeItems() {
     this.vacinas = this.nome_vac;
@@ -84,8 +104,11 @@ export class VacinaModalPage {
           this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present()    
        
         }else {
-          this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present()    
+          this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present()     
           this.closeModal()
+          this.navCtrl.setRoot(Tab2Page);
+
+
         }
       })         
   }
@@ -118,4 +141,10 @@ export class VacinaModalPage {
   }
 }
 
+export interface VacinaUSer{
+  id_vacina?: string;
+  nome_vacina?: string;
+  data_vacina?: string;
+  ds_local_vacina?: string;
+}
   
