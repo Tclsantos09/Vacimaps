@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 295:
+/***/ 294:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VacinaModalPageModule", function() { return VacinaModalPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vacina_modal__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vacina_modal__ = __webpack_require__(298);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,16 +38,17 @@ var VacinaModalPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 299:
+/***/ 298:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VacinaModalPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__vacina_services__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__vacina_services__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tab2_tab2__ = __webpack_require__(212);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -57,6 +58,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -87,11 +89,21 @@ var VacinaModalPage = /** @class */ (function () {
             vaidarLote: ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required],
         });
         this.token = JSON.parse(localStorage.getItem('token'));
-        this.VacinaService.getVacinas().subscribe(function (vacinas) {
-            _this.vacinas = vacinas;
-            _this.nome_vac = _this.vacinas;
-            console.log(_this.nome_vac);
-        });
+        if (this.navParams.data.nome_vacina &&
+            this.navParams.data.data_vacina &&
+            this.navParams.data.ds_local_vacina &&
+            this.navParams.data.id_usuario_vacina) {
+            this.vacina = this.navParams.data.nome_vacina;
+            this.data = this.navParams.data.data_vacina;
+            this.lote = this.navParams.data.ds_local_vacina;
+            this.id = this.navParams.data.id_usuario_vacina;
+        }
+        else {
+            this.VacinaService.getVacinas().subscribe(function (vacinas) {
+                _this.vacinas = vacinas;
+                _this.nome_vac = _this.vacinas;
+            });
+        }
         this.hiddenCidades = true;
     }
     VacinaModalPage.prototype.ionViewDidLoad = function () {
@@ -122,6 +134,7 @@ var VacinaModalPage = /** @class */ (function () {
             else {
                 _this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present();
                 _this.closeModal();
+                _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_5__tab2_tab2__["a" /* Tab2Page */]);
             }
         });
     };
@@ -171,14 +184,14 @@ var VacinaModalPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 300:
+/***/ 299:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VacinaService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(19);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
