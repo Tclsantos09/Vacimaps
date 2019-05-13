@@ -477,7 +477,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Tab1PageModule", function() { return Tab1PageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tab1__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tab1__ = __webpack_require__(263);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -515,7 +515,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Tab2PageModule", function() { return Tab2PageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tab2__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tab2__ = __webpack_require__(265);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -672,110 +672,9 @@ var profileService = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Tab2Page; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_profile_services__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(19);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the Tab2Page page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var Tab2Page = /** @class */ (function () {
-    function Tab2Page(navCtrl, vacinaModal, toast, profileService, http, navParams) {
-        this.navCtrl = navCtrl;
-        this.vacinaModal = vacinaModal;
-        this.toast = toast;
-        this.profileService = profileService;
-        this.http = http;
-        this.navParams = navParams;
-        this.API_URL = 'https://vacimaps-app.herokuapp.com';
-        this.getVacinas();
-        this.token = JSON.parse(localStorage.getItem('token'));
-    }
-    Tab2Page.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad Tab2Page');
-    };
-    Tab2Page.prototype.getVacinas = function () {
-        var _this = this;
-        this.profileService.getUser().subscribe(function (usuario) {
-            _this.usuario = usuario;
-            _this.vacinas = usuario.vacinas;
-        });
-    };
-    Tab2Page.prototype.ModalVacina = function () {
-        var modalvacina = this.vacinaModal.create('VacinaModalPage');
-        modalvacina.present();
-    };
-    Tab2Page.prototype.editContact = function (vacina) {
-        console.log(vacina);
-        var modalvacina = this.vacinaModal.create('VacinaModalPage', {
-            nome_vacina: vacina.vacina,
-            data_vacina: vacina.data_vacina,
-            ds_local_vacina: vacina.local,
-            id_usuario_vacina: vacina.id
-        });
-        modalvacina.present();
-    };
-    Tab2Page.prototype.doDELETE = function (vacina) {
-        var _this = this;
-        console.log("DELETE");
-        var url = this.API_URL + "/usuario/vacina/" + vacina.id;
-        console.log(url);
-        this.http
-            .delete(url, { headers: new __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["c" /* HttpHeaders */]({ 'token': this.token.token }) })
-            .subscribe(function (res) {
-            if (res['Mensagem'] == 'Vacina deletada com sucesso!') {
-                _this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present();
-                _this.navCtrl.setRoot(_this.navCtrl.getActive().component);
-            }
-            else {
-                _this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present();
-            }
-        });
-    };
-    Tab2Page = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-tab2',template:/*ion-inline-start:"/home/renan/Vídeos/Vacimaps/src/pages/tab2/tab2.html"*/'<style>\n  @font-face {\n    font-family: Souliyo-Regular;\n    src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n  }\n\n  ion-content{\n    font-family: \'Souliyo Regular\', sans-serif;\n    background-color: #F1EEEE;\n  }\n  h1{\n    color: #FFFFFF; font-size: 12px; font-weight: 100; font-style: normal; line-height: normal;\n  }\n  ion-label{\n    color:#808080;\n  }\n  ion-card{\n    background: rgba(18, 97, 76, 0.23);\n    width: 270px;\n    height: 90px;\n  }\n  .card-nv-vacina{\n    background: rgba(18, 97, 76, 0.23);\n    width: 270px;\n    height: 140px;\n  }\n  .btn{\n    position: absolute;\n    bottom: 68px;\n    right: 32px;\n    padding-right: 2px;\n    padding-left: 3px;\n  }\n  .btn-2{\n    position: absolute;\n    bottom: 68px;\n    right: 3px;\n    padding: 2px;\n    padding-left: 3px;\n  }\n  .icon-btn{\n    background-color: #EEE9E9;\n    padding: 5px;\n    border-radius: 3px;\n  }\n  .p-card{\n    font-size: 12px;\n    color: white;\n    font-weight: bold;\n    margin: 0 0 2px;\n  }\n  ion-searchbar{\n    background-color: white;\n    margin-left: 6px;\n    margin-top: 25%;\n    width: 100%;\n    font-size: 3px;\n    border-radius: 4px;\n    padding: 0 5px !important;\n  }\n  ion-header{\n    background-color: #3C7D6B;\n    width: 100%;\n    height: 50px;\n    display: flex;\n    flex-direction: row;\n  }\n  .menu{\n    background-color: #3C7D6B;\n    margin-left: 40%;\n    padding-top: 7px;\n  }\n  .p-header{\n    color: white;\n    margin-left: 15px;\n    padding-top: 7px;\n  }\n  .btn-vacinas{\n    height: 20px;\n    width: 90px;\n    font-size: 12px;\n    padding: 10px;\n    margin: 10px;\n    left: 20px;\n    background-color: white;\n    color: darkgrey;\n    float: right;\n  }\n  .btn-nv-vacinas{\n    height: 20px;\n    width: 90px;\n    font-size: 12px;\n    padding: 10px;\n    margin: 10px;\n    left: -11px;\n    background-color: white;\n    color: darkgrey;\n    float: right;\n  }\n  ion-icon{\n    color: #32BEA6;\n    padding-right: 5px;\n  }\n  .placeholder{\n    background-color: white;\n    width: 100%;\n  }\n  .placeholder-input{\n    background-color: white;\n    width: 10px;\n  }\n  ion-input--placeholder-color{\n    color: #FFFFFF;\n    left: -10px;\n  }\n  .search{\n    top: -10px;\n    padding: 0px;\n    margin-left: 5px;\n    margin-right: 5px;\n    border-radius: 4px;\n  }\n  .input-margin{\n    margin-left: -55px;\n    margin-right: 8px;\n    border-radius: 4px;\n  }\n  ion-input .text-input{\n    margin-left: 11px;\n    font-size: 12px;\n  }\n  .card-content-ios[_ngcontent-c3] {\n    padding: 0px 5px 0px;\n    font-size: 1.4rem;\n    line-height: 1.4;\n  }\n.card-header-ios {\n    font-size: 1.6rem;\n    font-weight: 500;\n    color: rgb(51, 51, 51);\n    padding: 7px;\n}\n\n  /* css que nao vou usar mais mas que eh bom manter pq vai que \n  .nv-vacina{\n    display: flex;\n    flex-direction: row;\n  }\n  ion-searchbar--placeholder-color{\n    color: #C4C4C4; \n  }\n  ion-searchbar--background{\n    color: white;\n  }\n  ion-list{\n    left: -60px;\n  }\n  ion-datetime--placeholder-color{\n    color: #FFFFFF;\n  }\n   ion-datetime--placeholder{\n    font-size: 10px;\n  }\n  ion-grid{\n    background: rgba(18, 97, 76, 0.23);\n    width: 265px;\n    height: 170px;\n  }\n  .btn-nv-vacina{\n    left: -26px;\n    top: -12px;\n  } \n  */\n\n</style>\n\n    <ion-content padding>\n      <ion-header>\n        <p class="p-header">VACIMAPS</p>\n        <button class="menu" ion-button menuToggle>\n          <ion-label class="p-card">Olá {{nome}}</ion-label>\n          <ion-avatar>\n            <ion-icon style="color: white;" name="ios-contact"></ion-icon>\n          </ion-avatar>\n        </button>\n      </ion-header>\n\n      <ion-grid>\n        <ion-col>\n          <ion-row justify-content-center>\n            <ion-searchbar class="search-vacina" placeholder="Digite o nome da vacina"></ion-searchbar>\n          </ion-row>\n\n          <ion-row justify-content-end>\n            <button class="btn-vacinas" (click)="ModalVacina()" ion-button>\n              <ion-icon name="add-circle"></ion-icon>\n              Nova vacina \n            </button>\n          </ion-row>\n\n          <ion-row justify-content-center>\n            <ion-list *ngFor="let vacina of vacinas" >\n\n                <ion-card>\n                  <ion-card-header>\n                    <p class="p-card">{{ vacina.vacina }}</p>\n                  </ion-card-header>\n                    \n                  <ion-card-content>\n                    <ion-label> Data: {{ vacina.data_vacina }} </ion-label>\n                    <ion-label> Lote: {{ vacina.local }} </ion-label>\n                  </ion-card-content>\n\n                  <ion-row text-right>\n                    <ion-col>\n                      <button class="btn" ion-button icon-left clear small (click)="editContact(vacina);">\n                        <ion-icon class="icon-btn" name="md-create"></ion-icon>\n                      </button>\n                      <button class="btn-2" ion-button icon-left clear small (click)="doDELETE(vacina);">\n                        <ion-icon class="icon-btn" name="md-trash"></ion-icon>\n                      </button>\n                    </ion-col>\n                  </ion-row>\n                </ion-card>\n\n            </ion-list>\n          </ion-row>\n        </ion-col>\n      </ion-grid>\n    </ion-content>\n\n'/*ion-inline-end:"/home/renan/Vídeos/Vacimaps/src/pages/tab2/tab2.html"*/,
-            providers: [__WEBPACK_IMPORTED_MODULE_2__modal_profile_services__["a" /* profileService */]],
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_2__modal_profile_services__["a" /* profileService */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-    ], Tab2Page);
-    return Tab2Page;
-}());
-
-//# sourceMappingURL=tab2.js.map
-
-/***/ }),
-
-/***/ 213:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(234);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(233);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -783,7 +682,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 234:
+/***/ 233:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -879,14 +778,14 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 264:
+/***/ 263:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Tab1Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tab1_services__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tab1_services__ = __webpack_require__(264);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -971,7 +870,7 @@ var Tab1Page = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 265:
+/***/ 264:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1015,6 +914,111 @@ var Tab1Service = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=tab1.services.js.map
+
+/***/ }),
+
+/***/ 265:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Tab2Page; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_profile_services__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(19);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the Tab2Page page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var Tab2Page = /** @class */ (function () {
+    function Tab2Page(navCtrl, vacinaModal, toast, profileService, http, navParams) {
+        this.navCtrl = navCtrl;
+        this.vacinaModal = vacinaModal;
+        this.toast = toast;
+        this.profileService = profileService;
+        this.http = http;
+        this.navParams = navParams;
+        this.API_URL = 'https://vacimaps-app.herokuapp.com';
+        this.getVacinas();
+        this.token = JSON.parse(localStorage.getItem('token'));
+    }
+    Tab2Page.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad Tab2Page');
+    };
+    Tab2Page.prototype.getVacinas = function () {
+        var _this = this;
+        this.profileService.getUser().subscribe(function (usuario) {
+            _this.usuario = usuario;
+            _this.vacinas = usuario.vacinas;
+        });
+    };
+    Tab2Page.prototype.ModalVacina = function () {
+        var _this = this;
+        var modalvacina = this.vacinaModal.create('VacinaModalPage');
+        modalvacina.onDidDismiss(function () {
+            _this.navCtrl.setRoot(_this.navCtrl.getActive().component);
+        });
+        modalvacina.present();
+    };
+    Tab2Page.prototype.editContact = function (vacina) {
+        console.log(vacina);
+        var modalvacina = this.vacinaModal.create('VacinaModalPage', {
+            nome_vacina: vacina.vacina,
+            data_vacina: vacina.data_vacina,
+            ds_local_vacina: vacina.local,
+            id_usuario_vacina: vacina.id
+        });
+        modalvacina.present();
+    };
+    Tab2Page.prototype.doDELETE = function (vacina) {
+        var _this = this;
+        console.log("DELETE");
+        var url = this.API_URL + "/usuario/vacina/" + vacina.id;
+        console.log(url);
+        this.http
+            .delete(url, { headers: new __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["c" /* HttpHeaders */]({ 'token': this.token.token }) })
+            .subscribe(function (res) {
+            if (res['Mensagem'] == 'Vacina deletada com sucesso!') {
+                _this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present();
+                _this.navCtrl.setRoot(_this.navCtrl.getActive().component);
+            }
+            else {
+                _this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present();
+            }
+        });
+    };
+    Tab2Page = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-tab2',template:/*ion-inline-start:"/home/renan/Vídeos/Vacimaps/src/pages/tab2/tab2.html"*/'<style>\n  @font-face {\n    font-family: Souliyo-Regular;\n    src: url(../www/assets/fonts/Souliyo-Regular.ttf)\n  }\n\n  ion-content{\n    font-family: \'Souliyo Regular\', sans-serif;\n    background-color: #F1EEEE;\n  }\n  h1{\n    color: #FFFFFF; font-size: 12px; font-weight: 100; font-style: normal; line-height: normal;\n  }\n  ion-label{\n    color:#808080;\n  }\n  ion-card{\n    background: rgba(18, 97, 76, 0.23);\n    width: 270px;\n    height: 90px;\n  }\n  .card-nv-vacina{\n    background: rgba(18, 97, 76, 0.23);\n    width: 270px;\n    height: 140px;\n  }\n  .btn{\n    position: absolute;\n    bottom: 68px;\n    right: 32px;\n    padding-right: 2px;\n    padding-left: 3px;\n  }\n  .btn-2{\n    position: absolute;\n    bottom: 68px;\n    right: 3px;\n    padding: 2px;\n    padding-left: 3px;\n  }\n  .icon-btn{\n    background-color: #EEE9E9;\n    padding: 5px;\n    border-radius: 3px;\n  }\n  .p-card{\n    font-size: 12px;\n    color: white;\n    font-weight: bold;\n    margin: 0 0 2px;\n  }\n  ion-searchbar{\n    background-color: white;\n    margin-left: 6px;\n    margin-top: 25%;\n    width: 100%;\n    font-size: 3px;\n    border-radius: 4px;\n    padding: 0 5px !important;\n  }\n  ion-header{\n    background-color: #3C7D6B;\n    width: 100%;\n    height: 50px;\n    display: flex;\n    flex-direction: row;\n  }\n  .menu{\n    background-color: #3C7D6B;\n    margin-left: 40%;\n    padding-top: 7px;\n  }\n  .p-header{\n    color: white;\n    margin-left: 15px;\n    padding-top: 7px;\n  }\n  .btn-vacinas{\n    height: 20px;\n    width: 90px;\n    font-size: 12px;\n    padding: 10px;\n    margin: 10px;\n    left: 20px;\n    background-color: white;\n    color: darkgrey;\n    float: right;\n  }\n  .btn-nv-vacinas{\n    height: 20px;\n    width: 90px;\n    font-size: 12px;\n    padding: 10px;\n    margin: 10px;\n    left: -11px;\n    background-color: white;\n    color: darkgrey;\n    float: right;\n  }\n  ion-icon{\n    color: #32BEA6;\n    padding-right: 5px;\n  }\n  .placeholder{\n    background-color: white;\n    width: 100%;\n  }\n  .placeholder-input{\n    background-color: white;\n    width: 10px;\n  }\n  ion-input--placeholder-color{\n    color: #FFFFFF;\n    left: -10px;\n  }\n  .search{\n    top: -10px;\n    padding: 0px;\n    margin-left: 5px;\n    margin-right: 5px;\n    border-radius: 4px;\n  }\n  .input-margin{\n    margin-left: -55px;\n    margin-right: 8px;\n    border-radius: 4px;\n  }\n  ion-input .text-input{\n    margin-left: 11px;\n    font-size: 12px;\n  }\n  .card-content-ios[_ngcontent-c3] {\n    padding: 0px 5px 0px;\n    font-size: 1.4rem;\n    line-height: 1.4;\n  }\n.card-header-ios {\n    font-size: 1.6rem;\n    font-weight: 500;\n    color: rgb(51, 51, 51);\n    padding: 7px;\n}\n\n  /* css que nao vou usar mais mas que eh bom manter pq vai que \n  .nv-vacina{\n    display: flex;\n    flex-direction: row;\n  }\n  ion-searchbar--placeholder-color{\n    color: #C4C4C4; \n  }\n  ion-searchbar--background{\n    color: white;\n  }\n  ion-list{\n    left: -60px;\n  }\n  ion-datetime--placeholder-color{\n    color: #FFFFFF;\n  }\n   ion-datetime--placeholder{\n    font-size: 10px;\n  }\n  ion-grid{\n    background: rgba(18, 97, 76, 0.23);\n    width: 265px;\n    height: 170px;\n  }\n  .btn-nv-vacina{\n    left: -26px;\n    top: -12px;\n  } \n  */\n\n</style>\n\n    <ion-content padding>\n      <ion-header>\n        <p class="p-header">VACIMAPS</p>\n        <button class="menu" ion-button menuToggle>\n          <ion-label class="p-card">Olá {{nome}}</ion-label>\n          <ion-avatar>\n            <ion-icon style="color: white;" name="ios-contact"></ion-icon>\n          </ion-avatar>\n        </button>\n      </ion-header>\n\n      <ion-grid>\n        <ion-col>\n          <ion-row justify-content-center>\n            <ion-searchbar class="search-vacina" placeholder="Digite o nome da vacina"></ion-searchbar>\n          </ion-row>\n\n          <ion-row justify-content-end>\n            <button class="btn-vacinas" (click)="ModalVacina()" ion-button>\n              <ion-icon name="add-circle"></ion-icon>\n              Nova vacina \n            </button>\n          </ion-row>\n\n          <ion-row justify-content-center>\n            <ion-list *ngFor="let vacina of vacinas" >\n\n                <ion-card>\n                  <ion-card-header>\n                    <p class="p-card">{{ vacina.vacina }}</p>\n                  </ion-card-header>\n                    \n                  <ion-card-content>\n                    <ion-label> Data: {{ vacina.data_vacina }} </ion-label>\n                    <ion-label> Lote: {{ vacina.local }} </ion-label>\n                  </ion-card-content>\n\n                  <ion-row text-right>\n                    <ion-col>\n                      <button class="btn" ion-button icon-left clear small (click)="editContact(vacina);">\n                        <ion-icon class="icon-btn" name="md-create"></ion-icon>\n                      </button>\n                      <button class="btn-2" ion-button icon-left clear small (click)="doDELETE(vacina);">\n                        <ion-icon class="icon-btn" name="md-trash"></ion-icon>\n                      </button>\n                    </ion-col>\n                  </ion-row>\n                </ion-card>\n\n            </ion-list>\n          </ion-row>\n        </ion-col>\n      </ion-grid>\n    </ion-content>\n\n'/*ion-inline-end:"/home/renan/Vídeos/Vacimaps/src/pages/tab2/tab2.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_2__modal_profile_services__["a" /* profileService */]],
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_2__modal_profile_services__["a" /* profileService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+    ], Tab2Page);
+    return Tab2Page;
+}());
+
+//# sourceMappingURL=tab2.js.map
 
 /***/ }),
 
@@ -1370,5 +1374,5 @@ var RedefinirSenhaPage = /** @class */ (function () {
 
 /***/ })
 
-},[213]);
+},[212]);
 //# sourceMappingURL=main.js.map

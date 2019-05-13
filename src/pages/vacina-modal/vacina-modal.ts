@@ -106,7 +106,6 @@ export class VacinaModalPage {
         }else {
           this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present()     
           this.closeModal()
-          this.navCtrl.setRoot(Tab2Page);
 
 
         }

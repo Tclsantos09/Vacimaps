@@ -53,7 +53,11 @@ export class Tab2Page {
   }
 
   ModalVacina(){
-    var modalvacina = this.vacinaModal.create ('VacinaModalPage'); modalvacina.present();
+    var modalvacina = this.vacinaModal.create ('VacinaModalPage');
+    modalvacina.onDidDismiss(() => {
+      this.navCtrl.setRoot(this.navCtrl.getActive().component);
+    });
+     modalvacina.present();
   }
 
   editContact(vacina) {
