@@ -66,8 +66,12 @@ export class Tab2Page {
       nome_vacina: vacina.vacina,
       data_vacina: vacina.data_vacina,
       ds_local_vacina: vacina.local,
-      id_usuario_vacina: vacina.id
-    }); modalvacina.present();
+      id_usuario_vacina: vacina.id,
+      id_vacina: vacina.id_vacina
+    }); modalvacina.onDidDismiss(() => {
+      this.navCtrl.setRoot(this.navCtrl.getActive().component);
+    });
+    modalvacina.present();
   }
 
   doDELETE(vacina) {

@@ -182,18 +182,18 @@
             <ion-col>
               <ion-row>
                   <ion-item>
-                      <label>Vacinas</label>
-                      <ion-select style="max-width: 100%" *ngFor="let c of vacinas" (ionInput)="getVacinas($event)" [formControl]="formulario.controls['validarVacina']" [(ngModel)]="vacina">
-                          <ion-option  [value] = "c.id_vacina">{{ c.nome_vacina }}</ion-option>
+                      <ion-label>Vacinas</ion-label>
+                      <ion-select style="max-width: 100%"  [formControl]="formulario.controls['validarVacina']" [(ngModel)]="vacina" disabled="disabled">
+                          <ion-option *ngFor="let c of vacinas" [value] = "c.id_vacina" >{{ c.nome_vacina }}</ion-option>
                       </ion-select>
                     </ion-item>
               </ion-row>
               <ion-row>
                 <ion-col>
                   <ion-row>
-                    <ion-label>Data: </ion-label>
+                    <ion-label>Data</ion-label>
                     <!--<ion-datetime display-format="MM/DD/YYYY" placeholder="dd/mm/aaaa"></ion-datetime>-->
-                    <ion-datetime class="placeholder-input input-margin" [formControl]="formulario.controls['validarData']" [(ngModel)]="data" display-format="MMM DD, YYYY HH:mm"></ion-datetime>
+                    <ion-datetime   [formControl]="formulario.controls['validarData']" display-format="DD/MM/YYYY" [(ngModel)]="data"></ion-datetime>
                   </ion-row>
                 </ion-col>
                 <ion-col>

@@ -57,20 +57,18 @@ export class VacinaModalPage {
         this.navParams.data.ds_local_vacina  &&
         this.navParams.data.id_usuario_vacina
         ) {
-        this.vacina = this.navParams.data.nome_vacina;
-        this.data = this.navParams.data.data_vacina;
+        this.nome_vac = this.navParams.data.nome_vacina;
+        this.data = new Date(this.navParams.data.data_vacina).toISOString();
         this.lote = this.navParams.data.ds_local_vacina;
         this.id = this.navParams.data.id_usuario_vacina; 
+        this.vacina = this.navParams.data.id_vacina;;
+      }   
         
-      } else {
-        
-        this.VacinaService.getVacinas().subscribe((vacinas) => {
+      this.VacinaService.getVacinas().subscribe((vacinas) => {
         this.vacinas = vacinas;
         this.nome_vac = this.vacinas;
       });
-      }
       
-    
      this.hiddenCidades = true;
 
   }
@@ -89,6 +87,30 @@ export class VacinaModalPage {
 }
 
   doPOST() {
+    if(this.id){
+
+      this.datajson ={ 
+        id_vacina: this.vacina, 
+        data_vacina: this.data, 
+        ds_local_vacina: this.lote,
+      }
+      console.log(this.datajson);
+      let url = `${this.API_URL}/usuario/vacina/${this.id}`;
+      this.http
+      .put(url, this.datajson, {headers: new HttpHeaders({'token': this.token.token})})
+      .subscribe(res => {
+        if(res['Mensagem'] == 'Vacina alterada com sucesso!'){          
+          this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present()    
+          this.closeModal()
+        }else {
+          this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present()     
+          
+
+
+        }
+      })   
+    }else{
+
     console.log("POST");
     let url = `${this.API_URL}/usuario/vacina`;
     this.datajson ={ 
@@ -109,7 +131,8 @@ export class VacinaModalPage {
 
 
         }
-      })         
+      })   
+    }      
   }
   getVacinas(ev: any) {
     // Reset items back to all of the items
