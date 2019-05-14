@@ -44,8 +44,12 @@ export class Tab1Page {
       this.cidades = this.cidade;
   }
 
-  something(){
-    var modalcidade = this.cityModal.create ('CidadeModalPage'); modalcidade.present();
+  something(cidade){
+    var modalcidade = this.cityModal.create ('CidadeModalPage',{ 
+      nome_cidade: cidade.nome_cidade,
+      uf_cidade: cidade.uf_cidade,
+      
+    }); modalcidade.present();
   }
 
   getCity(ev: any) {

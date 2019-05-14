@@ -15,10 +15,18 @@ import { ViewController } from 'ionic-angular';
   templateUrl: 'cidade-modal.html',
 })
 export class CidadeModalPage {
+  nome_cidade;
+  uf_cidade;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public viewCtrl : ViewController) {
+      if (this.navParams.data.nome_cidade  && 
+          this.navParams.data.uf_cidade
+        ){
+        this.nome_cidade = this.navParams.data.nome_cidade;
+        this.uf_cidade = this.navParams.data.uf_cidade;
+      }
   }
 
   ionViewDidLoad() {

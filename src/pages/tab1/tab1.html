@@ -63,7 +63,7 @@
         <br>
       <ion-searchbar placeholder="Digite o nome da cidade" (ionInput)="getCity($event)"></ion-searchbar>
       <ion-list [hidden]= hiddenCidades>
-        <button (click)="something()" ion-item *ngFor="let c of cidades">
+        <button (click)="something(c)" ion-item *ngFor="let c of cidades">
           <ion-option  [value] = "c.nome_cidade">{{ c.nome_cidade }} - {{ c.uf_cidade }}</ion-option>
         </button>
       </ion-list> 
