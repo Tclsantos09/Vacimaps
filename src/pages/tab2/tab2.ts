@@ -22,6 +22,8 @@ export class Tab2Page {
   usuario: User;
   vacinas;
   token;
+  hiddenVacinas: Boolean;
+  user_vacinas;
 
   private API_URL = 'https://vacimaps-app.herokuapp.com'
 
@@ -38,6 +40,8 @@ export class Tab2Page {
 
      this.token = JSON.parse(localStorage.getItem('token'));
 
+     this.hiddenVacinas = true;
+
   }
 
   ionViewDidLoad() {
@@ -48,9 +52,14 @@ export class Tab2Page {
     this.profileService.getUser().subscribe((usuario: User) => {
       this.usuario = usuario;
       this.vacinas = usuario.vacinas;
+      this.user_vacinas = this.vacinas;
 
      });
   }
+  
+  initializeItems() {
+    this.vacinas = this.user_vacinas;
+}
 
   ModalVacina(){
     var modalvacina = this.vacinaModal.create ('VacinaModalPage');
@@ -89,6 +98,34 @@ export class Tab2Page {
           
         }
       })          
+  }
+
+  getVacina(ev: any) {
+    // Reset items back to all of the items
+    this.initializeItems();
+    let val
+
+    try{
+      val = ev.target.value;
+               
+      if(val.length > 2){
+        this.hiddenVacinas = false;
+      }else{
+        this.hiddenVacinas = true;
+      }
+    }catch{
+      val = "a";
+      this.hiddenVacinas = true;
+    }
+     
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.vacinas = this.vacinas.filter((vacina) => {        
+        return (
+          vacina.vacina.toLowerCase().indexOf(val.toLowerCase()) > -1 
+      );
+      })
+    }
   }
 
 }

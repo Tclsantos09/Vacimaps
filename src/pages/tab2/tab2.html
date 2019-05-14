@@ -188,7 +188,12 @@
       <ion-grid>
         <ion-col>
           <ion-row justify-content-center>
-            <ion-searchbar class="search-vacina" placeholder="Digite o nome da vacina"></ion-searchbar>
+            <ion-searchbar class="search-vacina" placeholder="Digite o nome da vacina" (ionInput)="getVacina($event)"></ion-searchbar>
+            <ion-list [hidden]= hiddenVacinas>
+              <button (click)="editContact(vacina);" ion-item *ngFor="let vacina of vacinas">
+                <ion-option  [value] = "vacina.vacina">{{ vacina.vacina }}</ion-option>
+              </button>
+            </ion-list>           
           </ion-row>
 
           <ion-row justify-content-end>
