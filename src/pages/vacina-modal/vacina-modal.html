@@ -177,8 +177,6 @@
 <ion-content padding>
     <ion-row justify-content-center>
         <ion-list>
-
-          <ion-card class="card-nv-vacina">
             <ion-col>
               <ion-row>
                   <ion-item>
@@ -196,6 +194,8 @@
                     <ion-datetime   [formControl]="formulario.controls['validarData']" display-format="DD/MM/YYYY" [(ngModel)]="data"></ion-datetime>
                   </ion-row>
                 </ion-col>
+              </ion-row>
+              <ion-row>
                 <ion-col>
                   <ion-row>
                     <ion-label>Lote: </ion-label>
@@ -203,7 +203,6 @@
                   </ion-row>
                 </ion-col>
               </ion-row>
-              
               <ion-row>
                 <ion-col>
                   <button class="btn-nv-vacinas" (click)="closeModal()" ion-button>
@@ -220,7 +219,6 @@
               </ion-row>
               <br><br>
             </ion-col>
-          </ion-card>
         </ion-list>
       </ion-row>
 
