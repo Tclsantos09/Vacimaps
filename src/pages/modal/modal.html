@@ -60,11 +60,11 @@
           <div id="div-config">
           <ion-label>Nome</ion-label>
         <ion-item>
-            <ion-input style="width:100%;" type="text" name="Nome" value="{{ nome }}"></ion-input>
+            <ion-input style="width:100%;" type="text" name="Nome"  [(ngModel)]="nome"></ion-input>
         </ion-item>
         <ion-label>Data de Nascimento</ion-label>
         <ion-item style="width:60%;">
-            <ion-datetime display-format="MMM DD, YYYY HH:mm"></ion-datetime>
+            <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="dt_nascimento"></ion-datetime>
         </ion-item>
       </div>
         <button ion-button block (click)="save()" style="background:#4FBA6E; float: right;">Salvar</button>
