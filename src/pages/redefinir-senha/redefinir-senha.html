@@ -6,31 +6,30 @@
 
   ion-content{
     font-family: 'Souliyo-Unicode', sans-serif;
+    background: url("assets/imgs/globo.png") no-repeat;
+    background-position: center;
+    background-size: 365px;
   }
   h1{
-    color: white; text-align: center; font-size: 35px; font-weight: 100; font-style: normal; line-height: normal;
-    padding: 110px 25px 35px 25px;
-    letter-spacing: 0.9px;
+    color: white; padding: 110px 25px 65px 25px; text-align: center; font-size: 40px; font-weight: 100; font-style: normal; line-height: normal;
+      letter-spacing: 0.5px;
   }
   ion-label{
-    color: white; padding-bottom: 5px;
+    color: white; padding-bottom: 5px; font-family: roboto; letter-spacing: 0.5px; margin-left: 30px; 
   }
   ion-item{
-    background-color: #12614C; color: white; align-content: center;
+    background-color: rgba(255, 255, 255, 0); color: white; align-content: center; width: 270px; margin-left: 30px; margin-bottom: 22px;
   }
   input::placeholder{
-    text-align: center; color: white; font-size: 12px;
+    text-align: center; color: white; font-size: 12px; font-size: 12px; width: 270px;
   }
   button{
-    width: 210px; height: 30px; color: #12614C; margin-left: 7px; margin-top: 15px;
-  }
-  .btn-back{
-    color: white; font-size: 10px; padding-right: 185px; padding-top: 10px;
+    width: 270px; height: 38px; color: #12614C; margin-left: 30px; margin-top: 10px; border-radius: 5px; font-family: roboto; font-size: 16px;
   }
 
 </style>
 
-<ion-content padding style="background-color: #12614C">
+<ion-content>
 
   <h1>VACIMAPS</h1>
   <form [formGroup]="formulario">
@@ -40,15 +39,15 @@
     </ion-label>
     
     <ion-item>
-      <ion-input type="password" [formControl]="formulario.controls['validSenha']" [(ngModel)]="senha" placeholder="Nova Senha"></ion-input>
+      <ion-input type="password" maxlength="20" [formControl]="formulario.controls['validSenha']" [(ngModel)]="senha" placeholder="Senha"></ion-input>
     </ion-item>
   
     <ion-item>
-      <ion-input type="password" [formControl]="formulario.controls['validConfSenha']"[(ngModel)]="confSenha" placeholder="Confirmar nova senha"></ion-input>
+      <ion-input type="password" maxlength="20" [formControl]="formulario.controls['validConfSenha']"[(ngModel)]="confSenha" placeholder="Confirmar Senha"></ion-input>
     </ion-item>
     <br>
 
-    <button ion-button color="light" (click)='reset_password()' [disabled]="!formulario.valid">Redefinir</button>
+    <button color="light" (click)='reset_password()' [disabled]="!formulario.valid">Redefinir</button>
   </ion-list>
   </form>
 </ion-content>

@@ -5,57 +5,46 @@
    }
  
    ion-content{
-     font-family: 'Souliyo Regular', sans-serif;
+      font-family: 'Souliyo-Unicode', sans-serif;
+      background: url("assets/imgs/globo.png") no-repeat;
+      background-position: center;
+      background-size: 365px;
    }
    h1{
-     color: white; text-align: center; font-size: 35px; font-weight: 100; font-style: normal; line-height: normal;
-     padding: 110px 25px 35px 25px;
-     letter-spacing: 0.9px;
+      color: white; padding: 58px 25px 115px 25px; text-align: center; font-size: 40px; font-weight: 100; font-style: normal; line-height: normal;
+      letter-spacing: 0.5px;
    }
    p{
-     color: white; text-align: center; font-size: 12px; font-style: normal; line-height: normal;
-     letter-spacing: 0.9px;
-   }
-   ion-label{
-     color: white; padding-bottom: 5px;
+    color: white; text-align: center; font-size: 12px; font-style: normal; line-height: normal;
+    letter-spacing: 0.9px;
+    font-family: roboto;
    }
    ion-item{
-     background-color: #12614C; color: white; align-content: center;
+    background-color: rgba(255, 255, 255, 0); color: white; align-content: center; width: 270px; margin-left: 30px;
    }
    input::placeholder{
-     text-align: center; color: white; font-size: 12px;
+     text-align: center; color: white; font-size: 12px; font-size: 12px; width: 270px;
    }
    button{
-     width: 210px; height: 30px; color: #12614C; margin-left: 7px; margin-top: 15px;
+     width: 270px; height: 38px; color: #12614C; margin-left: 30px; margin-top: 20px; border-radius: 5px; font-family: roboto; font-size: 16px;
    }
    .btn-back{
-     color: white; font-size: 10px; padding-right: 185px; padding-top: 10px;
-   }
-   .btn-others{
-      color: white; font-size: 12px; cursor: pointer; display: flex; flex-direction: column; text-align: center; margin: 8px; 
-  }
-  .btn-new{
-      padding-top: 14px;
-  }
- 
+     color: white; font-size: 10px; padding-right: 225px; padding-top: 1px;
+   } 
  </style>
  
- <ion-content padding style="background-color: #12614C">
-  
+ <ion-content>
   <button ion-button clear class="btn-back" (click)="Voltar()"><< voltar</button>
-
   <h1>VACIMAPS</h1>
- <form [formGroup]="formulario">
-  <ion-list inset>
-
-      <ion-item>
-          <ion-input type="text" [(ngModel)]="codigo" [formControl]="formulario.controls['validCodigo']"  placeholder="Código"></ion-input>
-      </ion-item>
-      <p>Insira o codigo recebido para realizar a validação</p>
-      <br>
-      <button ion-button color="light" (click)="validar_token()" [disabled]="!formulario.valid">Validar</button>
-
-  </ion-list>
+  <form [formGroup]="formulario">
+    <ion-list inset>
+        <ion-item>
+            <ion-input type="text" [(ngModel)]="codigo" [formControl]="formulario.controls['validCodigo']"  placeholder="Código"></ion-input>
+        </ion-item>
+        <p>Insira o codigo recebido para realizar a validação</p>
+        <br>
+        <button color="light" (click)="validar_token()" [disabled]="!formulario.valid">Validar</button>
+    </ion-list>
   </form>
  </ion-content>
  
