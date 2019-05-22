@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, App } from 'ionic-angular';
 import { profileService, User, Vacina } from '../modal/profile.services';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { ModalController } from 'ionic-angular';
+import {Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { VacinaService,  } from '../vacina-modal/vacina.services';
 
 
 /**
@@ -16,14 +18,23 @@ import { ModalController } from 'ionic-angular';
 @Component({
   selector: 'page-tab2',
   templateUrl: 'tab2.html',
-  providers: [profileService],
+  providers: [profileService, VacinaService],
 })
 export class Tab2Page {
   usuario: User;
   vacinas;
   token;
   hiddenVacinas: Boolean;
+  hiddenFormVacinas: Boolean;
   user_vacinas;
+  private formulario: FormGroup;
+  datajson;
+
+  vacina: string;
+  vacinaSelect: any;
+  data: string;
+  lote: string;
+  nome_vac: any[];
 
   private API_URL = 'https://vacimaps-app.herokuapp.com'
 
@@ -33,14 +44,27 @@ export class Tab2Page {
     private toast: ToastController, 
     private profileService: profileService,
     private http: HttpClient,
-     public navParams: NavParams) {
-       
+    public appCtrl: App, 
+    private VacinaService: VacinaService,
+    private formBuilder: FormBuilder,
+    public navParams: NavParams) {
+      this.formulario = this.formBuilder.group({
+        validarVacina: ['', Validators.required],
+        validarData: ['', Validators.required],
+        vaidarLote: ['', Validators.required],
+      });
     
      this.getVacinas();
+    
+     this.VacinaService.getVacinas().subscribe((vacinas) => {
+      this.vacinaSelect = vacinas;
+      this.nome_vac = this.vacinaSelect;
+    });
 
      this.token = JSON.parse(localStorage.getItem('token'));
 
      this.hiddenVacinas = true;
+     this.hiddenFormVacinas = true;
 
   }
 
@@ -61,12 +85,16 @@ export class Tab2Page {
     this.vacinas = this.user_vacinas;
 }
 
+
+
   ModalVacina(){
-    var modalvacina = this.vacinaModal.create ('VacinaModalPage');
+    /*var modalvacina = this.vacinaModal.create ('VacinaModalPage');
     modalvacina.onDidDismiss(() => {
       this.navCtrl.setRoot(this.navCtrl.getActive().component);
     });
-     modalvacina.present();
+     modalvacina.present();*/
+     this.hiddenFormVacinas = false;
+
   }
 
   editContact(vacina) {
@@ -128,4 +156,31 @@ export class Tab2Page {
     }
   }
 
+  public closeModal(){
+    this.hiddenFormVacinas = true;
+  } 
+
+  doPOST() {
+    console.log("POST");
+    let url = `${this.API_URL}/usuario/vacina`;
+    this.datajson ={ 
+      id_vacina: this.vacina, 
+      data_vacina: this.data, 
+      lote: this.lote,
+    }
+    console.log(this.datajson);
+    this.http
+      .post(url, this.datajson, {headers: new HttpHeaders({'token': this.token.token})})
+      .subscribe(res => {
+        if(res['Mensagem'] == 'Erro ao cadastrar vacina!'){          
+          this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present()    
+       
+        }else {
+          this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present()     
+          this.navCtrl.setRoot(this.navCtrl.getActive().component);
+
+
+        }
+      })   
+    }    
 }

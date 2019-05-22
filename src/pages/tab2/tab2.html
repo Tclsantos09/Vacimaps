@@ -16,8 +16,8 @@
   }
   ion-card{
     background: rgba(18, 97, 76, 0.23);
-    width: 310px;
-    height: 130px;
+    width: 320px;
+    height: 150px;
   }
   .card-nv-vacina{
     background: rgba(18, 97, 76, 0.23);
@@ -116,8 +116,10 @@
     width: 100%;
   }
   .placeholder-input{
+    margin-top: 7px;
     background-color: white;
     width: 10px;
+    height: 28px;
   }
   ion-input--placeholder-color{
     color: #FFFFFF;
@@ -150,7 +152,22 @@
     color: rgb(51, 51, 51);
     padding: 7px;
 }
-
+ion-select{
+  font-size: 12px;
+}
+ion-item{
+      border-radius: 10px;
+}
+ion-datetime{
+    background-color: white;
+    width: 40%;
+    height: 20px;
+    margin-left: -55px;
+    margin-right: 8px;
+    margin-top: 7px;
+    border-radius: 4px;
+    font-size: 12px;
+}
   /* css que nao vou usar mais mas que eh bom manter pq vai que 
   .nv-vacina{
     display: flex;
@@ -212,6 +229,49 @@
               Nova vacina
             </button>
           </ion-row>
+<!-- Card para cadastrar vacina-->
+            <ion-row justify-content-center [hidden]= hiddenFormVacinas>
+                <ion-list>
+                    <ion-card>
+                    <ion-col>
+                      <ion-row>
+                        <ion-item>
+                            <ion-label>Vacinas</ion-label>
+                            <ion-select  [formControl]="formulario.controls['validarVacina']" [(ngModel)]="vacina" disabled="disabled">
+                                <ion-option *ngFor="let c of vacinaSelect" [value] = "c.id_vacina" >{{ c.nome_vacina }}</ion-option>
+                            </ion-select>
+                          </ion-item>
+                    </ion-row>
+                      <ion-row>
+
+                            <ion-label>Data</ion-label>
+                            <!--<ion-datetime display-format="MM/DD/YYYY" placeholder="dd/mm/aaaa"></ion-datetime>-->
+                            <ion-datetime  [formControl]="formulario.controls['validarData']" display-format="DD/MM/YYYY" [(ngModel)]="data"></ion-datetime>
+                      
+                            <ion-label>Lote: </ion-label>
+                            <ion-input  type="text" class="placeholder-input input-margin" [formControl]="formulario.controls['vaidarLote']" [(ngModel)]="lote"></ion-input>
+                    
+                      </ion-row>
+                      <ion-row>
+                        <ion-col>
+                          <button class="btn-nv-vacinas" (click)="closeModal()" ion-button>
+        
+                            <ion-icon style="color: red;" name="close-circle"></ion-icon>
+                            Cancelar
+                          </button>
+                        </ion-col>
+                        <ion-col>
+                          <button class="btn-nv-vacinas" (click)="doPOST()" [disabled]="!formulario.valid" ion-button>
+                            <ion-icon style="color: green;" name="checkmark-circle"></ion-icon>
+                            Salvar 
+                          </button>
+                        </ion-col>
+                      </ion-row>
+                      <br><br>
+                    </ion-col>
+                  </ion-card>
+                </ion-list>
+              </ion-row>
 
           <ion-row justify-content-center>
             <ion-list *ngFor="let vacina of vacinas" >
