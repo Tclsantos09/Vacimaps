@@ -6,7 +6,7 @@
   
     ion-content{
       font-family: 'Souliyo-Unicode', sans-serif;
-      background-color: #8080806e;
+      background-color: #a8a8a867;
     }
     body{
       height:88%; 
@@ -41,7 +41,10 @@
       padding: 10px;
     }
     button{
-      width: 50px; height: 20px; font-size: 12px; align-items: center; margin-left: 15px; margin-top: 15px; align-content: flex-end;
+      width: 60px; height: 20px; font-size: 11px; align-items: center; margin-left: 15px; margin-top: 15px;
+      color: white;
+      border-radius: 3px;
+      font-family: roboto;
     }
     a{
       color: gray;
@@ -76,7 +79,7 @@
             <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="dt_nascimento"></ion-datetime>
         </ion-item>
       </div>
-        <button ion-button block (click)="save()" style="background:#4FBA6E; float: right;">Salvar</button>
+        <button block (click)="save()" style="background:#4FBA6E; float: right;">Salvar</button>
       </ion-list>
   </body>
 </ion-content>  

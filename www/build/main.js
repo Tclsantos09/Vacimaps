@@ -52,14 +52,14 @@ var map = {
 		165
 	],
 	"../pages/tabs/tabs.module": [
-		166
+		167
 	],
 	"../pages/vacina-modal/vacina-modal.module": [
 		295,
 		0
 	],
 	"../pages/verify-code/verify-code.module": [
-		167
+		166
 	]
 };
 function webpackAsyncContext(req) {
@@ -337,18 +337,16 @@ var DashboardPage = /** @class */ (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */])
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */]) === "function" && _a || Object)
     ], DashboardPage.prototype, "nav", void 0);
     DashboardPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-dashboard',template:/*ion-inline-start:"C:\Users\Thais.Lopes\Vacimaps\src\pages\dashboard\dashboard.html"*/'<ion-menu [content]="content">\n\n    <ion-header>\n\n      <ion-toolbar>\n\n        <ion-title>Menu</ion-title>\n\n      </ion-toolbar>\n\n    </ion-header>\n\n   \n\n    <ion-content>\n\n      <ion-list>\n\n          <button ion-item (click)="openModal()">Perfil</button>\n\n          <button ion-item (click)="modalOpen()">Configuracoes</button>\n\n          <button ion-item (click)="Sair()">Sair</button>\n\n      </ion-list>\n\n    </ion-content>\n\n  </ion-menu>\n\n\n\n  <!-- main navigation -->\n\n  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"C:\Users\Thais.Lopes\Vacimaps\src\pages\dashboard\dashboard.html"*/,
+            selector: 'page-dashboard',template:/*ion-inline-start:"C:\Users\Thais.Lopes\Vacimaps\src\pages\dashboard\dashboard.html"*/'<ion-menu [content]="content">\n\n    <ion-header>\n\n      <ion-toolbar>\n\n        <ion-title>Menu</ion-title>\n\n      </ion-toolbar>\n\n    </ion-header>\n\n   \n\n    <ion-content>\n\n      <ion-list>\n\n          <button ion-item (click)="openModal()">Perfil</button>\n\n          <button ion-item (click)="modalOpen()">Configuracoes</button>\n\n          <button ion-item (click)="Sair()">Sair</button>\n\n      </ion-list>\n\n    </ion-content>\n\n  </ion-menu>\n\n  \n\n  <!-- main navigation -->\n\n  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"C:\Users\Thais.Lopes\Vacimaps\src\pages\dashboard\dashboard.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]) === "function" && _e || Object])
     ], DashboardPage);
     return DashboardPage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=dashboard.js.map
@@ -550,44 +548,6 @@ var Tab2PageModule = /** @class */ (function () {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabsPageModule", function() { return TabsPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tabs__ = __webpack_require__(266);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var TabsPageModule = /** @class */ (function () {
-    function TabsPageModule() {
-    }
-    TabsPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__tabs__["a" /* TabsPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__tabs__["a" /* TabsPage */]),
-            ],
-        })
-    ], TabsPageModule);
-    return TabsPageModule;
-}());
-
-//# sourceMappingURL=tabs.module.js.map
-
-/***/ }),
-
-/***/ 167:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VerifyCodePageModule", function() { return VerifyCodePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
@@ -618,6 +578,44 @@ var VerifyCodePageModule = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=verify-code.module.js.map
+
+/***/ }),
+
+/***/ 167:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabsPageModule", function() { return TabsPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tabs__ = __webpack_require__(266);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var TabsPageModule = /** @class */ (function () {
+    function TabsPageModule() {
+    }
+    TabsPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__tabs__["a" /* TabsPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__tabs__["a" /* TabsPage */]),
+            ],
+        })
+    ], TabsPageModule);
+    return TabsPageModule;
+}());
+
+//# sourceMappingURL=tabs.module.js.map
 
 /***/ }),
 
@@ -698,8 +696,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_dashboard_dashboard_module__ = __webpack_require__(161);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_redefinir_senha_redefinir_senha_module__ = __webpack_require__(163);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_esqSenha_esqSenha_module__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_verify_code_verify_code_module__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_tabs_tabs_module__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_verify_code_verify_code_module__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_tabs_tabs_module__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_tab1_tab1_module__ = __webpack_require__(164);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_tab2_tab2_module__ = __webpack_require__(165);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -736,18 +734,18 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/cadastro/cadastro.module#CadastroPageModule', name: 'CadastroPage', segment: 'cadastro', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cidade-modal/cidade-modal.module#CidadeModalPageModule', name: 'CidadeModalPage', segment: 'cidade-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/configuracoes/configuracoes.module#ConfiguracoesPageModule', name: 'ConfiguracoesPage', segment: 'configuracoes', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro/cadastro.module#CadastroPageModule', name: 'CadastroPage', segment: 'cadastro', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/esqSenha/esqSenha.module#EsqSenhaPageModule', name: 'EsqSenhaPage', segment: 'esqSenha', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/modal/modal.module#ModalPageModule', name: 'ModalPage', segment: 'modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/redefinir-senha/redefinir-senha.module#RedefinirSenhaPageModule', name: 'RedefinirSenhaPage', segment: 'redefinir-senha', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tab1/tab1.module#Tab1PageModule', name: 'Tab1Page', segment: 'tab1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tab2/tab2.module#Tab2PageModule', name: 'Tab2Page', segment: 'tab2', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/modal/modal.module#ModalPageModule', name: 'ModalPage', segment: 'modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/vacina-modal/vacina-modal.module#VacinaModalPageModule', name: 'VacinaModalPage', segment: 'vacina-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/verify-code/verify-code.module#VerifyCodePageModule', name: 'VerifyCodePage', segment: 'verify-code', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/verify-code/verify-code.module#VerifyCodePageModule', name: 'VerifyCodePage', segment: 'verify-code', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_7__pages_cadastro_cadastro_module__["CadastroPageModule"],
@@ -1042,7 +1040,7 @@ var Tab2Page = /** @class */ (function () {
     };
     Tab2Page = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-tab2',template:/*ion-inline-start:"C:\Users\Thais.Lopes\Vacimaps\src\pages\tab2\tab2.html"*/'<style>\n\n  @font-face {\n\n    font-family: Souliyo-Unicode;\n\n    src: url(../www/assets/fonts/Souliyo-Unicode.ttf)\n\n  }\n\n\n\n  ion-content{\n\n    font-family: \'Souliyo-Unicode\', sans-serif;\n\n    background-color: #F1EEEE;\n\n  }\n\n  h1{\n\n    color: #FFFFFF; font-size: 12px; font-weight: 100; font-style: normal; line-height: normal;\n\n  }\n\n  ion-label{\n\n    color:#808080;\n\n  }\n\n  ion-card{\n\n    background: rgba(18, 97, 76, 0.23);\n\n    width: 310px;\n\n    height: 130px;\n\n  }\n\n  .card-nv-vacina{\n\n    background: rgba(18, 97, 76, 0.23);\n\n    width: 270px;\n\n    height: 140px;\n\n  }\n\n  .btn{\n\n    position: absolute;\n\n    bottom: 115px;\n\n    right: 10px;\n\n    padding-right:25px;\n\n    padding-left: 3px;\n\n    border-radius: 7px;\n\n  }\n\n  .btn-2{\n\n    position: absolute;\n\n    bottom: 115px;\n\n    right: 3px;\n\n    padding: 2px;\n\n    padding-left: 3px;\n\n    border-radius: 7px;\n\n  }\n\n  .icon-btn{\n\n    background-color: #EEE9E9;\n\n    padding: 5px;\n\n    border-radius: 3px;\n\n    font-size: 20px;\n\n    color: black;\n\n  }\n\n  .p-card{\n\n    font-size: 14px;\n\n    color: white;\n\n    font-weight: bold;\n\n  }\n\n  ion-searchbar{\n\n    background-color: white;\n\n    margin-left: 6px;\n\n    margin-top: 25%;\n\n    width: 100%;\n\n    font-size: 3px;\n\n    border-radius: 4px;\n\n    padding: 0 5px !important;\n\n  }\n\n  ion-header{\n\n    background: url("assets/imgs/Header.png") no-repeat;\n\n    background-size: cover;\n\n    width: 100%;\n\n    height: 50px;\n\n    display: flex;\n\n    flex-direction: row;\n\n  }\n\n  .menu{\n\n    background: transparent;\n\n    margin-left: 30%;\n\n    padding-top: 7px;\n\n  }\n\n  .p-header{\n\n    color: white;\n\n    font-size: 18px;\n\n    margin-left: 45px;\n\n    padding-top: 1px;\n\n    letter-spacing: 0.5px;\n\n    font-family: roboto;\n\n  }\n\n  .btn-vacinas{\n\n    height: 30px;\n\n    width: 110px;\n\n    font-size: 12px;\n\n    padding: 10px;\n\n    margin: 10px;\n\n    left: 20px;\n\n    background-color: white;\n\n    color: darkgrey;\n\n    float: right;\n\n    border-radius: 5px;\n\n    font-weight: bold;\n\n  }\n\n  .btn-nv-vacinas{\n\n    height: 20px;\n\n    width: 100px;\n\n    font-size: 12px;\n\n    padding: 10px;\n\n    margin: 10px;\n\n    left: -11px;\n\n    background-color: white;\n\n    color: darkgrey;\n\n    float: right;\n\n  }\n\n  ion-icon{\n\n    color: #32BEA6;\n\n    padding-right: 5px;\n\n    font-size: 20px;\n\n  }\n\n  .placeholder{\n\n    background-color: white;\n\n    width: 100%;\n\n  }\n\n  .placeholder-input{\n\n    background-color: white;\n\n    width: 10px;\n\n  }\n\n  ion-input--placeholder-color{\n\n    color: #FFFFFF;\n\n    left: -10px;\n\n  }\n\n  .search{\n\n    top: -10px;\n\n    padding: 0px;\n\n    margin-left: 5px;\n\n    margin-right: 5px;\n\n    border-radius: 4px;\n\n  }\n\n  .input-margin{\n\n    margin-left: -55px;\n\n    margin-right: 8px;\n\n    border-radius: 4px;\n\n  }\n\n  ion-input .text-input{\n\n    margin-left: 11px;\n\n    font-size: 12px;\n\n  }\n\n  .card-content-ios[_ngcontent-c3] {\n\n    padding: 0px 5px 0px;\n\n    font-size: 1.4rem;\n\n    line-height: 1.4;\n\n  }\n\n.card-header-ios {\n\n    font-size: 1.6rem;\n\n    font-weight: 500;\n\n    color: rgb(51, 51, 51);\n\n    padding: 7px;\n\n}\n\n\n\n  /* css que nao vou usar mais mas que eh bom manter pq vai que \n\n  .nv-vacina{\n\n    display: flex;\n\n    flex-direction: row;\n\n  }\n\n  ion-searchbar--placeholder-color{\n\n    color: #C4C4C4; \n\n  }\n\n  ion-searchbar--background{\n\n    color: white;\n\n  }\n\n  ion-list{\n\n    left: -60px;\n\n  }\n\n  ion-datetime--placeholder-color{\n\n    color: #FFFFFF;\n\n  }\n\n   ion-datetime--placeholder{\n\n    font-size: 10px;\n\n  }\n\n  ion-grid{\n\n    background: rgba(18, 97, 76, 0.23);\n\n    width: 265px;\n\n    height: 170px;\n\n  }\n\n  .btn-nv-vacina{\n\n    left: -26px;\n\n    top: -12px;\n\n  } \n\n  */\n\n\n\n</style>\n\n\n\n    <ion-content>\n\n      <ion-header>\n\n        <p class="p-header">VACIMAPS</p>\n\n        <button class="menu" ion-button menuToggle>\n\n          <ion-label class="p-card">Olá {{nome}}</ion-label>\n\n          <ion-avatar>\n\n            <ion-icon style="color: white;" name="ios-contact"></ion-icon>\n\n          </ion-avatar>\n\n        </button>\n\n      </ion-header>\n\n\n\n      <ion-grid>\n\n        <ion-col>\n\n          <ion-row justify-content-center>\n\n            <ion-searchbar class="search-vacina" placeholder="Digite o nome da vacina" (ionInput)="getVacina($event)"></ion-searchbar>\n\n            <ion-list [hidden]= hiddenVacinas>\n\n              <button (click)="editContact(vacina);" ion-item *ngFor="let vacina of vacinas">\n\n                <ion-option  [value] = "vacina.vacina">{{ vacina.vacina }}</ion-option>\n\n              </button>\n\n            </ion-list>           \n\n          </ion-row>\n\n\n\n          <ion-row justify-content-end>\n\n            <button class="btn-vacinas" (click)="ModalVacina()" ion-button>\n\n              <ion-icon name="add-circle"></ion-icon>\n\n              Nova vacina\n\n            </button>\n\n          </ion-row>\n\n\n\n          <ion-row justify-content-center>\n\n            <ion-list *ngFor="let vacina of vacinas" >\n\n\n\n                <ion-card>\n\n                  <ion-card-header>\n\n                    <p class="p-card">{{ vacina.vacina }}</p>\n\n                  </ion-card-header>\n\n                    \n\n                  <ion-card-content>\n\n                    <ion-label> Data: {{ vacina.data_vacina }} </ion-label>\n\n                    <ion-label> Lote: {{ vacina.local }} </ion-label>\n\n                  </ion-card-content>\n\n\n\n                  <ion-row text-right>\n\n                    <ion-col>\n\n                      <button class="btn" ion-button icon-left clear small (click)="editContact(vacina);">\n\n                        <ion-icon class="icon-btn" name="md-create"></ion-icon>\n\n                      </button>\n\n                      <button class="btn-2" ion-button icon-left clear small (click)="doDELETE(vacina);">\n\n                        <ion-icon class="icon-btn" name="md-trash"></ion-icon>\n\n                      </button>\n\n                    </ion-col>\n\n                  </ion-row>\n\n                </ion-card>\n\n\n\n            </ion-list>\n\n          </ion-row>\n\n        </ion-col>\n\n      </ion-grid>\n\n    </ion-content>\n\n\n\n'/*ion-inline-end:"C:\Users\Thais.Lopes\Vacimaps\src\pages\tab2\tab2.html"*/,
+            selector: 'page-tab2',template:/*ion-inline-start:"C:\Users\Thais.Lopes\Vacimaps\src\pages\tab2\tab2.html"*/'<style>\n\n  @font-face {\n\n    font-family: Souliyo-Unicode;\n\n    src: url(../www/assets/fonts/Souliyo-Unicode.ttf)\n\n  }\n\n\n\n  ion-content{\n\n    font-family: \'Souliyo-Unicode\', sans-serif;\n\n    background-color: #F1EEEE;\n\n  }\n\n  h1{\n\n    color: #FFFFFF; font-size: 12px; font-weight: 100; font-style: normal; line-height: normal;\n\n  }\n\n  ion-label{\n\n    color:#808080;\n\n  }\n\n  ion-card{\n\n    background: rgba(18, 97, 76, 0.23);\n\n    width: 310px;\n\n    height: 130px;\n\n  }\n\n  .card-nv-vacina{\n\n    background: rgba(18, 97, 76, 0.23);\n\n    width: 270px;\n\n    height: 140px;\n\n  }\n\n  .btn{\n\n    position: absolute;\n\n    bottom: 115px;\n\n    right: 10px;\n\n    padding-right:20px;\n\n    padding-left: 3px;\n\n    border-radius: 7px;\n\n  }\n\n  .btn-2{\n\n    position: absolute;\n\n    bottom: 115px;\n\n    right: 3px;\n\n    padding: 2px;\n\n    padding-left: 3px;\n\n    border-radius: 7px;\n\n  }\n\n  .icon-btn{\n\n    background-color: #EEE9E9;\n\n    padding: 5px;\n\n    border-radius: 3px;\n\n    font-size: 20px;\n\n    color: black;\n\n  }\n\n  .p-card{\n\n    font-size: 14px;\n\n    color: white;\n\n    font-weight: bold;\n\n  }\n\n  ion-searchbar{\n\n    background-color: white;\n\n    margin-left: 6px;\n\n    margin-top: 25%;\n\n    width: 100%;\n\n    font-size: 3px;\n\n    border-radius: 4px;\n\n    padding: 0 5px !important;\n\n  }\n\n  ion-header{\n\n    background: url("assets/imgs/Header.png") no-repeat;\n\n    background-size: cover;\n\n    width: 100%;\n\n    height: 50px;\n\n    display: flex;\n\n    flex-direction: row;\n\n  }\n\n  .menu{\n\n    background: transparent;\n\n    margin-left: 30%;\n\n    padding-top: 7px;\n\n  }\n\n  .p-header{\n\n    color: white;\n\n    font-size: 18px;\n\n    margin-left: 45px;\n\n    padding-top: 1px;\n\n    letter-spacing: 0.5px;\n\n    font-family: roboto;\n\n  }\n\n  .btn-vacinas{\n\n    height: 30px;\n\n    width: 110px;\n\n    font-size: 12px;\n\n    padding: 10px;\n\n    margin: 10px;\n\n    left: 20px;\n\n    background-color: white;\n\n    color: darkgrey;\n\n    float: right;\n\n    border-radius: 5px;\n\n    font-weight: bold;\n\n  }\n\n  .btn-nv-vacinas{\n\n    height: 20px;\n\n    width: 100px;\n\n    font-size: 12px;\n\n    padding: 10px;\n\n    margin: 10px;\n\n    left: -11px;\n\n    background-color: white;\n\n    color: darkgrey;\n\n    float: right;\n\n  }\n\n  ion-icon{\n\n    color: #32BEA6;\n\n    padding-right: 5px;\n\n    font-size: 20px;\n\n  }\n\n  .placeholder{\n\n    background-color: white;\n\n    width: 100%;\n\n  }\n\n  .placeholder-input{\n\n    background-color: white;\n\n    width: 10px;\n\n  }\n\n  ion-input--placeholder-color{\n\n    color: #FFFFFF;\n\n    left: -10px;\n\n  }\n\n  .search{\n\n    top: -10px;\n\n    padding: 0px;\n\n    margin-left: 5px;\n\n    margin-right: 5px;\n\n    border-radius: 4px;\n\n  }\n\n  .input-margin{\n\n    margin-left: -55px;\n\n    margin-right: 8px;\n\n    border-radius: 4px;\n\n  }\n\n  ion-input .text-input{\n\n    margin-left: 11px;\n\n    font-size: 12px;\n\n  }\n\n  .card-content-ios[_ngcontent-c3] {\n\n    padding: 0px 5px 0px;\n\n    font-size: 1.4rem;\n\n    line-height: 1.4;\n\n  }\n\n.card-header-ios {\n\n    font-size: 1.6rem;\n\n    font-weight: 500;\n\n    color: rgb(51, 51, 51);\n\n    padding: 7px;\n\n}\n\n\n\n  /* css que nao vou usar mais mas que eh bom manter pq vai que \n\n  .nv-vacina{\n\n    display: flex;\n\n    flex-direction: row;\n\n  }\n\n  ion-searchbar--placeholder-color{\n\n    color: #C4C4C4; \n\n  }\n\n  ion-searchbar--background{\n\n    color: white;\n\n  }\n\n  ion-list{\n\n    left: -60px;\n\n  }\n\n  ion-datetime--placeholder-color{\n\n    color: #FFFFFF;\n\n  }\n\n   ion-datetime--placeholder{\n\n    font-size: 10px;\n\n  }\n\n  ion-grid{\n\n    background: rgba(18, 97, 76, 0.23);\n\n    width: 265px;\n\n    height: 170px;\n\n  }\n\n  .btn-nv-vacina{\n\n    left: -26px;\n\n    top: -12px;\n\n  } \n\n  */\n\n\n\n</style>\n\n\n\n    <ion-content>\n\n      <ion-header>\n\n        <p class="p-header">VACIMAPS</p>\n\n        <button class="menu" ion-button menuToggle>\n\n          <ion-label class="p-card">Olá {{nome}}</ion-label>\n\n          <ion-avatar>\n\n            <ion-icon style="color: white;" name="ios-contact"></ion-icon>\n\n          </ion-avatar>\n\n        </button>\n\n      </ion-header>\n\n\n\n      <ion-grid>\n\n        <ion-col>\n\n          <ion-row justify-content-center>\n\n            <ion-searchbar class="search-vacina" placeholder="Digite o nome da vacina" (ionInput)="getVacina($event)"></ion-searchbar>\n\n            <ion-list [hidden]= hiddenVacinas>\n\n              <button (click)="editContact(vacina);" ion-item *ngFor="let vacina of vacinas">\n\n                <ion-option  [value] = "vacina.vacina">{{ vacina.vacina }}</ion-option>\n\n              </button>\n\n            </ion-list>           \n\n          </ion-row>\n\n\n\n          <ion-row justify-content-end>\n\n            <button class="btn-vacinas" (click)="ModalVacina()" ion-button>\n\n              <ion-icon name="add-circle"></ion-icon>\n\n              Nova vacina\n\n            </button>\n\n          </ion-row>\n\n\n\n          <ion-row justify-content-center>\n\n            <ion-list *ngFor="let vacina of vacinas" >\n\n\n\n                <ion-card>\n\n                  <ion-card-header>\n\n                    <p class="p-card">{{ vacina.vacina }}</p>\n\n                  </ion-card-header>\n\n                    \n\n                  <ion-card-content>\n\n                    <ion-label> Data: {{ vacina.data_vacina }} </ion-label>\n\n                    <ion-label> Lote: {{ vacina.local }} </ion-label>\n\n                  </ion-card-content>\n\n\n\n                  <ion-row text-right>\n\n                    <ion-col>\n\n                      <button class="btn" ion-button icon-left clear small (click)="editContact(vacina);">\n\n                        <ion-icon class="icon-btn" name="md-create"></ion-icon>\n\n                      </button>\n\n                      <button class="btn-2" ion-button icon-left clear small (click)="doDELETE(vacina);">\n\n                        <ion-icon class="icon-btn" name="ios-trash"></ion-icon>\n\n                      </button>\n\n                    </ion-col>\n\n                  </ion-row>\n\n                </ion-card>\n\n\n\n            </ion-list>\n\n          </ion-row>\n\n        </ion-col>\n\n      </ion-grid>\n\n    </ion-content>\n\n\n\n'/*ion-inline-end:"C:\Users\Thais.Lopes\Vacimaps\src\pages\tab2\tab2.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_2__modal_profile_services__["a" /* profileService */]],
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
