@@ -58,9 +58,6 @@ export class EsqSenhaPage {
           this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present()    
           this.appCtrl.getRootNav().setRoot(VerifyCodePage)
         }
-      })
-         
+    })
   }
-
-
 }

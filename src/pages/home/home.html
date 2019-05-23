@@ -4,47 +4,58 @@
     src: url(../www/assets/fonts/Souliyo-Unicode.ttf)
   }
   ion-content{
-    font-family: 'Souliyo-Unicode', sans-serif;  mix-blend-mode: luminosity;
+    font-family: 'Souliyo-Unicode', sans-serif;
+    background: url("assets/imgs/globo.png") no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   h1{
-    color: white; padding: 80px 25px 45px 25px; text-align: center; font-size: 35px; font-weight: 100; font-style: normal; line-height: normal;
+    color: white; padding: 110px 25px 65px 25px; text-align: center; font-size: 40px; font-weight: 100; font-style: normal; line-height: normal;
+    letter-spacing: 0.5px;
   }
   ion-item{
-    background-color: #12614C; color: white; align-content: center;
+   color: white; align-items: center; background-color: rgba(255, 255, 255, 0); width: 270px; margin-left:30px; margin-bottom: 22px;
   }
   input::placeholder{
-    width: 230px; text-align: center; color: white; font-size: 12px; font-family: Roboto;
+    width: 270px; text-align: center; color: white; font-size: 12px;
   }
   button{
-    width: 310px; height: 30px; color: #12614C; margin-left: 15px; margin-top: 25px; border-radius: 5px;
+    width: 270px; height: 38px; color: #12614C; margin-left: 30px; margin-top: 10px; border-radius: 5px; font-family: roboto; font-size: 16px;
   }
   .btn-others{
    color: white; font-size: 12px; cursor: pointer; display: flex; flex-direction: column; text-align: center; margin: 8px; 
   }
   .btn-new{
-    padding-top: 14px;
+    padding-top: 35px;
   }
   .btn-pass{
-    padding-top: 10px;
+    padding-top: 13px;
+  }
+  p {
+  color: #ea6153;
+  display: none
+  }
+  input:invalid + p {
+    display: inline
   }
 </style>
 
 
-<ion-content style="background-color: #12614C; ">
+<ion-content>
 <body>
   <h1>VACIMAPS</h1>
   <form [formGroup]="formulario">
     <ion-list inset>
-
+        <p>Usuário ou senha inválida!</p>
       <ion-item>
-        <ion-input type="email"  [formControl]="formulario.controls['validEmail']" [(ngModel)]="email" placeholder="e-mail"></ion-input>
+        <ion-input type="email" maxlength="75" [formControl]="formulario.controls['validEmail']" [(ngModel)]="email" placeholder="e-mail"></ion-input>
       </ion-item>
     
       <ion-item>
-        <ion-input type="password"  [formControl]="formulario.controls['vaidSenha']" [(ngModel)]="senha" placeholder="senha"></ion-input>
+        <ion-input type="password" maxlength="20" [formControl]="formulario.controls['vaidSenha']" [(ngModel)]="senha" placeholder="senha"></ion-input>
       </ion-item>
 
-      <button ion-button color="light" (click)='login()' [disabled]="!formulario.valid">Entrar</button>
+      <button color="light" (click)='login()' [disabled]="!formulario.valid">Entrar</button>
     </ion-list>
   </form>
   <div>

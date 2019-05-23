@@ -5,29 +5,29 @@
 }
 
   ion-content{
-    font-family: 'Souliyo-Unicode';
+    font-family: 'Souliyo-Unicode', sans-serif;
+    background: url("assets/imgs/globo.png") no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   h1{
-    color: white; text-align: center;
-    padding: 40px 25px 45px 25px;
-    letter-spacing: 0.9px;
+    color: white; padding: 58px 25px 65px 25px; text-align: center; font-size: 40px; font-weight: 100; font-style: normal; line-height: normal;
+    letter-spacing: 0.5px;
   }
   ion-item{
-    background-color: #12614C; color: white; align-content: center;
+    background-color: rgba(255, 255, 255, 0); color: white; align-content: center; width: 270px; margin-left: 30px; margin-bottom: 22px;
   }
   input::placeholder{
-    text-align: center; color: white; font-size: 12px; 
+    text-align: center; color: white; font-size: 12px; width: 270px;
   }
   button{
-    width: 285px; height: 30px; color: #12614C; margin-left: 7px; margin-top: 15px; border-radius: 5px;
+    width: 270px; height: 38px; color: #12614C; margin-left: 30px; margin-top: 10px; border-radius: 5px; font-family: roboto; font-size: 16px;
   }
   .btn-back{
-    color: white; font-size: 10px; padding-right: 185px; padding-top: 10px;
+    color: white; font-size: 10px; padding-top: 1px; padding-right: 225px;
   }
-
 </style>
-
-<ion-content padding style="background-color: #12614C">
+<ion-content>
 
   <button ion-button clear class="btn-back" (click)="Voltar()"><< voltar</button>
 
@@ -36,19 +36,19 @@
     <ion-list inset>
 
       <ion-item>
-        <ion-input type="text"[formControl]="formulario.controls['validNome']" [(ngModel)]="nome" placeholder="nome"></ion-input>
+        <ion-input maxlength="75" pattern="[a-z\s]+$" type="text" [formControl]="formulario.controls['validNome']" [(ngModel)]="nome" placeholder="nome"></ion-input>
       </ion-item>
-    
+      
       <ion-item>
-        <ion-input type="email" [formControl]="formulario.controls['validEmail']" [(ngModel)]="email" placeholder="e-mail" ></ion-input>
+        <ion-input maxlength="75" type="email" [formControl]="formulario.controls['validEmail']" [(ngModel)]="email" placeholder="e-mail" ></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input type="password" [formControl]="formulario.controls['vaidSenha']"[(ngModel)]="senha" placeholder="senha" ></ion-input>
+        <ion-input maxlength="20"  type="password" [formControl]="formulario.controls['vaidSenha']"[(ngModel)]="senha" placeholder="senha" ></ion-input>
       </ion-item>
       <br>
 
-      <button ion-button color="light" (click)="doPOST()" [disabled]="!formulario.valid">Cadastrar</button>
+      <button color="light" (click)="doPOST()" [disabled]="!formulario.valid">Cadastrar</button>
     </ion-list>
-  </form> 
+  </form>
 </ion-content>
