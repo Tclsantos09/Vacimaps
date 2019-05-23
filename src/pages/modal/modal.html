@@ -1,26 +1,28 @@
 <style>
-  @font-face {
-    font-family: Souliyo-Unicode;
-    src: url(../www/assets/fonts/Souliyo-Unicode.ttf)
-  }
-  
-    ion-content{
-      font-family: 'Souliyo-Unicode', sans-serif;
-      background-color: #8080806e;
+    @font-face {
+      font-family: Souliyo-Unicode;
+      src: url(../www/assets/fonts/Souliyo-Unicode.ttf)
     }
     body{
-      height:88%; 
-      width:95%; 
-      border-radius: 2px; 
-      top: 7%; 
-      left: 3%; 
-      background-color: white;
+      top: 11%; 
+      left: 0%; 
+      /*background-color: white; */
+      font-family: 'Souliyo-Unicode', sans-serif;
+    }
+    ion-card{
+      height: 74%;
+      width: 93%;
+      margin-left: 13px;
+      border-radius: 5px;
     }
     h1{
-      color: black; text-align: center; font-size: 18px; font-weight: 100; font-style: normal; line-height: normal; padding-top: 10px;
+      color: black; /* text-align: center; */ font-size: 18px; font-weight: 100; font-style: normal; line-height: normal; padding-top: 0px; padding-left: 116px;
     }
-    ion-label{
-      font-size: 12px; font-weight: 100; font-style: normal; line-height: normal; color: #C4C4C4;
+    #nome{
+      font-size: 12px; font-weight: 100; font-style: normal; line-height: normal; color: #C4C4C4; margin-top: 8px; margin-left: 5px;
+    }
+    #data{
+      font-size: 12px; font-weight: 100; font-style: normal; line-height: normal; color: #C4C4C4; margin-top: 11px; margin-left: 5px; margin-bottom: 12px;
     }
     ion-avatar{
       width: 25px; height: 25px; align-content: center;
@@ -32,51 +34,54 @@
       color: black; font-size: 16px; font-weight: 100; width:100%; align-content:center;
     }
     #div-config{
-      background-color: #F6F5F5;  margin: 5px; padding: 2px; 
+      background-color: #F6F5F5;
+      margin: -10px;
+      padding: 2px;
+      margin-top: 10px;
+      margin-right: -8px;
+      margin-left: -10px;
+      padding-bottom: 15px;
     }
     ion-datetime{
-      color: black; font-size: 12px; top: 5px;
+      color: black; font-size: 12px; top: 3px;
     }
     ion-datetime--padding-start{
-      padding: 10px;
+      padding: 0px;
     }
     button{
-      width: 50px; height: 20px; font-size: 12px; align-items: center; margin-left: 15px; margin-top: 15px; align-content: flex-end;
+      width: 67px; height: 23px; font-size: 12px; align-items: center; margin-left: 15px; margin-top: 67px; margin-right: -7px; margin-bottom: 18px; align-content: flex-end; text-transform: inherit; padding-top: 2px; border-radius: 5px; box-shadow: none;
     }
     a{
       color: gray;
     }
     ion-icon {
-      font-size: 160px;
-      vertical-align: auto;
+      font-size: 160px; vertical-align: auto;
     }
   </style>
-  
-  
-<ion-content>
-  
-  <body>
-    <a (click)="closeModal()"> <ion-icon name="close" style="font-size: 30px; float: right; padding-top: 10px; padding-right: 15px;"></ion-icon></a>
 
-    <h1>Meu Perfil</h1>
-    <ion-row>
-      <ion-col text-center>
-        <ion-icon name="ios-contact"></ion-icon>
-      </ion-col>
-    </ion-row>
-    
-      <ion-list inset>
-          <div id="div-config">
-          <ion-label>Nome</ion-label>
-        <ion-item>
-            <ion-input style="width:100%;" type="text" name="Nome"  [(ngModel)]="nome"></ion-input>
-        </ion-item>
-        <ion-label>Data de Nascimento</ion-label>
-        <ion-item style="width:60%;">
+  <body>
+    <ion-card>
+      <ion-card-content>
+        <a (click)="closeModal()"> <ion-icon name="close" style="font-size: 20px; float: right; padding-top: 0px; padding-right: 0px;"></ion-icon></a>
+
+        <h1>Meu Perfil</h1>
+        <ion-row>
+          <ion-col text-center>
+            <ion-icon name="ios-contact"></ion-icon>
+          </ion-col>
+        </ion-row>
+            
+        <div id="div-config">
+          <ion-label id ="nome">Nome</ion-label>
+          <ion-item style="width: 98%; padding-top: 0px; padding-left: 0px; margin-top: -9px; margin-left: 2px;">
+            <ion-input type="text" name="Nome"  [(ngModel)]="nome"></ion-input>
+          </ion-item>
+          <ion-label id="data">Data de Nascimento</ion-label>
+          <ion-item style="width:40%; padding-top: 0px; padding-left: 0px; margin-top: -9px; margin-left: 2px;">
             <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="dt_nascimento"></ion-datetime>
-        </ion-item>
-      </div>
+          </ion-item>
+        </div>
         <button ion-button block (click)="save()" style="background:#4FBA6E; float: right;">Salvar</button>
-      </ion-list>
+      </ion-card-content> 
+    </ion-card>
   </body>
-</ion-content>  
