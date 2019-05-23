@@ -286,7 +286,7 @@ ion-datetime{
                     <ion-label> Lote: {{ vacina.local }} </ion-label>
                   </ion-card-content>
 
-                  <ion-row text-right>
+                  <ion-row text-right [hidden]= hiddenCardVacinas>
                     <ion-col>
                       <button class="btn" ion-button icon-left clear small (click)="editContact(vacina);">
                         <ion-icon class="icon-btn" name="md-create"></ion-icon>
