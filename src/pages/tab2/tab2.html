@@ -3,7 +3,35 @@
     font-family: Souliyo-Unicode;
     src: url(../www/assets/fonts/Souliyo-Unicode.ttf)
   }
-
+  ion-header{
+    background: url("assets/imgs/Header.png") no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+  }
+  .menu{
+    margin-left: 28%;
+    margin-top: 3px;
+    background: transparent;
+    height: 46px;
+    width: 140px;
+    /* border-left: 1px solid black; */
+  }
+  #label-menu{
+    font-size: 13px;
+    text-transform: capitalize;
+    margin-left: -16px;
+  }
+  .p-header{
+    color: white;
+    font-size: 18px;
+    margin-left: 50px;
+    margin-top: 15px;
+    letter-spacing: 0.5px;
+    font-family: 'Souliyo-Unicode', sans-serif;
+  }
   ion-content{
     font-family: 'Souliyo-Unicode', sans-serif;
     background-color: #F1EEEE;
@@ -61,27 +89,6 @@
     font-size: 3px;
     /* border-radius: 4px; */
     padding: 0 5px !important;
-  }
-  ion-header{
-    background: url("assets/imgs/Header.png") no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-  }
-  .menu{
-    background: transparent;
-    margin-left: 30%;
-    padding-top: 7px;
-  }
-  .p-header{
-    color: white;
-    font-size: 18px;
-    margin-left: 45px;
-    padding-top: 1px;
-    letter-spacing: 0.5px;
-    font-family: roboto;
   }
   .btn-vacinas{
     height: 30px;
@@ -192,9 +199,9 @@
       <ion-header>
         <p class="p-header">VACIMAPS</p>
         <button class="menu" ion-button menuToggle>
-          <ion-label class="p-card">Olá {{nome}}</ion-label>
-          <ion-avatar>
-            <ion-icon style="color: white;" name="ios-contact"></ion-icon>
+          <ion-label id="label-menu">Olá, {{nome}}</ion-label>
+          <ion-avatar style="font-size: 32px;">
+            <ion-icon name="ios-contact"></ion-icon>
           </ion-avatar>
         </button>
       </ion-header>
@@ -290,4 +297,3 @@
         </ion-col>
       </ion-grid>
     </ion-content>
-
