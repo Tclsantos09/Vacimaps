@@ -23,6 +23,7 @@
     font-size: 13px;
     text-transform: capitalize;
     margin-left: -16px;
+    color: #FFFFFF;
   }
   .p-header{
     color: white;
@@ -81,27 +82,26 @@
     font-weight: bold;
   }
   ion-searchbar{
-    /* background-color: white; */
     margin-left: 6px;
-    margin-top: 20%;
+    margin-top: 25%;
     margin-bottom: 15px;
-    width: 100%;
-    font-size: 3px;
-    /* border-radius: 4px; */
-    padding: 0 5px !important;
+    width: 310px;
+    color: #C4C4C4;
   }
+
   .btn-vacinas{
     height: 30px;
     width: 110px;
     font-size: 13px;
     padding: 10px;
     margin: 10px;
-    left: 20px;
+    padding-right: 3px;
     background-color: white;
-    color: darkgrey;
+    font-family: Roboto;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.5);
     float: right;
     border-radius: 5px;
-    /* font-weight: bold; */
     text-transform: inherit;
   }
   .btn-nv-vacinas{
@@ -115,7 +115,7 @@
     color: darkgrey;
     float: right;
   }
-  ion-icon{
+  .addvacina{
     color: #32BEA6;
     padding-right: 5px;
     font-size: 20px;
@@ -134,13 +134,7 @@
     color: #FFFFFF;
     left: -10px;
   }
-  .search{
-    top: -10px;
-    padding: 0px;
-    margin-left: 5px;
-    margin-right: 5px;
-    border-radius: 4px;
-  }
+  
   .input-margin{
     margin-left: -55px;
     margin-right: 8px;
@@ -219,7 +213,7 @@
 
           <ion-row justify-content-end>
             <button class="btn-vacinas" (click)="ModalVacina()" ion-button>
-              <ion-icon name="add-circle"></ion-icon>
+              <ion-icon class="addvacina" name="add-circle"></ion-icon>
               Nova vacina
             </button>
           </ion-row>
