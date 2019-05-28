@@ -60,7 +60,8 @@ export class ConfiguracoesPage {
       nova_senha: this.novasenha,
     }
     console.log(this.datajson);
-    this.http
+    if(this.novasenha == this.confsenha){
+      this.http
       .put(url, this.datajson, {headers: new HttpHeaders({'token': this.token.token})})
       .subscribe(res => {
         if(res['Mensagem'] == 'Senha alterada com sucesso!'){
@@ -70,7 +71,12 @@ export class ConfiguracoesPage {
         }else {
           this.toast.create({ message: res["Mensagem"], duration: 3000, position: 'botton' }).present()    
         }
-      })         
+      })
+    }else{
+      this.toast.create({ message: "Senhas Diferentes!", duration: 3000, position: 'botton' }).present()    
+
+    }
+             
   }
 
 }

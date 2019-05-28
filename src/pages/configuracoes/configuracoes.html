@@ -78,7 +78,7 @@
         
             <ion-input style="top: -13px" type="password" [(ngModel)]="novasenha"placeholder="Digite a nova senha" [formControl]="formulario.controls['validarNovaSenha']" ></ion-input>
 
-            <ion-input style="top: -10px" type="password" [(ngModel)]="confSenha" placeholder="Confirme a nova senha" [formControl]="formulario.controls['validarConfSenha']" ></ion-input>
+            <ion-input style="top: -10px" type="password" [(ngModel)]="confsenha" placeholder="Confirme a nova senha" [formControl]="formulario.controls['validarConfSenha']" ></ion-input>
         </div>
 
         <button ion-button class="btn-salvar" (click)="doPut()" [disabled]="!formulario.valid" color="light">Salvar</button>
