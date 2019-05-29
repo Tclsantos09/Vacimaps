@@ -12,18 +12,30 @@
     flex-direction: row;
   }
   .menu{
-    margin-left: 28%;
-    margin-top: 3px;
+    margin-left: 25%;
+    margin-top: -1px;
+    margin-right: -2px;
     background: transparent;
-    height: 46px;
-    width: 140px;
-    /* border-left: 1px solid black; */
+    height: 51px;
+    width: 141px;
+    border-left: 0.5px solid rgba(0, 0, 0, 0.3);
+    box-shadow:none;
+  }
+  .p-menu{
+    font-size: 9px;
+    color: #FFFFFF;
+    margin-left: 7px;
+    margin-top: 15px;
   }
   #label-menu{
     font-size: 13px;
     text-transform: capitalize;
     margin-left: -16px;
     color: #FFFFFF;
+  }
+  ion-label{
+    margin-left: 5px;
+    color: #808080;
   }
   .p-header{
     color: white;
@@ -40,13 +52,18 @@
   h1{
     color: #FFFFFF; font-size: 12px; font-weight: 100; font-style: normal; line-height: normal;
   }
-  ion-label{
-    color:#808080;
-  }
   ion-card{
     background: rgba(18, 97, 76, 0.23);
-    width: 320px;
-    height: 150px;
+    width: 330px;
+    height: 170px;
+    border-radius: 3px;
+  }
+  .minhavacina{
+    background: rgba(18, 97, 76, 0.23);
+    width: 330px;
+    height: 90px;
+    border-radius: 3px;
+    margin-top: -2px;
   }
   .card-nv-vacina{
     background: rgba(18, 97, 76, 0.23);
@@ -55,15 +72,15 @@
   }
   .btn{
     position: absolute;
-    bottom: 115px;
+    bottom: 85px;
     right: 10px;
-    padding-right:20px;
+    padding-right:25px;
     padding-left: 3px;
     border-radius: 7px;
   }
   .btn-2{
     position: absolute;
-    bottom: 115px;
+    bottom: 85px;
     right: 3px;
     padding: 2px;
     padding-left: 3px;
@@ -84,18 +101,18 @@
   ion-searchbar{
     margin-left: 6px;
     margin-top: 25%;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     width: 310px;
-    color: #C4C4C4;
+    color:#C4C4C4;
   }
-
   .btn-vacinas{
     height: 30px;
     width: 110px;
     font-size: 13px;
     padding: 10px;
     margin: 10px;
-    padding-right: 3px;
+    margin-right: 5px;
+    margin-bottom: 25px;
     background-color: white;
     font-family: Roboto;
     font-weight: bold;
@@ -105,57 +122,63 @@
     text-transform: inherit;
   }
   .btn-nv-vacinas{
-    height: 20px;
-    width: 100px;
-    font-size: 12px;
-    padding: 10px;
-    margin: 10px;
-    left: -11px;
+    margin-top: 10px;
+    height: 30px;
+    width: 110px;
+    font-size: 13px;
+    margin-left: 25px;
     background-color: white;
-    color: darkgrey;
-    float: right;
+    font-family: Roboto;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    text-transform: inherit;
   }
   .addvacina{
     color: #32BEA6;
     padding-right: 5px;
     font-size: 20px;
   }
-  .placeholder{
-    background-color: white;
-    width: 100%;
-  }
-  .placeholder-input{
-    margin-top: 7px;
-    background-color: white;
-    width: 10px;
-    height: 28px;
-  }
-  ion-input--placeholder-color{
-    color: #FFFFFF;
-    left: -10px;
-  }
-  
   .input-margin{
     margin-left: -55px;
     margin-right: 8px;
     border-radius: 4px;
   }
-  ion-input .text-input{
-    margin-left: 11px;
-    font-size: 12px;
+  ion-card-content {
+    margin-top: -23px;
+    margin-left: -15px;
   }
-  .card-content-ios[_ngcontent-c3] {
-    padding: 0px 5px 0px;
-    font-size: 1.4rem;
-    line-height: 1.4;
+  ion-card-header {
+    margin-top: -12px;
+    margin-left: -10px;
   }
-  .card-header-ios {
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: rgb(51, 51, 51);
-    padding: 7px;
+  .vac{
+    width: 320px;
+    border-radius: 3px;
+    margin-left: 5px;
+    margin-bottom: 15px;
   }
+  ion-select{
+    margin-left: 10px;
+  }
+  ion-datetime{
+    margin-top: 3px;
+    background-color: white;
+    border-radius: 3px;
+    margin-left: -65px;
+    width: 110px;
+    margin-right: 10px;
+    height: 30px;
+    padding: -10px;
+  }
+  ion-input{
+    margin-top: 3px;
+    background-color: white;
+    border-radius: 3px;
+    width: 110px;
+    height: 30px;
 
+  }
   /* css que nao vou usar mais mas que eh bom manter pq vai que 
   .nv-vacina{
     display: flex;
@@ -197,6 +220,7 @@
           <ion-avatar style="font-size: 32px;">
             <ion-icon name="ios-contact"></ion-icon>
           </ion-avatar>
+          <p class="p-menu">v</p>
         </button>
       </ion-header>
 
@@ -220,10 +244,10 @@
 <!-- Card para cadastrar vacina-->
             <ion-row justify-content-center [hidden]= hiddenFormVacinas>
                 <ion-list>
-                    <ion-card>
+                  <ion-card>
                     <ion-col>
                       <ion-row>
-                        <ion-item>
+                        <ion-item class="vac">
                             <ion-label>Vacinas</ion-label>
                             <ion-select  [formControl]="formulario.controls['validarVacina']" [(ngModel)]="vacina" disabled="disabled">
                                 <ion-option *ngFor="let c of vacinaSelect" [value] = "c.id_vacina" >{{ c.nome_vacina }}</ion-option>
@@ -232,25 +256,25 @@
                     </ion-row>
                       <ion-row>
 
-                            <ion-label>Data</ion-label>
+                            <ion-label>Data: </ion-label>
                             <!--<ion-datetime display-format="MM/DD/YYYY" placeholder="dd/mm/aaaa"></ion-datetime>-->
-                            <ion-datetime  [formControl]="formulario.controls['validarData']" display-format="DD/MM/YYYY" [(ngModel)]="data"></ion-datetime>
+                            <ion-datetime placeholder="dia/mês/ano" [formControl]="formulario.controls['validarData']" display-format="DD/MM/YYYY" [(ngModel)]="data"></ion-datetime>
                       
                             <ion-label>Lote: </ion-label>
-                            <ion-input  type="text" class="placeholder-input input-margin" [formControl]="formulario.controls['vaidarLote']" [(ngModel)]="lote"></ion-input>
+                            <ion-input type="text" class="placeholder-input input-margin" [formControl]="formulario.controls['vaidarLote']" [(ngModel)]="lote"></ion-input>
                     
                       </ion-row>
                       <ion-row>
                         <ion-col>
                           <button class="btn-nv-vacinas" (click)="closeModal()" ion-button>
         
-                            <ion-icon style="color: red;" name="close-circle"></ion-icon>
+                            <ion-icon style="color: red; font-size: 27px; padding-right: 10px;" name="close-circle"></ion-icon>
                             Cancelar
                           </button>
                         </ion-col>
                         <ion-col>
                           <button class="btn-nv-vacinas" (click)="doPOST()" [disabled]="!formulario.valid" ion-button>
-                            <ion-icon style="color: green;" name="checkmark-circle"></ion-icon>
+                            <ion-icon style="color: green; font-size: 27px; padding-right: 10px;" name="checkmark-circle"></ion-icon>
                             Salvar 
                           </button>
                         </ion-col>
@@ -264,14 +288,14 @@
           <ion-row justify-content-center>
             <ion-list *ngFor="let vacina of vacinas" >
 
-                <ion-card>
+                <ion-card class="minhavacina">
                   <ion-card-header>
                     <p class="p-card">{{ vacina.vacina }}</p>
                   </ion-card-header>
                     
                   <ion-card-content>
                     <ion-label> Data: {{ vacina.data_vacina }} </ion-label>
-                    <ion-label> Lote: {{ vacina.local }} </ion-label>
+                    <ion-label style="margin-top: -5px;"> Lote: {{ vacina.local }} </ion-label>
                   </ion-card-content>
 
                   <ion-row text-right [hidden]= hiddenCardVacinas>
