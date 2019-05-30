@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Tab1Service, City } from './tab1.services';
 import { ModalController } from 'ionic-angular';
+import { profileService, User } from '../modal/profile.services';
+
 /**
  * Generated class for the Tab1Page page.
  *
@@ -13,7 +15,7 @@ import { ModalController } from 'ionic-angular';
 @Component({
   selector: 'page-tab1',
   templateUrl: 'tab1.html',
-  providers: [Tab1Service]
+  providers: [Tab1Service, profileService]
 })
 export class Tab1Page {
 
@@ -21,11 +23,16 @@ export class Tab1Page {
   cidade: any[];
   hiddenCidades: Boolean;
   selectOptions;
+  nome: string;
 
   constructor(public navCtrl: NavController,
      public navParams: NavParams,
      private Tab1Service: Tab1Service,
-     public cityModal : ModalController) {      
+     public cityModal : ModalController,
+     private profileService: profileService) {   
+      this.profileService.getUser().subscribe((usuario: User) => {
+        this.nome = usuario.nome;
+      });   
       
       this.Tab1Service.getCity().subscribe((cidades) => {
         this.cidades = cidades;

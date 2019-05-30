@@ -16,19 +16,20 @@
     flex-direction: row;
   }
   .menu{
-    margin-left: 25%;
+    margin-left: 8%;
     margin-top: -1px;
     margin-right: -2px;
     background: transparent;
     height: 51px;
-    width: 141px;
+    width: 220px;
     border-left: 0.5px solid rgba(0, 0, 0, 0.3);
     box-shadow:none;
   }
   #label-menu{
-    font-size: 13px;
+    font-size: 11px;
     text-transform: capitalize;
-    margin-left: -16px;
+    margin-left: -8px;
+    color: #FFFFFF;
   }
   .p-header{
     color: white;
@@ -66,8 +67,8 @@
       <ion-header>
           <p class="p-header">VACIMAPS</p>
           <button class="menu" ion-button menuToggle>
-            <ion-label id="label-menu">Olá, {{nome}}</ion-label>
-            <ion-avatar style="font-size: 32px;">
+            <ion-label id="label-menu">Olá, {{ nome }}</ion-label>
+            <ion-avatar style="font-size: 25px;">
               <ion-icon name="ios-contact"></ion-icon>
             </ion-avatar>
             <p>v</p>

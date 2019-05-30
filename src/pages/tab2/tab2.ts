@@ -7,6 +7,7 @@ import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { VacinaService,  } from '../vacina-modal/vacina.services';
 
 
+
 /**
  * Generated class for the Tab2Page page.
  *
@@ -38,6 +39,7 @@ export class Tab2Page {
   id_usuario_vacina: string;
 
   nome_vac: any[];
+  nome: string;
 
   private API_URL = 'https://vacimaps-app.herokuapp.com'
 
@@ -55,6 +57,10 @@ export class Tab2Page {
         validarVacina: ['', Validators.required],
         validarData: ['', Validators.required],
         vaidarLote: ['', Validators.required],
+      });
+
+      this.profileService.getUser().subscribe((usuario: User) => {
+        this.nome = usuario.nome;
       });
     
      this.getVacinas();
