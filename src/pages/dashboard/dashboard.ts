@@ -1,10 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
 
-import { ModalController } from 'ionic-angular';
+import { ModalController, App } from 'ionic-angular';
 import { Tab2Page } from './../tab2/tab2';
 import { Tab1Page } from './../tab1/tab1';
 import { TabsPage } from './../tabs/tabs';
+import { HomePage } from '../home/home';
 
 export interface PageInterface {
   title: string;
@@ -24,6 +25,7 @@ export class DashboardPage {
  
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, 
+    public appCtrl: App, 
     public modalCtrl : ModalController,
     public confCtrl : ModalController){
 }
@@ -37,6 +39,8 @@ public modalOpen () {
 }
 
 public Sair () {
+  localStorage.removeItem('token');
+  this.appCtrl.getRootNav().setRoot(HomePage)
 }
 
   ionViewDidLoad() {
