@@ -62,8 +62,11 @@
     margin-left: 7px;
     margin-top: 15px;
   }
-ion-list{
-  position: relative;
+  .list-md {
+    margin: -1px 0 16px;
+    position: absolute;
+    z-index: 10;
+    width: 90%;
 }
 </style>
 
@@ -82,7 +85,7 @@ ion-list{
       <ion-searchbar placeholder="Digite o nome da cidade" (ionInput)="getCity($event)"></ion-searchbar>
       <ion-list [hidden]= hiddenCidades>
         <button (click)="something(c)" ion-item *ngFor="let c of cidades">
-          <ion-option  [value] = "c.nome_cidade">{{ c.nome_cidade }} - {{ c.uf_cidade }}</ion-option>
+          <ion-option [value] = "c.nome_cidade">{{ c.nome_cidade }} - {{ c.uf_cidade }}</ion-option>
         </button>
       </ion-list> 
         <ion-img src="./assets/imgs/Design.png"></ion-img>
