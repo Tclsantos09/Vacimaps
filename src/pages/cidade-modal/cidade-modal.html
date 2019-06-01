@@ -67,17 +67,17 @@
     margin-left: -27px;
   }
   .colunas1{
-    background-color: #48A0DC;
+    background-color: #B3B3B3;
     color: white;
-    width: 45px;
-    height: 15px;
+    width: 67px;
+    height: 17px;
     font-size: 10px;
     border-radius: 4px;
     padding-right: 3px;
-    padding-left: 7px;
-    padding-top: 2px;
-    margin-bottom: -4px;
-    margin-top: -22px;
+    padding-left: 5px;
+    padding-top: 3px;
+    margin-top: -15px;
+    margin-left: 6px;
   }
   .colunas2{
     background-color: #48A0DC;
@@ -141,10 +141,11 @@
         <ion-label style="margin-left: 73px;">Doenças endemicas da região</ion-label>
       </ion-row>
       <ion-row>
-          <p class="colunas2">Leptospirose</p>
+          <p class="{{ propBtn1 }}" (click) = 'showDengue()'>Dengue</p>
+          <p class="{{ propBtn2 }}" (click) = 'showLep()'>Leptospirose</p>
         <ion-row>
-          <p class="letrinha2">Clique na doença para ter mais informações</p>
-          <ion-card>
+          <p class="letrinha2" [hidden] = hiddentxt>Clique na doença para ter mais informações</p>
+          <ion-card  [hidden]= cardLep>
             <ion-card-content>
               <p class="paragrafo-doencas">
                 Leptospirose é uma doença causada por uma bactéria presente na urina do rato que, normalmente, se espalha pela água suja de enchentes e esgotos. <br>
@@ -152,6 +153,15 @@
                 <b>Sinais e sintomas:</b> o período de incubação da doença varia de 1 a 30 dias, sendo mais frequente entre 5 a 14 dias. <br>
                 <b>Fase precoce (leptospirêmica):</b> Febre abrupta; Dores de cabeça; Dores e desconforto nos músculos. <br>
                 <b>Fase tardia (fase imune):</b> Ictericia (pele amarelada ou alaranjada); Insuficiência renal; Hemorragia (principalmente pulmonar)
+              </p>
+            </ion-card-content>
+          </ion-card>
+          <ion-card  [hidden]= cardDengue>
+            <ion-card-content>
+              <p class="paragrafo-doencas">
+                A dengue é uma doença causada por um vírus e transmitida por um mosquito denominado Aedes aegypti, com 3 a 5 dias de incubação. <br>
+                <b>Profilaxia e recomendações:</b> uso de repelente é indispensável para evitar a doença, sendo alguns específicos para este. Deve-se tomar cuidado, principalmente, no verão. Evitar antitérmicos que contenham ácido acetilsalicílico e antiinflamatórios. Em caso de suspeita da doença, procure o posto médico mais próximo. <br>
+                <b>Sinais e sintomas:</b> Febre alta; Cefaleia; Dor retroorbitária; Mialgia; Artralgia; Náuseas e vômitos; Diarreia; Exantema; Manifestações hemorrágicas.
               </p>
             </ion-card-content>
           </ion-card>
