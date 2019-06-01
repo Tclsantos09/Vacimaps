@@ -3,6 +3,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Tab1Service, City } from './tab1.services';
 import { ModalController } from 'ionic-angular';
 import { profileService, User } from '../modal/profile.services';
+import { PopoverController } from 'ionic-angular';
+import { DashboardPage } from '../dashboard/dashboard';
+import { PopoverPage } from '../popover/popover';
+
 
 /**
  * Generated class for the Tab1Page page.
@@ -29,6 +33,7 @@ export class Tab1Page {
      public navParams: NavParams,
      private Tab1Service: Tab1Service,
      public cityModal : ModalController,
+     public popoverCtrl: PopoverController,
      private profileService: profileService) {   
       this.profileService.getUser().subscribe((usuario: User) => {
         this.nome = usuario.nome;
@@ -85,6 +90,13 @@ export class Tab1Page {
       );
       })
     }
+  }
+
+  presentPopover(myEvent) {
+    let popover = this.popoverCtrl.create(PopoverPage);
+    popover.present({
+      ev: myEvent
+    });
   }
 
 }

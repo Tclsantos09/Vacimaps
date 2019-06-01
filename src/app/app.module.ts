@@ -13,6 +13,7 @@ import { VerifyCodePageModule } from '../pages/verify-code/verify-code.module';
 import { TabsPageModule } from '../pages/tabs/tabs.module';
 import { Tab1PageModule } from '../pages/tab1/tab1.module';
 import { Tab2PageModule } from '../pages/tab2/tab2.module';
+import { PopoverPageModule } from '../pages/popover/popover.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { Tab2PageModule } from '../pages/tab2/tab2.module';
     VerifyCodePageModule,
     TabsPageModule,
     Tab1PageModule,
-    Tab2PageModule
+    Tab2PageModule,
+    PopoverPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -73,7 +73,7 @@
   <ion-content padding>
       <ion-header>
           <p class="p-header">VACIMAPS</p>
-          <button class="menu" ion-button menuToggle>
+          <button class="menu" (click)="presentPopover($event)" ion-button>
             <ion-label id="label-menu">Olá, {{ nome }}</ion-label>
             <ion-avatar style="font-size: 25px;">
               <ion-icon name="ios-contact"></ion-icon>
