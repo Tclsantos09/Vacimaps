@@ -16168,6 +16168,11 @@ ion-popover {
 }
 
 .popover-content {
+  top: 50px !important;
+  left: 175px !important;
+  width: 190px !important;
+  height: 135px !important;
+  background: #3C7D6B !important;
   position: absolute;
   z-index: 10;
   display: -webkit-box;

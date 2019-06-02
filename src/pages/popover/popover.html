@@ -1,11 +1,20 @@
 <style>
-    ion-list{
-        margin-top: 160px;
+    button{
+        background: #C4C4C4 !important;
+        text-align: center;
+        font-size: 14px;
+        font-family: Roboto;
+        color: rgb(107, 106, 106);
+    }
+    ion-icon{
+        float: right;
+        font-size: 25px;
+        color: rgba(255, 255, 255, 0.432);
     }
 </style>
 
 <ion-list>
     <button ion-item (click)="openModal()">Perfil</button>
     <button ion-item (click)="modalOpen()">Configuracoes</button>
-    <button ion-item (click)="Sair()">Sair</button>
+    <button ion-item (click)="Sair()">Sair <ion-icon name="power"></ion-icon></button> 
 </ion-list>

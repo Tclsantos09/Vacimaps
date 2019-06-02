@@ -3,9 +3,10 @@ import { IonicPage, NavController, NavParams, ToastController, App } from 'ionic
 import { profileService, User, Vacina } from '../modal/profile.services';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { ModalController } from 'ionic-angular';
+import { PopoverController } from 'ionic-angular';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { VacinaService,  } from '../vacina-modal/vacina.services';
-
+import { PopoverPage } from '../popover/popover';
 
 
 /**
@@ -50,6 +51,7 @@ export class Tab2Page {
     private profileService: profileService,
     private http: HttpClient,
     public appCtrl: App, 
+    public popoverCtrl: PopoverController,
     private VacinaService: VacinaService,
     private formBuilder: FormBuilder,
     public navParams: NavParams) {
@@ -95,7 +97,12 @@ export class Tab2Page {
     this.vacinas = this.user_vacinas;
 }
 
-
+presentPopover(myEvent) {
+    let popover = this.popoverCtrl.create(PopoverPage);
+    popover.present({
+      ev: myEvent
+    });
+  }
 
   ModalVacina(){
     /*var modalvacina = this.vacinaModal.create ('VacinaModalPage');
