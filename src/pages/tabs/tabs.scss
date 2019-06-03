@@ -1,3 +1,31 @@
 page-tabs {
 
 }
+
+.ion-ios-customap,
+.ion-md-customap {
+  content: url(../assets/imgs/map.svg);
+  width: 24px;
+  height: 32px;
+  //padding: 6px 4px 2px;
+  //opacity: 0.9;
+  margin-bottom: -31px;
+  margin-left: -125px;
+}
+.ion-ios-customedicalbook,
+.ion-md-customedicalbook {
+  content: url(../assets/imgs/medical-book.svg);
+  width: 24px;
+  height: 32px;
+  //padding: 6px 4px 2px;
+  //opacity: 0.9;
+  margin-bottom: -29px;
+  margin-left: -106px;
+}
+
+.tabs-md[tabsLayout=icon-top] .has-icon .tab-button-text {
+    margin-top: 4px;
+    /* margin-bottom: 0; */
+    margin-left: 33px;
+    font-size: 12px;
+}
