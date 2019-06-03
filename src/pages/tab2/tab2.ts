@@ -86,9 +86,12 @@ export class Tab2Page {
 
   getVacinas(){
     this.profileService.getUser().subscribe((usuario: User) => {
+      
       this.usuario = usuario;
-      this.vacinas = usuario.vacinas;
-      this.user_vacinas = this.vacinas;
+      if(usuario.vacinas != 'Nenhuma vacina cadastrada!'){
+        this.vacinas = usuario.vacinas;
+        this.user_vacinas = this.vacinas;
+      }
 
      });
   }
@@ -129,7 +132,6 @@ presentPopover(myEvent) {
   doDELETE(vacina) {
     console.log("DELETE");
     let url = `${this.API_URL}/usuario/vacina/${vacina.id}`;
-    console.log(url)
     this.http
       .delete(url, {headers: new HttpHeaders({'token': this.token.token})})
       .subscribe(res => {
@@ -190,7 +192,6 @@ presentPopover(myEvent) {
         data_vacina: this.data, 
         ds_local_vacina: this.lote,
       }
-      console.log(this.datajson);
       let url = `${this.API_URL}/usuario/vacina/${this.id_usuario_vacina}`;
       this.http
       .put(url, this.datajson, {headers: new HttpHeaders({'token': this.token.token})})
